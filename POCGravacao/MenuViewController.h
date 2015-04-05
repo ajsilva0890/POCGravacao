@@ -11,4 +11,6 @@
 
 @interface MenuViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *paiOuFilho;
+
 @end

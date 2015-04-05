@@ -17,6 +17,23 @@
 
 @implementation MenuViewController
 
+@synthesize paiOuFilho;
+
+
+- (IBAction)paiOuFilho:(id)sender {
+    
+    if(paiOuFilho.selectedSegmentIndex == 0) {
+        [self.tipoUsuario setTipoDeUsuario:0 ];
+        printf("tipo usuario: %d \n", [self.tipoUsuario tipoDeUsuario]);
+    }
+    
+    if(paiOuFilho.selectedSegmentIndex == 1) {
+        [self.tipoUsuario setTipoDeUsuario:1 ];
+        printf("tipo usuario: %d \n", [self.tipoUsuario tipoDeUsuario]);
+    }
+}
+
+
 - (IBAction)filho:(id)sender {
     
     [self.tipoUsuario setTipoDeUsuario:0 ];

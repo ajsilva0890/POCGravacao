@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController">
             <connections>
+                <outlet property="paiOuFilho" destination="Fuu-Tb-ZGO" id="HOT-Ut-Cum"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,7 +16,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lvd-4r-UtS">
-                    <rect key="frame" x="311" y="137" width="44" height="30"/>
+                    <rect key="frame" x="35" y="8" width="44" height="30"/>
                     <state key="normal" title="FILHO">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -24,7 +25,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXg-u9-chJ">
-                    <rect key="frame" x="318" y="209" width="30" height="30"/>
+                    <rect key="frame" x="96" y="8" width="30" height="30"/>
                     <state key="normal" title="PAI">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -32,18 +33,21 @@
                         <action selector="pai:" destination="-1" eventType="touchUpInside" id="J5r-el-TT9"/>
                     </connections>
                 </button>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Fuu-Tb-ZGO">
-                    <rect key="frame" x="272" y="278" width="87" height="29"/>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Fuu-Tb-ZGO">
+                    <rect key="frame" x="117" y="174" width="423" height="29"/>
                     <segments>
-                        <segment title="Pai"/>
                         <segment title="Filho"/>
+                        <segment title="Pai"/>
                     </segments>
+                    <connections>
+                        <action selector="paiOuFilho:" destination="-1" eventType="valueChanged" id="7k2-qM-3Vn"/>
+                    </connections>
                 </segmentedControl>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-            <point key="canvasLocation" x="280" y="339"/>
+            <point key="canvasLocation" x="279.5" y="338.5"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
