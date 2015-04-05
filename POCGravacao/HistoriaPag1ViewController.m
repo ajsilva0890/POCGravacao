@@ -100,7 +100,6 @@
         [gravarPauseButton setEnabled:NO];
     }
     else {
-        [pararButton setEnabled:YES];
         [gravarPauseButton setEnabled:YES];
     }
 }
@@ -117,7 +116,8 @@
         [session setActive:YES error:nil];
         
         //        comecar a gravacao
-        [_gravador record];
+        NSTimeInterval time = 10.0;
+        [_gravador recordForDuration:time];
         [gravarPauseButton setTitle:@"Pausar" forState:UIControlStateNormal];
         
     } else {

@@ -32,6 +32,13 @@
                         <action selector="pai:" destination="-1" eventType="touchUpInside" id="J5r-el-TT9"/>
                     </connections>
                 </button>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Fuu-Tb-ZGO">
+                    <rect key="frame" x="272" y="278" width="87" height="29"/>
+                    <segments>
+                        <segment title="Pai"/>
+                        <segment title="Filho"/>
+                    </segments>
+                </segmentedControl>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>

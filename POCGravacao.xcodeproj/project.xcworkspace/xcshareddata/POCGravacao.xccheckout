@@ -6,31 +6,35 @@
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>4F649B8D-5154-4A88-BD64-2CCC2E786F62</string>
+	<key>IDESourceControlProjectName</key>
+	<string>POCGravacao</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>C9A96D7E87BE952FC65CA07765552E1BFF4B7D94</key>
-		<string>https://github.com/mugasparetto/NanoChallenge1.git</string>
+		<key>EBBA48ADA99EAA73CFEE9E62E5F213508056CFD8</key>
+		<string>https://github.com/ajsilva0890/POCGravacao.git</string>
 	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>POCGravacao.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>C9A96D7E87BE952FC65CA07765552E1BFF4B7D94</key>
-		<string>NanoChallenge1/</string>
+		<key>EBBA48ADA99EAA73CFEE9E62E5F213508056CFD8</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/mugasparetto/NanoChallenge1.git</string>
+	<string>https://github.com/ajsilva0890/POCGravacao.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>C9A96D7E87BE952FC65CA07765552E1BFF4B7D94</string>
+	<string>EBBA48ADA99EAA73CFEE9E62E5F213508056CFD8</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>C9A96D7E87BE952FC65CA07765552E1BFF4B7D94</string>
+			<string>EBBA48ADA99EAA73CFEE9E62E5F213508056CFD8</string>
 			<key>IDESourceControlWCCName</key>
-			<string>NanoChallenge1</string>
+			<string>POCGravacao</string>
 		</dict>
 	</array>
 </dict>
