@@ -8,9 +8,8 @@
 
 #import "AppDelegate.h"
 #import "MenuViewController.h"
-#import "HistoriaPag1ViewController.h"
-#import "HistoriaPag2ViewController.h"
-#import "HistoriaPag3ViewController.h"
+#import "BookViewController.h"
+
 
 @interface AppDelegate ()
 
@@ -23,12 +22,10 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     MenuViewController *menuvc = [[MenuViewController alloc] init];
-    HistoriaPag1ViewController *pag1vc = [[HistoriaPag1ViewController alloc] init];
-    HistoriaPag2ViewController *pag2vc = [[HistoriaPag2ViewController alloc] init];
-    HistoriaPag3ViewController *pag3vc = [[HistoriaPag3ViewController alloc] init];
+    BookViewController *book = [[BookViewController alloc] initWithPageTotal:5];
     
     UITabBarController *tbc = [[UITabBarController alloc] init];
-    tbc.viewControllers = @[menuvc, pag1vc, pag2vc, pag3vc];
+    tbc.viewControllers = @[menuvc, book];
     
     self.window.rootViewController = tbc;
     

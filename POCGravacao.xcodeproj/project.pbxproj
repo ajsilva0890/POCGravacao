@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54DA0C901AD31A1200FA848D /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DA0C8E1AD31A1200FA848D /* PageViewController.m */; };
+		54DA0C911AD31A1200FA848D /* PageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54DA0C8F1AD31A1200FA848D /* PageViewController.xib */; };
+		54DA0C941AD3253100FA848D /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DA0C931AD3253100FA848D /* BookViewController.m */; };
+		54DA0C971AD3305800FA848D /* PageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DA0C961AD3305800FA848D /* PageView.m */; };
 		C46316061AD0729800695BA1 /* EntradaUsuario.m in Sources */ = {isa = PBXBuildFile; fileRef = C46316051AD0729800695BA1 /* EntradaUsuario.m */; };
 		C4C5F63C1AD042B300226F61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C5F63B1AD042B300226F61 /* main.m */; };
 		C4C5F63F1AD042B300226F61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C5F63E1AD042B300226F61 /* AppDelegate.m */; };
@@ -16,12 +20,6 @@
 		C4C5F6531AD042B400226F61 /* POCGravacaoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C5F6521AD042B400226F61 /* POCGravacaoTests.m */; };
 		C4C5F6621AD0430B00226F61 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C5F6601AD0430B00226F61 /* MenuViewController.m */; };
 		C4C5F6631AD0430B00226F61 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4C5F6611AD0430B00226F61 /* MenuViewController.xib */; };
-		C4C5F6671AD0435B00226F61 /* HistoriaPag1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C5F6651AD0435B00226F61 /* HistoriaPag1ViewController.m */; };
-		C4C5F6681AD0435B00226F61 /* HistoriaPag1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4C5F6661AD0435B00226F61 /* HistoriaPag1ViewController.xib */; };
-		C4C5F66C1AD0437C00226F61 /* HistoriaPag2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C5F66A1AD0437C00226F61 /* HistoriaPag2ViewController.m */; };
-		C4C5F66D1AD0437C00226F61 /* HistoriaPag2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4C5F66B1AD0437C00226F61 /* HistoriaPag2ViewController.xib */; };
-		C4C5F6711AD0438D00226F61 /* HistoriaPag3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C5F66F1AD0438D00226F61 /* HistoriaPag3ViewController.m */; };
-		C4C5F6721AD0438D00226F61 /* HistoriaPag3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4C5F6701AD0438D00226F61 /* HistoriaPag3ViewController.xib */; };
 		C4C5F6751AD0508700226F61 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4C5F6741AD0508700226F61 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +34,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		54DA0C8D1AD31A1200FA848D /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
+		54DA0C8E1AD31A1200FA848D /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
+		54DA0C8F1AD31A1200FA848D /* PageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageViewController.xib; sourceTree = "<group>"; };
+		54DA0C921AD3253100FA848D /* BookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookViewController.h; sourceTree = "<group>"; };
+		54DA0C931AD3253100FA848D /* BookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookViewController.m; sourceTree = "<group>"; };
+		54DA0C951AD3305800FA848D /* PageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageView.h; sourceTree = "<group>"; };
+		54DA0C961AD3305800FA848D /* PageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageView.m; sourceTree = "<group>"; };
 		C46316041AD0729800695BA1 /* EntradaUsuario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntradaUsuario.h; sourceTree = "<group>"; };
 		C46316051AD0729800695BA1 /* EntradaUsuario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntradaUsuario.m; sourceTree = "<group>"; };
 		C4C5F6361AD042B300226F61 /* POCGravacao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POCGravacao.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,15 +57,6 @@
 		C4C5F65F1AD0430B00226F61 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		C4C5F6601AD0430B00226F61 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		C4C5F6611AD0430B00226F61 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
-		C4C5F6641AD0435B00226F61 /* HistoriaPag1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoriaPag1ViewController.h; sourceTree = "<group>"; };
-		C4C5F6651AD0435B00226F61 /* HistoriaPag1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoriaPag1ViewController.m; sourceTree = "<group>"; };
-		C4C5F6661AD0435B00226F61 /* HistoriaPag1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoriaPag1ViewController.xib; sourceTree = "<group>"; };
-		C4C5F6691AD0437C00226F61 /* HistoriaPag2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoriaPag2ViewController.h; sourceTree = "<group>"; };
-		C4C5F66A1AD0437C00226F61 /* HistoriaPag2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoriaPag2ViewController.m; sourceTree = "<group>"; };
-		C4C5F66B1AD0437C00226F61 /* HistoriaPag2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoriaPag2ViewController.xib; sourceTree = "<group>"; };
-		C4C5F66E1AD0438D00226F61 /* HistoriaPag3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoriaPag3ViewController.h; sourceTree = "<group>"; };
-		C4C5F66F1AD0438D00226F61 /* HistoriaPag3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoriaPag3ViewController.m; sourceTree = "<group>"; };
-		C4C5F6701AD0438D00226F61 /* HistoriaPag3ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoriaPag3ViewController.xib; sourceTree = "<group>"; };
 		C4C5F6741AD0508700226F61 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -150,15 +146,13 @@
 		C4C5F6731AD043A000226F61 /* PagesHistoria */ = {
 			isa = PBXGroup;
 			children = (
-				C4C5F6641AD0435B00226F61 /* HistoriaPag1ViewController.h */,
-				C4C5F6651AD0435B00226F61 /* HistoriaPag1ViewController.m */,
-				C4C5F6661AD0435B00226F61 /* HistoriaPag1ViewController.xib */,
-				C4C5F6691AD0437C00226F61 /* HistoriaPag2ViewController.h */,
-				C4C5F66A1AD0437C00226F61 /* HistoriaPag2ViewController.m */,
-				C4C5F66B1AD0437C00226F61 /* HistoriaPag2ViewController.xib */,
-				C4C5F66E1AD0438D00226F61 /* HistoriaPag3ViewController.h */,
-				C4C5F66F1AD0438D00226F61 /* HistoriaPag3ViewController.m */,
-				C4C5F6701AD0438D00226F61 /* HistoriaPag3ViewController.xib */,
+				54DA0C951AD3305800FA848D /* PageView.h */,
+				54DA0C961AD3305800FA848D /* PageView.m */,
+				54DA0C8D1AD31A1200FA848D /* PageViewController.h */,
+				54DA0C8E1AD31A1200FA848D /* PageViewController.m */,
+				54DA0C8F1AD31A1200FA848D /* PageViewController.xib */,
+				54DA0C921AD3253100FA848D /* BookViewController.h */,
+				54DA0C931AD3253100FA848D /* BookViewController.m */,
 			);
 			name = PagesHistoria;
 			sourceTree = "<group>";
@@ -245,10 +239,8 @@
 			files = (
 				C4C5F6471AD042B300226F61 /* LaunchScreen.xib in Resources */,
 				C4C5F6631AD0430B00226F61 /* MenuViewController.xib in Resources */,
-				C4C5F6681AD0435B00226F61 /* HistoriaPag1ViewController.xib in Resources */,
 				C4C5F6441AD042B300226F61 /* Images.xcassets in Resources */,
-				C4C5F6721AD0438D00226F61 /* HistoriaPag3ViewController.xib in Resources */,
-				C4C5F66D1AD0437C00226F61 /* HistoriaPag2ViewController.xib in Resources */,
+				54DA0C911AD31A1200FA848D /* PageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,13 +259,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4C5F63F1AD042B300226F61 /* AppDelegate.m in Sources */,
-				C4C5F6671AD0435B00226F61 /* HistoriaPag1ViewController.m in Sources */,
 				C4C5F6421AD042B300226F61 /* POCGravacao.xcdatamodeld in Sources */,
+				54DA0C941AD3253100FA848D /* BookViewController.m in Sources */,
 				C46316061AD0729800695BA1 /* EntradaUsuario.m in Sources */,
+				54DA0C901AD31A1200FA848D /* PageViewController.m in Sources */,
+				54DA0C971AD3305800FA848D /* PageView.m in Sources */,
 				C4C5F63C1AD042B300226F61 /* main.m in Sources */,
-				C4C5F6711AD0438D00226F61 /* HistoriaPag3ViewController.m in Sources */,
 				C4C5F6621AD0430B00226F61 /* MenuViewController.m in Sources */,
-				C4C5F66C1AD0437C00226F61 /* HistoriaPag2ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
