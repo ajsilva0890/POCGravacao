@@ -41,7 +41,6 @@
     [pararButton2 setEnabled:NO];
     [playButton2 setEnabled:YES];
     
-    printf("audioRecorderDidFinishRecording PAGINA 2\n");
 }
 
 - (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)_player2 successfully:(BOOL)flag{
@@ -142,6 +141,7 @@
     if (!_gravador2.recording) {
         _player2 = [[AVAudioPlayer alloc] initWithContentsOfURL:_gravador2.url error:nil];
         [_player2 setDelegate:self];
+        [_player2 setVolume:5];
         [_player2 play];
     }
 }

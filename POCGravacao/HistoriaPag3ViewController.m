@@ -139,6 +139,7 @@
     if (!_gravador3.recording) {
         _player3 = [[AVAudioPlayer alloc] initWithContentsOfURL:_gravador3.url error:nil];
         [_player3 setDelegate:self];
+        [_player3 setVolume:5];
         [_player3 play];
     }
 }
