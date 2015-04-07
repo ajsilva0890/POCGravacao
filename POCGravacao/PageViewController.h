@@ -17,7 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *lblPage;
 
-@property (nonatomic) NSInteger pageNumber;
+@property (nonatomic) unsigned int pageNumber;
 
 -(instancetype) initWithPageNumber:(NSInteger)pageNumber;
 

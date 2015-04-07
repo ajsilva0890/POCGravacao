@@ -9,7 +9,6 @@
 #import "PageViewController.h"
 #import "EntradaUsuario.h"
 
-
 @interface PageViewController (){
     
     AVAudioRecorder *_recorder;
@@ -26,20 +25,6 @@
 @synthesize btnStop, btnPlay, btnRecordPause;
 
 
-
-
-//- (instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
-//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-//    
-//    if (self){
-//        _pageNumber = 1;
-//        self.tabBarItem.title = [NSString stringWithFormat:@"Page %ld", _pageNumber];
-//    }
-//    
-//    return self;
-//}
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -50,14 +35,14 @@
     [btnStop setEnabled:NO];
     [btnPlay setEnabled:NO];
     
-    self.tabBarItem.title = [NSString stringWithFormat:@"Page %ld", _pageNumber];
-    _lblPage.text = [NSString stringWithFormat:@"%ld", _pageNumber+1];
+    self.tabBarItem.title = [NSString stringWithFormat:@"Page %i", _pageNumber];
+    _lblPage.text = [NSString stringWithFormat:@"%i", _pageNumber+1];
     
     
     //    definindo a arquivo de aúdio
     NSArray *pathComponents = [NSArray arrayWithObjects:
                                 [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
-                                [NSString stringWithFormat:@"PageAudio%ld.m4a", _pageNumber], nil ];
+                                [NSString stringWithFormat:@"PageAudio%i.m4a", _pageNumber], nil ];
     
     NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
     
@@ -86,7 +71,7 @@
     self = [super init];
     
     if (self){
-        _pageNumber = pageNumber;
+        _pageNumber = (unsigned int)pageNumber;
         
     }
     
