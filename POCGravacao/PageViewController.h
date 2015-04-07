@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnStop;
 @property (weak, nonatomic) IBOutlet UIButton *btnPlay;
 
+@property (weak, nonatomic) IBOutlet UILabel *lblPage;
+
 @property (nonatomic) NSInteger pageNumber;
 
 -(instancetype) initWithPageNumber:(NSInteger)pageNumber;

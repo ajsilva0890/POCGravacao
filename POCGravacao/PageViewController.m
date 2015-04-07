@@ -26,17 +26,7 @@
 @synthesize btnStop, btnPlay, btnRecordPause;
 
 
-- (instancetype) initWithPageNumber:(NSInteger)pageNumber{
-    
-    self = [super init];
-    
-    if (self){
-        _pageNumber = pageNumber;
-        self.tabBarItem.title = [NSString stringWithFormat:@"Page %ld", _pageNumber];
-    }
-    
-    return self;
-}
+
 
 //- (instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
 //    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -49,23 +39,6 @@
 //    return self;
 //}
 
-- (void) audioRecorderDidFinishRecording:(AVAudioRecorder *)_recorder successfully:(BOOL)flag{
-    [btnRecordPause setTitle:@"Gravar" forState:UIControlStateNormal];
-    
-    [btnStop setEnabled:NO];
-    [btnPlay setEnabled:YES];
-    
-}
-
-- (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)_player successfully:(BOOL)flag{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Recorder"
-                                                    message: @"Tocou tudo!"
-                                                   delegate: nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
-}
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -76,6 +49,10 @@
     //    desabilita botao play/stop quando iniciada a aplicaçao
     [btnStop setEnabled:NO];
     [btnPlay setEnabled:NO];
+    
+    self.tabBarItem.title = [NSString stringWithFormat:@"Page %ld", _pageNumber];
+    _lblPage.text = [NSString stringWithFormat:@"%ld", _pageNumber+1];
+    
     
     //    definindo a arquivo de aúdio
     NSArray *pathComponents = [NSArray arrayWithObjects:
@@ -103,6 +80,20 @@
     
 }
 
+
+- (instancetype) initWithPageNumber:(NSInteger)pageNumber{
+    
+    self = [super init];
+    
+    if (self){
+        _pageNumber = pageNumber;
+        
+    }
+    
+    return self;
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -110,7 +101,7 @@
 
 - (void) viewWillAppear:(BOOL)animated{
     
-    if ([self.tipoUsuario tipoDeUsuario] == 0) {
+    if ([self.tipoUsuario tipoDeUsuario] == 1) {
         [btnStop setEnabled:NO];
         [btnRecordPause setEnabled:NO];
     }
@@ -118,6 +109,27 @@
         [btnRecordPause setEnabled:YES];
     }
 }
+
+
+
+- (void) audioRecorderDidFinishRecording:(AVAudioRecorder *)_recorder successfully:(BOOL)flag{
+    [btnRecordPause setTitle:@"Gravar" forState:UIControlStateNormal];
+    
+    [btnStop setEnabled:NO];
+    [btnPlay setEnabled:YES];
+    
+}
+
+- (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)_player successfully:(BOOL)flag{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Recorder"
+                                                    message: @"Tocou tudo!"
+                                                   delegate: nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+}
+
+
 
 - (IBAction)recordPauseTapped:(id)sender {
     //    para a reproducao do audio antes de comecar a gravar

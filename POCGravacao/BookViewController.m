@@ -8,7 +8,7 @@
 
 #import "BookViewController.h"
 #import "PageViewController.h"
-#import "PageView.h"
+
 
 @interface BookViewController ()
 
@@ -26,14 +26,18 @@
     for (int i=0; i<_pageTotal; i++) {
         PageViewController *page =[[PageViewController alloc] initWithPageNumber:i];
         [_pages addObject:page];
+        [_viewPage addSubview:[page view]];
         //NSLog(@"%@", [_pages objectAtIndex:i]);
     }
     
-    [self.view ]
-    PageView *teste = [[PageView alloc] init];
-    [self.view bringSubviewToFront:teste];
-    //[self.view sendSubviewToBack:[_pages objectAtIndex:0]];
-
+    [_viewPage bringSubviewToFront:[[_pages objectAtIndex:0] view]];
+    
+    //[self presentViewController:[_pages objectAtIndex:0] animated:YES completion:nil];
+    
+    // [self.view bringSubviewToFront:[[_pages objectAtIndex:0] view]];
+    
+    
+    
 }
 
 
@@ -48,6 +52,23 @@
     return self;
 }
 
+-(IBAction)touchBtnEsq:(id)sender{
+    if (_pageIndex > 0) {
+       _pageIndex--;
+    }
+    
+    [_viewPage bringSubviewToFront:[[_pages objectAtIndex:_pageIndex] view]];
+}
+
+-(IBAction)touchBtnDir:(id)sender{
+    if(_pageIndex < _pageTotal-1){
+        _pageIndex++;
+    }
+    
+    [_viewPage bringSubviewToFront:[[_pages objectAtIndex:_pageIndex] view]];
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -56,13 +77,13 @@
 
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

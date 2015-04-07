@@ -9,6 +9,7 @@
                 <outlet property="btnPlay" destination="m4y-Fw-KbN" id="KnU-md-Qa0"/>
                 <outlet property="btnRecordPause" destination="4Tc-5E-B3K" id="Jpi-8x-NJa"/>
                 <outlet property="btnStop" destination="qZD-Ju-bf6" id="m0w-a9-nxb"/>
+                <outlet property="lblPage" destination="tnc-Lb-KBI" id="Jld-5B-ptn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -44,10 +45,17 @@
                         <action selector="playTapped:" destination="-1" eventType="touchUpInside" id="UWV-GJ-Wg8"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnc-Lb-KBI">
+                    <rect key="frame" x="157" y="177" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="245.5" y="361.5"/>
         </view>
     </objects>
 </document>

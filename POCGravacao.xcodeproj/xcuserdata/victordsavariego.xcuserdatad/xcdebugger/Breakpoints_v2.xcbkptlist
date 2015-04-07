@@ -9,7 +9,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "POCGravacao/BookViewController.m"
+            filePath = "POCGravacao/BookViewController1.m"
             timestampString = "450047261.517457"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "POCGravacao/BookViewController.m"
-            timestampString = "450048958.369132"
+            timestampString = "450129967.428877"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "-touchBtnDir:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
