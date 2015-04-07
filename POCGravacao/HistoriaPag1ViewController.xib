@@ -23,6 +23,7 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
+                        <action selector="recordAudio:" destination="-1" eventType="touchUpInside" id="8cg-OV-sgO"/>
                         <action selector="recordPauseTapped:" destination="-1" eventType="touchUpInside" id="MeM-yo-Sa8"/>
                     </connections>
                 </button>

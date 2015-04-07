@@ -12,6 +12,8 @@
 
 @interface HistoriaPag1ViewController () {
 
+    NSURL *temporaryRecFile;
+    
     AVAudioRecorder *_gravador;
     AVAudioPlayer *_player;
 }
@@ -62,30 +64,12 @@
     [pararButton setEnabled:NO];
     [playButton setEnabled:NO];
     
-    //    definindo a arquivo de aúdio
-    NSArray *pathComponents = [NSArray arrayWithObjects:
-                               [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
-                               @"MyAudioMemo.m4a", nil ];
-    
-    NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
-    
     //    definindo sessao de audio
     AVAudioSession *session = [[AVAudioSession alloc]init ];
     [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
-    
-    //    define a configuracao de gravador
-    NSMutableDictionary *recordSettings = [[NSMutableDictionary alloc]init];
-    
-    [recordSettings setValue:[NSNumber numberWithInt:kAudioFormatMPEG4AAC] forKey:AVFormatIDKey];
-    [recordSettings setValue:[NSNumber numberWithFloat:44100.0] forKey:AVSampleRateKey];
-    [recordSettings setValue:[NSNumber numberWithInt:2] forKey:AVNumberOfChannelsKey];
-    
-    //    iniciando e preparando a gravacao
-    _gravador = [[AVAudioRecorder alloc] initWithURL:outputFileURL settings:recordSettings error:nil];
-    _gravador.delegate  = self;
-    _gravador.meteringEnabled = YES;
-    [_gravador prepareToRecord];
-    
+    [session setActive:YES error:nil];
+    [_gravador setDelegate:self];
+    [super viewDidLoad];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -104,6 +88,14 @@
     }
 }
 
+- (NSString *) dateString
+{
+    // return a formatted string for a file name
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"ddMMMYY_hhmmssa";
+    return [[formatter stringFromDate:[NSDate date]] stringByAppendingString:@".aif"];
+}
+
 - (IBAction)recordPauseTapped:(id)sender {
 
     //    para a reproducao do audio antes de comecar a gravar
@@ -112,13 +104,40 @@
     }
     
     if (!_gravador.recording) {
+        
+        //Recording Settings
+        NSMutableDictionary *settings = [NSMutableDictionary dictionary];
+        
+        [settings setValue: [NSNumber numberWithInt:kAudioFormatLinearPCM] forKey:AVFormatIDKey];
+        [settings setValue: [NSNumber numberWithFloat:8000.0] forKey:AVSampleRateKey];
+        [settings setValue: [NSNumber numberWithInt: 1] forKey:AVNumberOfChannelsKey];
+        [settings setValue: [NSNumber numberWithInt:16] forKey:AVLinearPCMBitDepthKey];
+        [settings setValue: [NSNumber numberWithBool:NO] forKey:AVLinearPCMIsBigEndianKey];
+        [settings setValue: [NSNumber numberWithBool:NO] forKey:AVLinearPCMIsFloatKey];
+        [settings setValue:  [NSNumber numberWithInt: AVAudioQualityMax] forKey:AVEncoderAudioQualityKey];
+        
+        NSArray *searchPaths =NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *documentPath_ = [searchPaths objectAtIndex: 0];
+        
+        NSString *pathToSave = [documentPath_ stringByAppendingPathComponent:[self dateString]];
+        
+        // File URL
+        NSURL *url = [NSURL fileURLWithPath:pathToSave];
+        
+        //Save recording path to preferences
+        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+        
+        
+        [prefs setURL:url forKey:@"Test1"];
+        [prefs synchronize];
+        
         AVAudioSession *session = [[AVAudioSession alloc]init ];
         [session setActive:YES error:nil];
         
-        //        comecar a gravacao
-        NSTimeInterval time = 10.0;
-        [_gravador recordForDuration:time];
-        [gravarPauseButton setTitle:@"Pausar" forState:UIControlStateNormal];
+        // Create recorder
+        _gravador = [[AVAudioRecorder alloc] initWithURL:url settings:settings error:nil];
+        [_gravador prepareToRecord];
+        [_gravador record];
         
     } else {
         
@@ -138,12 +157,25 @@
     [audioSession setActive:NO error:nil];
 }
 
+
 - (IBAction)playTapped:(id)sender {
 
     if (!_gravador.recording) {
-        _player = [[AVAudioPlayer alloc] initWithContentsOfURL:_gravador.url error:nil];
-        [_player setDelegate:self];
-        [_player setVolume:5];
+        
+        AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+        [audioSession setCategory:AVAudioSessionCategoryPlayback error:nil];
+        [audioSession setActive:YES error:nil];
+        
+        
+        //Load recording path from preferences
+        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+        temporaryRecFile = [prefs URLForKey:@"Test1"];
+        
+        _player = [[AVAudioPlayer alloc] initWithContentsOfURL:temporaryRecFile error:nil];
+        _player.delegate = self;
+        [_player setNumberOfLoops:0];
+        _player.volume = 5;
+        [_player prepareToPlay];
         [_player play];
     }
 }
