@@ -12,6 +12,8 @@
 
 @interface HistoriaPag2ViewController (){
     
+    NSURL *temporaryRecFile;
+    
     AVAudioRecorder *_gravador2;
     AVAudioPlayer *_player2;
 }
@@ -61,31 +63,7 @@
     
     //    desabilita botao play/stop quando iniciada a aplicaçao
     [pararButton2 setEnabled:NO];
-    [playButton2 setEnabled:NO];
-    
-    //    definindo a arquivo de aúdio
-    NSArray *pathComponents2 = [NSArray arrayWithObjects:
-                               [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
-                               @"MyAudioMemo2.m4a", nil ];
-    
-    NSURL *outputFileURL2 = [NSURL fileURLWithPathComponents:pathComponents2];
-    
-    //    definindo sessao de audio
-    AVAudioSession *session2 = [[AVAudioSession alloc]init ];
-    [session2 setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
-    
-    //    define a configuracao de gravador
-    NSMutableDictionary *recordSettings2 = [[NSMutableDictionary alloc]init];
-    
-    [recordSettings2 setValue:[NSNumber numberWithInt:kAudioFormatMPEG4AAC] forKey:AVFormatIDKey];
-    [recordSettings2 setValue:[NSNumber numberWithFloat:44100.0] forKey:AVSampleRateKey];
-    [recordSettings2 setValue:[NSNumber numberWithInt:2] forKey:AVNumberOfChannelsKey];
-    
-    //    iniciando e preparando a gravacao
-    _gravador2 = [[AVAudioRecorder alloc] initWithURL:outputFileURL2 settings:recordSettings2 error:nil];
-    _gravador2.delegate  = self;
-    _gravador2.meteringEnabled = YES;
-    [_gravador2 prepareToRecord];
+    [playButton2 setEnabled:YES];
     
 }
 
@@ -112,7 +90,39 @@
     }
     
     if (!_gravador2.recording) {
+        
+        //    definindo a arquivo de aúdio
+        NSArray *pathComponents2 = [NSArray arrayWithObjects:
+                                    [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
+                                    @"MyAudioMemo2.m4a", nil ];
+        
+        NSURL *outputFileURL2 = [NSURL fileURLWithPathComponents:pathComponents2];
+        
+        //    definindo sessao de audio
         AVAudioSession *session2 = [[AVAudioSession alloc]init ];
+        [session2 setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+        
+        //    define a configuracao de gravador
+        NSMutableDictionary *recordSettings2 = [[NSMutableDictionary alloc]init];
+        
+        [recordSettings2 setValue:[NSNumber numberWithInt:kAudioFormatMPEG4AAC] forKey:AVFormatIDKey];
+        [recordSettings2 setValue:[NSNumber numberWithFloat:44100.0] forKey:AVSampleRateKey];
+        [recordSettings2 setValue:[NSNumber numberWithInt:2] forKey:AVNumberOfChannelsKey];
+        
+        //Salva o caminho da gravação
+        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+        
+        
+        [prefs setURL:outputFileURL2 forKey:@"Test2"];
+        [prefs synchronize];
+        
+        //    iniciando e preparando a gravacao
+        _gravador2 = [[AVAudioRecorder alloc] initWithURL:outputFileURL2 settings:recordSettings2 error:nil];
+        _gravador2.delegate  = self;
+        _gravador2.meteringEnabled = YES;
+        [_gravador2 prepareToRecord];
+
+        
         [session2 setActive:YES error:nil];
         
         //        comecar a gravacao
@@ -138,12 +148,19 @@
 }
 
 - (IBAction)playTapped2:(id)sender {
-    if (!_gravador2.recording) {
-        _player2 = [[AVAudioPlayer alloc] initWithContentsOfURL:_gravador2.url error:nil];
+        
+        //Carrega o caminho da gravação
+        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+        
+        
+        temporaryRecFile = [prefs URLForKey:@"Test2"];
+
+        
+        _player2 = [[AVAudioPlayer alloc] initWithContentsOfURL:temporaryRecFile error:nil];
         [_player2 setDelegate:self];
         [_player2 setVolume:5];
         [_player2 play];
-    }
+    
 }
 
 /*

@@ -62,14 +62,7 @@
     
     //    desabilita botao play/stop quando iniciada a aplicaçao
     [pararButton setEnabled:NO];
-    [playButton setEnabled:NO];
-    
-    //    definindo sessao de audio
-    AVAudioSession *session = [[AVAudioSession alloc]init ];
-    [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
-    [session setActive:YES error:nil];
-    [_gravador setDelegate:self];
-    [super viewDidLoad];
+    [playButton setEnabled:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -104,40 +97,45 @@
     }
     
     if (!_gravador.recording) {
+        //    definindo a arquivo de aúdio
+        NSArray *pathComponents = [NSArray arrayWithObjects:
+                                    [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
+                                    @"MyAudioMemo.m4a", nil ];
         
-        //Recording Settings
-        NSMutableDictionary *settings = [NSMutableDictionary dictionary];
+        NSURL *outputFileURL2 = [NSURL fileURLWithPathComponents:pathComponents];
         
-        [settings setValue: [NSNumber numberWithInt:kAudioFormatLinearPCM] forKey:AVFormatIDKey];
-        [settings setValue: [NSNumber numberWithFloat:8000.0] forKey:AVSampleRateKey];
-        [settings setValue: [NSNumber numberWithInt: 1] forKey:AVNumberOfChannelsKey];
-        [settings setValue: [NSNumber numberWithInt:16] forKey:AVLinearPCMBitDepthKey];
-        [settings setValue: [NSNumber numberWithBool:NO] forKey:AVLinearPCMIsBigEndianKey];
-        [settings setValue: [NSNumber numberWithBool:NO] forKey:AVLinearPCMIsFloatKey];
-        [settings setValue:  [NSNumber numberWithInt: AVAudioQualityMax] forKey:AVEncoderAudioQualityKey];
+        //    definindo sessao de audio
+        AVAudioSession *session2 = [[AVAudioSession alloc]init ];
+        [session2 setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
         
-        NSArray *searchPaths =NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString *documentPath_ = [searchPaths objectAtIndex: 0];
+        //    define a configuracao de gravador
+        NSMutableDictionary *recordSettings2 = [[NSMutableDictionary alloc]init];
         
-        NSString *pathToSave = [documentPath_ stringByAppendingPathComponent:[self dateString]];
+        [recordSettings2 setValue:[NSNumber numberWithInt:kAudioFormatMPEG4AAC] forKey:AVFormatIDKey];
+        [recordSettings2 setValue:[NSNumber numberWithFloat:44100.0] forKey:AVSampleRateKey];
+        [recordSettings2 setValue:[NSNumber numberWithInt:2] forKey:AVNumberOfChannelsKey];
         
-        // File URL
-        NSURL *url = [NSURL fileURLWithPath:pathToSave];
-        
-        //Save recording path to preferences
+        //Salva o caminho da gravação
         NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
         
         
-        [prefs setURL:url forKey:@"Test1"];
+        [prefs setURL:outputFileURL2 forKey:@"Test1"];
         [prefs synchronize];
         
-        AVAudioSession *session = [[AVAudioSession alloc]init ];
-        [session setActive:YES error:nil];
-        
-        // Create recorder
-        _gravador = [[AVAudioRecorder alloc] initWithURL:url settings:settings error:nil];
+        //    iniciando e preparando a gravacao
+        _gravador = [[AVAudioRecorder alloc] initWithURL:outputFileURL2 settings:recordSettings2 error:nil];
+        _gravador.delegate  = self;
+        _gravador.meteringEnabled = YES;
         [_gravador prepareToRecord];
-        [_gravador record];
+        
+        
+        [session2 setActive:YES error:nil];
+        
+        //        comecar a gravacao
+        NSTimeInterval time = 10.0;
+        [_gravador recordForDuration:time];
+        [gravarPauseButton setTitle:@"Pausar" forState:UIControlStateNormal];
+       
         
     } else {
         
@@ -159,25 +157,19 @@
 
 
 - (IBAction)playTapped:(id)sender {
-
-    if (!_gravador.recording) {
         
-        AVAudioSession *audioSession = [AVAudioSession sharedInstance];
-        [audioSession setCategory:AVAudioSessionCategoryPlayback error:nil];
-        [audioSession setActive:YES error:nil];
-        
-        
-        //Load recording path from preferences
+        //Carrega o caminho da gravação
         NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+        
+        
         temporaryRecFile = [prefs URLForKey:@"Test1"];
         
+        
         _player = [[AVAudioPlayer alloc] initWithContentsOfURL:temporaryRecFile error:nil];
-        _player.delegate = self;
-        [_player setNumberOfLoops:0];
-        _player.volume = 5;
-        [_player prepareToPlay];
+        [_player setDelegate:self];
+        [_player setVolume:5];
         [_player play];
-    }
+
 }
 
 /*
