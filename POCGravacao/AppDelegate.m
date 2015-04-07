@@ -27,7 +27,7 @@
    // NavigationViewController *navCon = [[NavigationViewController alloc] initWithRootViewController:bookNavCon];
     
     
-    BookViewController *book = [[BookViewController alloc] initWithPageTotal:150];
+    BookViewController *book = [[BookViewController alloc] initWithPageTotal:10];
     
     self.window.rootViewController = book;
     

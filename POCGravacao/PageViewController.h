@@ -19,6 +19,9 @@
 
 @property (nonatomic) unsigned int pageNumber;
 
+@property (nonatomic) AVAudioRecorder *recorder;
+@property (nonatomic) AVAudioPlayer *player;
+
 -(instancetype) initWithPageNumber:(NSInteger)pageNumber;
 
 @end

@@ -9,11 +9,8 @@
 #import "PageViewController.h"
 #import "EntradaUsuario.h"
 
-@interface PageViewController (){
-    
-    AVAudioRecorder *_recorder;
-    AVAudioPlayer *_player;
-}
+@interface PageViewController ()
+
 
 @property (nonatomic) EntradaUsuario *tipoUsuario;
 
@@ -152,7 +149,7 @@
     if (!_recorder.recording) {
         _player = [[AVAudioPlayer alloc] initWithContentsOfURL:_recorder.url error:nil];
         [_player setDelegate:self];
-        [_player setVolume:5];
+        [_player setVolume:10];
         [_player play];
     }
 }

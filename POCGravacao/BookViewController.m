@@ -53,18 +53,20 @@
 }
 
 -(IBAction)touchBtnEsq:(id)sender{
-    if (_pageIndex > 0) {
-       _pageIndex--;
+    if (_pageIndex <= 0 /*|| [_pages objectAtIndex:_pageIndex]*/) {
+        return;
     }
     
+    _pageIndex--;
     [_viewPage bringSubviewToFront:[[_pages objectAtIndex:_pageIndex] view]];
 }
 
 -(IBAction)touchBtnDir:(id)sender{
-    if(_pageIndex < _pageTotal-1){
-        _pageIndex++;
+    if(_pageIndex >= _pageTotal-1){
+        return;
     }
     
+    _pageIndex++;
     [_viewPage bringSubviewToFront:[[_pages objectAtIndex:_pageIndex] view]];
 }
 
