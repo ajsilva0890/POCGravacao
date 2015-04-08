@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5443FE771AD59E0800E7EBD6 /* Book3PQPage0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5443FE741AD59E0800E7EBD6 /* Book3PQPage0.jpg */; };
+		5443FE781AD59E0800E7EBD6 /* Book3PQPage1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5443FE751AD59E0800E7EBD6 /* Book3PQPage1.jpg */; };
+		5443FE791AD59E0800E7EBD6 /* Book3PQPage2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5443FE761AD59E0800E7EBD6 /* Book3PQPage2.jpg */; };
 		545DA4441AD45190008A5247 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545DA4421AD45190008A5247 /* NavigationViewController.m */; };
 		545DA4451AD45190008A5247 /* NavigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545DA4431AD45190008A5247 /* NavigationViewController.xib */; };
 		545DA4561AD46BFC008A5247 /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545DA4541AD46BFC008A5247 /* BookViewController.m */; };
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5443FE741AD59E0800E7EBD6 /* Book3PQPage0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Book3PQPage0.jpg; path = ../../Book3PQPage0.jpg; sourceTree = "<group>"; };
+		5443FE751AD59E0800E7EBD6 /* Book3PQPage1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Book3PQPage1.jpg; path = ../../Book3PQPage1.jpg; sourceTree = "<group>"; };
+		5443FE761AD59E0800E7EBD6 /* Book3PQPage2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Book3PQPage2.jpg; path = ../../Book3PQPage2.jpg; sourceTree = "<group>"; };
 		545DA4411AD45190008A5247 /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
 		545DA4421AD45190008A5247 /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
 		545DA4431AD45190008A5247 /* NavigationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationViewController.xib; sourceTree = "<group>"; };
@@ -83,6 +89,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5443FE7A1AD59E1400E7EBD6 /* Book3PQ */ = {
+			isa = PBXGroup;
+			children = (
+				5443FE741AD59E0800E7EBD6 /* Book3PQPage0.jpg */,
+				5443FE751AD59E0800E7EBD6 /* Book3PQPage1.jpg */,
+				5443FE761AD59E0800E7EBD6 /* Book3PQPage2.jpg */,
+			);
+			name = Book3PQ;
+			sourceTree = "<group>";
+		};
 		545DA44B1AD4614F008A5247 /* Navigator */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +131,7 @@
 		C4C5F6381AD042B300226F61 /* POCGravacao */ = {
 			isa = PBXGroup;
 			children = (
+				5443FE7A1AD59E1400E7EBD6 /* Book3PQ */,
 				C4C5F65F1AD0430B00226F61 /* MenuViewController.h */,
 				C4C5F6601AD0430B00226F61 /* MenuViewController.m */,
 				C4C5F6611AD0430B00226F61 /* MenuViewController.xib */,
@@ -254,6 +271,9 @@
 				C4C5F6471AD042B300226F61 /* LaunchScreen.xib in Resources */,
 				545DA4571AD46BFC008A5247 /* BookViewController.xib in Resources */,
 				C4C5F6631AD0430B00226F61 /* MenuViewController.xib in Resources */,
+				5443FE771AD59E0800E7EBD6 /* Book3PQPage0.jpg in Resources */,
+				5443FE781AD59E0800E7EBD6 /* Book3PQPage1.jpg in Resources */,
+				5443FE791AD59E0800E7EBD6 /* Book3PQPage2.jpg in Resources */,
 				C4C5F6441AD042B300226F61 /* Images.xcassets in Resources */,
 				545DA4451AD45190008A5247 /* NavigationViewController.xib in Resources */,
 				54DA0C911AD31A1200FA848D /* PageViewController.xib in Resources */,

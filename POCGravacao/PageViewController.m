@@ -31,15 +31,123 @@
     //    desabilita botao play/stop quando iniciada a aplicaçao
     [btnStop setEnabled:NO];
     [btnPlay setEnabled:NO];
-    
-    self.tabBarItem.title = [NSString stringWithFormat:@"Page %i", _pageNumber];
+
     _lblPage.text = [NSString stringWithFormat:@"%i", _pageNumber+1];
     
+    [self loadAudioSettings];
+    [self loadImageSettings];
     
+    
+    
+}
+
+
+- (instancetype)initWithPageNumber:(NSInteger)pageNumber{
+    
+    self = [super init];
+    
+    if (self){
+        _pageNumber = (unsigned int)pageNumber;
+        
+    }
+    
+    return self;
+}
+
+
+
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+-(void)loadImageSettings{
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    _drawImage.image = [defaults objectForKey:@"drawImageKey"];
+    _drawImage = [[UIImageView alloc] initWithImage:nil];
+    _drawImage.frame = _drawView.frame;
+    [_drawView addSubview:_drawImage];
+    
+    r = 0.0; g = 0.0; b = 0.0; alpha = 1.0;
+    
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    UITouch *touch = [[event allTouches] anyObject];
+    
+    if ([touch tapCount] == 2 ) {
+        _drawView.image = nil;
+    }
+    
+    _currentPoint = [touch locationInView:touch.view];
+    _lastPoint = [touch locationInView:_drawView];
+    
+    [self drawInViewCurrentPoint:_currentPoint lastPoint:_lastPoint];
+    
+    [super touchesBegan: touches withEvent: event];
+    
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    UITouch *touch = [touches anyObject];
+    _currentPoint = [touch locationInView:_drawView];
+    
+    [self drawInViewCurrentPoint:_currentPoint lastPoint:_lastPoint];
+    
+    _lastPoint = _currentPoint;
+}
+
+-(void) drawInViewCurrentPoint:(CGPoint)currentPoint lastPoint:(CGPoint)lastPoint{
+    
+    //Contexto da caixa de desenho.
+    UIGraphicsBeginImageContext(_drawView.frame.size);
+    [_drawImage.image drawInRect:_drawView.bounds];
+    
+    //Define a forma, tamanho e cor da linha.
+    
+    CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
+    
+    CGContextSetLineWidth(UIGraphicsGetCurrentContext(), 18);
+    CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), r, g, b, alpha);
+    
+    // Altera o contexto de desenho.
+    CGContextSetBlendMode(UIGraphicsGetCurrentContext(), kCGBlendModeNormal);
+    
+    
+    //Começa o caminho de desenho.
+    CGContextBeginPath(UIGraphicsGetCurrentContext());
+    
+    //Move para o ponto de desenho e adiciona linha entre o ultimo e atual ponto.
+    CGContextMoveToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
+    CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), currentPoint.x, currentPoint.y);
+    
+    //Desenha o caminho.
+    CGContextStrokePath(UIGraphicsGetCurrentContext());
+    
+    //Define o tamanho da caixa de desenho.
+    [_drawImage setFrame:_drawView.bounds];
+    
+    _drawImage.alpha = 0.7;
+    _drawImage.image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    
+    
+    [_drawView addSubview:_drawImage];
+    //[self.view sendSubviewToBack:drawImage];
+
+}
+
+-(void)loadAudioSettings{
     //    definindo a arquivo de aúdio
     NSArray *pathComponents = [NSArray arrayWithObjects:
-                                [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
-                                [NSString stringWithFormat:@"PageAudio%i.m4a", _pageNumber], nil ];
+                               [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
+                               [NSString stringWithFormat:@"PageAudio%i.m4a", _pageNumber], nil ];
     
     NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
     
@@ -63,25 +171,7 @@
 }
 
 
-- (instancetype) initWithPageNumber:(NSInteger)pageNumber{
-    
-    self = [super init];
-    
-    if (self){
-        _pageNumber = (unsigned int)pageNumber;
-        
-    }
-    
-    return self;
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void) viewWillAppear:(BOOL)animated{
+- (void)viewWillAppear:(BOOL)animated{
     
     if ([self.tipoUsuario tipoDeUsuario] == 1) {
         [btnStop setEnabled:NO];

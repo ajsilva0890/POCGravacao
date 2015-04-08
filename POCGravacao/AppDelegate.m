@@ -18,16 +18,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    //BookViewController *book = [[BookViewController alloc] initWithPageTotal:5];
-    
-   // BookNavigationViewController *bookNavCon = [[BookNavigationViewController alloc] init];
-    
-   // NavigationViewController *navCon = [[NavigationViewController alloc] initWithRootViewController:bookNavCon];
-    
-    
-    BookViewController *book = [[BookViewController alloc] initWithPageTotal:10];
+    BookViewController *book = [[BookViewController alloc] initWithPageTotal:10 bookName:@"3PQ"];
     
     self.window.rootViewController = book;
     

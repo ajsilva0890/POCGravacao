@@ -18,35 +18,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
     _pageIndex = 0;
     _pages = [[NSMutableArray alloc] init];
     
-    for (int i=0; i<_pageTotal; i++) {
+    for (unsigned int i=0; i<_pageTotal; i++) {
         PageViewController *page =[[PageViewController alloc] initWithPageNumber:i];
         [_pages addObject:page];
         [_viewPage addSubview:[page view]];
-        //NSLog(@"%@", [_pages objectAtIndex:i]);
     }
     
+    [self changePage];
     [_viewPage bringSubviewToFront:[[_pages objectAtIndex:0] view]];
-    
-    //[self presentViewController:[_pages objectAtIndex:0] animated:YES completion:nil];
-    
-    // [self.view bringSubviewToFront:[[_pages objectAtIndex:0] view]];
-    
     
     
 }
 
 
--(instancetype) initWithPageTotal:(NSInteger)pageTotal{
+-(instancetype) initWithPageTotal:(NSInteger)pageTotal bookName:(NSString*)bookName{
     
     self = [super init];
     
     if(self){
         _pageTotal = pageTotal;
+        _bookName = bookName;
     }
     
     return self;
@@ -58,7 +53,7 @@
     }
     
     _pageIndex--;
-    [_viewPage bringSubviewToFront:[[_pages objectAtIndex:_pageIndex] view]];
+    [self changePage];
 }
 
 -(IBAction)touchBtnDir:(id)sender{
@@ -67,7 +62,18 @@
     }
     
     _pageIndex++;
+    [self changePage];
+}
+
+
+-(void)changePage{
+    //Change between pages, sets background of page.
+    
+    _pageURL = [NSString stringWithFormat:@"Book%@Page%ld.jpg", _bookName, _pageIndex];
+    
+    [[_pages objectAtIndex:_pageIndex] bgView].image = [UIImage imageNamed:_pageURL];
     [_viewPage bringSubviewToFront:[[_pages objectAtIndex:_pageIndex] view]];
+    
 }
 
 
