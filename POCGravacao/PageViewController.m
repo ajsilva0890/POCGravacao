@@ -10,6 +10,9 @@
 #import "EntradaUsuario.h"
 
 @interface PageViewController ()
+{
+    NSURL *temporaryRecFile;
+}
 
 
 @property (nonatomic) EntradaUsuario *tipoUsuario;
@@ -30,35 +33,13 @@
     
     //    desabilita botao play/stop quando iniciada a aplicaçao
     [btnStop setEnabled:NO];
-    [btnPlay setEnabled:NO];
+    [btnPlay setEnabled:YES];
     
     self.tabBarItem.title = [NSString stringWithFormat:@"Page %i", _pageNumber];
     _lblPage.text = [NSString stringWithFormat:@"%i", _pageNumber+1];
     
     
-    //    definindo a arquivo de aúdio
-    NSArray *pathComponents = [NSArray arrayWithObjects:
-                                [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
-                                [NSString stringWithFormat:@"PageAudio%i.m4a", _pageNumber], nil ];
     
-    NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
-    
-    //    definindo sessao de audio
-    AVAudioSession *session = [[AVAudioSession alloc]init ];
-    [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
-    
-    //    define a configuracao de gravador
-    NSMutableDictionary *recordSettings = [[NSMutableDictionary alloc]init];
-    
-    [recordSettings setValue:[NSNumber numberWithInt:kAudioFormatMPEG4AAC] forKey:AVFormatIDKey];
-    [recordSettings setValue:[NSNumber numberWithFloat:44100.0] forKey:AVSampleRateKey];
-    [recordSettings setValue:[NSNumber numberWithInt:2] forKey:AVNumberOfChannelsKey];
-    
-    //    iniciando e preparando a gravacao
-    _recorder = [[AVAudioRecorder alloc] initWithURL:outputFileURL settings:recordSettings error:nil];
-    _recorder.delegate  = self;
-    _recorder.meteringEnabled = YES;
-    [_recorder prepareToRecord];
     
 }
 
@@ -120,8 +101,41 @@
     }
     
     if (!_recorder.recording) {
-        AVAudioSession *session2 = [[AVAudioSession alloc]init ];
-        [session2 setActive:YES error:nil];
+        //    definindo a arquivo de aúdio
+        NSArray *pathComponents = [NSArray arrayWithObjects:
+                                   [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
+                                   [NSString stringWithFormat:@"PageAudio%i.m4a", _pageNumber], nil ];
+        
+        NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
+        
+        //    definindo sessao de audio
+        AVAudioSession *session = [[AVAudioSession alloc]init ];
+        [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+        
+        //    define a configuracao de gravador
+        NSMutableDictionary *recordSettings = [[NSMutableDictionary alloc]init];
+        
+        [recordSettings setValue:[NSNumber numberWithInt:kAudioFormatMPEG4AAC] forKey:AVFormatIDKey];
+        [recordSettings setValue:[NSNumber numberWithFloat:44100.0] forKey:AVSampleRateKey];
+        [recordSettings setValue:[NSNumber numberWithInt:2] forKey:AVNumberOfChannelsKey];
+        
+        //Salva o caminho da gravação
+        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+        
+        NSString *namePathRecorer = [NSString stringWithFormat:@"RecorderPage%i", _pageNumber];
+        
+        [prefs setURL:outputFileURL forKey:namePathRecorer];
+        [prefs synchronize];
+
+        
+        //    iniciando e preparando a gravacao
+        _recorder = [[AVAudioRecorder alloc] initWithURL:outputFileURL settings:recordSettings error:nil];
+        _recorder.delegate  = self;
+        _recorder.meteringEnabled = YES;
+        [_recorder prepareToRecord];
+        
+        
+        [session setActive:YES error:nil];
         
         //        comecar a gravacao
         NSTimeInterval time = 10.0;
@@ -147,7 +161,16 @@
 
 - (IBAction)playTapped:(id)sender {
     if (!_recorder.recording) {
-        _player = [[AVAudioPlayer alloc] initWithContentsOfURL:_recorder.url error:nil];
+        
+        //Carrega o caminho da gravação
+        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+        
+        NSString *namePathRecorer = [NSString stringWithFormat:@"RecorderPage%i", _pageNumber];
+        
+        temporaryRecFile = [prefs URLForKey:namePathRecorer];
+        
+        
+        _player = [[AVAudioPlayer alloc] initWithContentsOfURL:temporaryRecFile error:nil];
         [_player setDelegate:self];
         [_player setVolume:10];
         [_player play];
