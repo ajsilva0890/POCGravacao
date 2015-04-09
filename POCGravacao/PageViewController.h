@@ -19,7 +19,6 @@
 @property (nonatomic) CGPoint location;
 @property (nonatomic) UIImageView *drawImage;
 
-
 @property (weak, nonatomic) IBOutlet UIButton *btnRecordPause;
 @property (weak, nonatomic) IBOutlet UIButton *btnStop;
 @property (weak, nonatomic) IBOutlet UIButton *btnPlay;

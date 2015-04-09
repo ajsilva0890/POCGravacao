@@ -109,6 +109,16 @@
 			name = Navigator;
 			sourceTree = "<group>";
 		};
+		C422BD5D1AD6C92B004F7E87 /* PagesHistoria */ = {
+			isa = PBXGroup;
+			children = (
+				54DA0C8D1AD31A1200FA848D /* PageViewController.h */,
+				54DA0C8E1AD31A1200FA848D /* PageViewController.m */,
+				54DA0C8F1AD31A1200FA848D /* PageViewController.xib */,
+			);
+			name = PagesHistoria;
+			sourceTree = "<group>";
+		};
 		C4C5F62D1AD042B300226F61 = {
 			isa = PBXGroup;
 			children = (
@@ -138,10 +148,10 @@
 				C4C5F6451AD042B300226F61 /* LaunchScreen.xib */,
 				C4C5F63D1AD042B300226F61 /* AppDelegate.h */,
 				C4C5F63E1AD042B300226F61 /* AppDelegate.m */,
-				545DA44B1AD4614F008A5247 /* Navigator */,
 				C46316041AD0729800695BA1 /* EntradaUsuario.h */,
 				C46316051AD0729800695BA1 /* EntradaUsuario.m */,
-				C4C5F6731AD043A000226F61 /* PagesHistoria */,
+				C4C5F6731AD043A000226F61 /* BookHistoria */,
+				545DA44B1AD4614F008A5247 /* Navigator */,
 				C4C5F6431AD042B300226F61 /* Images.xcassets */,
 				C4C5F6401AD042B300226F61 /* POCGravacao.xcdatamodeld */,
 				C4C5F6391AD042B300226F61 /* Supporting Files */,
@@ -175,17 +185,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		C4C5F6731AD043A000226F61 /* PagesHistoria */ = {
+		C4C5F6731AD043A000226F61 /* BookHistoria */ = {
 			isa = PBXGroup;
 			children = (
-				54DA0C8D1AD31A1200FA848D /* PageViewController.h */,
-				54DA0C8E1AD31A1200FA848D /* PageViewController.m */,
-				54DA0C8F1AD31A1200FA848D /* PageViewController.xib */,
 				545DA4531AD46BFC008A5247 /* BookViewController.h */,
 				545DA4541AD46BFC008A5247 /* BookViewController.m */,
 				545DA4551AD46BFC008A5247 /* BookViewController.xib */,
+				C422BD5D1AD6C92B004F7E87 /* PagesHistoria */,
 			);
-			name = PagesHistoria;
+			name = BookHistoria;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
