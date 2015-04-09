@@ -14,16 +14,13 @@
     NSURL *temporaryRecFile;
 }
 
-
 @property (nonatomic) EntradaUsuario *tipoUsuario;
 
 @end
 
-
 @implementation PageViewController
 
 @synthesize btnStop, btnPlay, btnRecordPause;
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,18 +30,21 @@
     
     //    desabilita botao play/stop quando iniciada a aplicaçao
     [btnStop setEnabled:NO];
+<<<<<<< HEAD
     [btnPlay setEnabled:YES];
     
     self.tabBarItem.title = [NSString stringWithFormat:@"Page %i", _pageNumber];
+=======
+    [btnPlay setEnabled:NO];
+
+>>>>>>> origin/master
     _lblPage.text = [NSString stringWithFormat:@"%i", _pageNumber+1];
     
-    
-    
-    
+    [self loadAudioSettings];
+    [self loadImageSettings];
 }
 
-
-- (instancetype) initWithPageNumber:(NSInteger)pageNumber{
+- (instancetype)initWithPageNumber:(NSInteger)pageNumber{
     
     self = [super init];
     
@@ -56,15 +56,113 @@
     return self;
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (void) viewWillAppear:(BOOL)animated{
+-(void)loadImageSettings{
     
-    if ([self.tipoUsuario tipoDeUsuario] == 1) {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    _drawImage.image = [defaults objectForKey:@"drawImageKey"];
+    _drawImage = [[UIImageView alloc] initWithImage:nil];
+    _drawImage.frame = _drawView.frame;
+    [_drawView addSubview:_drawImage];
+    
+    r = 0.0; g = 0.0; b = 0.0; alpha = 1.0;
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    UITouch *touch = [[event allTouches] anyObject];
+    
+    if ([touch tapCount] == 2 ) {
+        _drawView.image = nil;
+    }
+    
+    _currentPoint = [touch locationInView:touch.view];
+    _lastPoint = [touch locationInView:_drawView];
+    
+    [self drawInViewCurrentPoint:_currentPoint lastPoint:_lastPoint];
+    
+    [super touchesBegan: touches withEvent: event];
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    UITouch *touch = [touches anyObject];
+    _currentPoint = [touch locationInView:_drawView];
+    
+    [self drawInViewCurrentPoint:_currentPoint lastPoint:_lastPoint];
+    
+    _lastPoint = _currentPoint;
+}
+
+- (void) drawInViewCurrentPoint:(CGPoint)currentPoint lastPoint:(CGPoint)lastPoint{
+    
+    //Contexto da caixa de desenho.
+    UIGraphicsBeginImageContext(_drawView.frame.size);
+    [_drawImage.image drawInRect:_drawView.bounds];
+    
+    //Define a forma, tamanho e cor da linha.
+    
+    CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
+    
+    CGContextSetLineWidth(UIGraphicsGetCurrentContext(), 18);
+    CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), r, g, b, alpha);
+    
+    // Altera o contexto de desenho.
+    CGContextSetBlendMode(UIGraphicsGetCurrentContext(), kCGBlendModeNormal);
+    
+    
+    //Começa o caminho de desenho.
+    CGContextBeginPath(UIGraphicsGetCurrentContext());
+    
+    //Move para o ponto de desenho e adiciona linha entre o ultimo e atual ponto.
+    CGContextMoveToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
+    CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), currentPoint.x, currentPoint.y);
+    
+    //Desenha o caminho.
+    CGContextStrokePath(UIGraphicsGetCurrentContext());
+    
+<<<<<<< HEAD
+=======
+    //Define o tamanho da caixa de desenho.
+    [_drawImage setFrame:_drawView.bounds];
+    
+    _drawImage.alpha = 0.7;
+    _drawImage.image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    
+    
+    [_drawView addSubview:_drawImage];
+    //[self.view sendSubviewToBack:drawImage];
+
+}
+
+- (void)loadAudioSettings{
+    //    definindo a arquivo de aúdio
+    NSArray *pathComponents = [NSArray arrayWithObjects:
+                               [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
+                               [NSString stringWithFormat:@"PageAudio%i.m4a", _pageNumber], nil ];
+    
+    NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
+    
+    //    definindo sessao de audio
+    AVAudioSession *session = [[AVAudioSession alloc]init ];
+    [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+    
+    //    define a configuracao de gravador
+    NSMutableDictionary *recordSettings = [[NSMutableDictionary alloc]init];
+>>>>>>> origin/master
+    
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    
+    if ([self.tipoUsuario tipoDeUsuario] == 0) {
         [btnStop setEnabled:NO];
         [btnRecordPause setEnabled:NO];
     }
@@ -74,13 +172,11 @@
 }
 
 
-
 - (void) audioRecorderDidFinishRecording:(AVAudioRecorder *)_recorder successfully:(BOOL)flag{
     [btnRecordPause setTitle:@"Gravar" forState:UIControlStateNormal];
     
     [btnStop setEnabled:NO];
     [btnPlay setEnabled:YES];
-    
 }
 
 - (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)_player successfully:(BOOL)flag{
@@ -91,8 +187,6 @@
                                           otherButtonTitles:nil];
     [alert show];
 }
-
-
 
 - (IBAction)recordPauseTapped:(id)sender {
     //    para a reproducao do audio antes de comecar a gravar

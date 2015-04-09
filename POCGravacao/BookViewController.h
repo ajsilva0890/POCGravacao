@@ -13,11 +13,16 @@
 @property (nonatomic) NSMutableArray *pages;
 @property (nonatomic) NSInteger pageIndex;
 @property (nonatomic) NSInteger pageTotal;
+@property (nonatomic) NSString* bookName;
+@property (nonatomic) NSString* pageURL;
+
 
 @property (weak, nonatomic) IBOutlet UIButton *btnEsq;
 @property (weak, nonatomic) IBOutlet UIButton *btnDir;
 @property (nonatomic) IBOutlet UIView *viewPage;
 
--(instancetype) initWithPageTotal:(NSInteger)pageTotal;
+@property (weak, nonatomic) IBOutlet UIButton *btnMenu;
+
+-(instancetype) initWithPageTotal:(NSInteger)pageTotal bookName:(NSString*)bookName;
 
 @end

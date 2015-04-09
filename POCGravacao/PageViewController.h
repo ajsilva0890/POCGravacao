@@ -9,13 +9,23 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface PageViewController : UIViewController <AVAudioRecorderDelegate, AVAudioPlayerDelegate>
+@interface PageViewController : UIViewController <AVAudioRecorderDelegate, AVAudioPlayerDelegate>{
+        
+    float r, g, b, alpha;
+}
+
+@property (nonatomic) CGPoint lastPoint;
+@property (nonatomic) CGPoint currentPoint;
+@property (nonatomic) CGPoint location;
+@property (nonatomic) UIImageView *drawImage;
 
 @property (weak, nonatomic) IBOutlet UIButton *btnRecordPause;
 @property (weak, nonatomic) IBOutlet UIButton *btnStop;
 @property (weak, nonatomic) IBOutlet UIButton *btnPlay;
-
+@property (weak, nonatomic) IBOutlet UIImageView *bgView;
+@property (nonatomic) IBOutlet UIImageView *drawView;
 @property (weak, nonatomic) IBOutlet UILabel *lblPage;
+
 
 @property (nonatomic) unsigned int pageNumber;
 

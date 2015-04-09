@@ -13,6 +13,9 @@
 		545DA4571AD46BFC008A5247 /* BookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545DA4551AD46BFC008A5247 /* BookViewController.xib */; };
 		54DA0C901AD31A1200FA848D /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DA0C8E1AD31A1200FA848D /* PageViewController.m */; };
 		54DA0C911AD31A1200FA848D /* PageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54DA0C8F1AD31A1200FA848D /* PageViewController.xib */; };
+		C421A5F71AD6A298003DA8F0 /* Book3PQPage0.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = C421A5F41AD6A298003DA8F0 /* Book3PQPage0.jpeg */; };
+		C421A5F81AD6A298003DA8F0 /* Book3PQPage1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = C421A5F51AD6A298003DA8F0 /* Book3PQPage1.jpeg */; };
+		C421A5F91AD6A298003DA8F0 /* Book3PQPage2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = C421A5F61AD6A298003DA8F0 /* Book3PQPage2.jpeg */; };
 		C46316061AD0729800695BA1 /* EntradaUsuario.m in Sources */ = {isa = PBXBuildFile; fileRef = C46316051AD0729800695BA1 /* EntradaUsuario.m */; };
 		C4C5F63C1AD042B300226F61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C5F63B1AD042B300226F61 /* main.m */; };
 		C4C5F63F1AD042B300226F61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C5F63E1AD042B300226F61 /* AppDelegate.m */; };
@@ -45,6 +48,9 @@
 		54DA0C8D1AD31A1200FA848D /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
 		54DA0C8E1AD31A1200FA848D /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 		54DA0C8F1AD31A1200FA848D /* PageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageViewController.xib; sourceTree = "<group>"; };
+		C421A5F41AD6A298003DA8F0 /* Book3PQPage0.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Book3PQPage0.jpeg; path = ../../Book3PQPage0.jpeg; sourceTree = "<group>"; };
+		C421A5F51AD6A298003DA8F0 /* Book3PQPage1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Book3PQPage1.jpeg; path = ../../Book3PQPage1.jpeg; sourceTree = "<group>"; };
+		C421A5F61AD6A298003DA8F0 /* Book3PQPage2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Book3PQPage2.jpeg; path = ../../Book3PQPage2.jpeg; sourceTree = "<group>"; };
 		C46316041AD0729800695BA1 /* EntradaUsuario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntradaUsuario.h; sourceTree = "<group>"; };
 		C46316051AD0729800695BA1 /* EntradaUsuario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntradaUsuario.m; sourceTree = "<group>"; };
 		C4C5F6361AD042B300226F61 /* POCGravacao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POCGravacao.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +89,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5443FE7A1AD59E1400E7EBD6 /* Book3PQ */ = {
+			isa = PBXGroup;
+			children = (
+				C421A5F41AD6A298003DA8F0 /* Book3PQPage0.jpeg */,
+				C421A5F51AD6A298003DA8F0 /* Book3PQPage1.jpeg */,
+				C421A5F61AD6A298003DA8F0 /* Book3PQPage2.jpeg */,
+			);
+			name = Book3PQ;
+			sourceTree = "<group>";
+		};
 		545DA44B1AD4614F008A5247 /* Navigator */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +107,16 @@
 				545DA4431AD45190008A5247 /* NavigationViewController.xib */,
 			);
 			name = Navigator;
+			sourceTree = "<group>";
+		};
+		C422BD5D1AD6C92B004F7E87 /* PagesHistoria */ = {
+			isa = PBXGroup;
+			children = (
+				54DA0C8D1AD31A1200FA848D /* PageViewController.h */,
+				54DA0C8E1AD31A1200FA848D /* PageViewController.m */,
+				54DA0C8F1AD31A1200FA848D /* PageViewController.xib */,
+			);
+			name = PagesHistoria;
 			sourceTree = "<group>";
 		};
 		C4C5F62D1AD042B300226F61 = {
@@ -115,16 +141,17 @@
 		C4C5F6381AD042B300226F61 /* POCGravacao */ = {
 			isa = PBXGroup;
 			children = (
+				5443FE7A1AD59E1400E7EBD6 /* Book3PQ */,
 				C4C5F65F1AD0430B00226F61 /* MenuViewController.h */,
 				C4C5F6601AD0430B00226F61 /* MenuViewController.m */,
 				C4C5F6611AD0430B00226F61 /* MenuViewController.xib */,
 				C4C5F6451AD042B300226F61 /* LaunchScreen.xib */,
 				C4C5F63D1AD042B300226F61 /* AppDelegate.h */,
 				C4C5F63E1AD042B300226F61 /* AppDelegate.m */,
-				545DA44B1AD4614F008A5247 /* Navigator */,
 				C46316041AD0729800695BA1 /* EntradaUsuario.h */,
 				C46316051AD0729800695BA1 /* EntradaUsuario.m */,
-				C4C5F6731AD043A000226F61 /* PagesHistoria */,
+				C4C5F6731AD043A000226F61 /* BookHistoria */,
+				545DA44B1AD4614F008A5247 /* Navigator */,
 				C4C5F6431AD042B300226F61 /* Images.xcassets */,
 				C4C5F6401AD042B300226F61 /* POCGravacao.xcdatamodeld */,
 				C4C5F6391AD042B300226F61 /* Supporting Files */,
@@ -158,17 +185,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		C4C5F6731AD043A000226F61 /* PagesHistoria */ = {
+		C4C5F6731AD043A000226F61 /* BookHistoria */ = {
 			isa = PBXGroup;
 			children = (
-				54DA0C8D1AD31A1200FA848D /* PageViewController.h */,
-				54DA0C8E1AD31A1200FA848D /* PageViewController.m */,
-				54DA0C8F1AD31A1200FA848D /* PageViewController.xib */,
 				545DA4531AD46BFC008A5247 /* BookViewController.h */,
 				545DA4541AD46BFC008A5247 /* BookViewController.m */,
 				545DA4551AD46BFC008A5247 /* BookViewController.xib */,
+				C422BD5D1AD6C92B004F7E87 /* PagesHistoria */,
 			);
-			name = PagesHistoria;
+			name = BookHistoria;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,11 +277,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4C5F6471AD042B300226F61 /* LaunchScreen.xib in Resources */,
+				C421A5F81AD6A298003DA8F0 /* Book3PQPage1.jpeg in Resources */,
 				545DA4571AD46BFC008A5247 /* BookViewController.xib in Resources */,
 				C4C5F6631AD0430B00226F61 /* MenuViewController.xib in Resources */,
+				C421A5F71AD6A298003DA8F0 /* Book3PQPage0.jpeg in Resources */,
 				C4C5F6441AD042B300226F61 /* Images.xcassets in Resources */,
 				545DA4451AD45190008A5247 /* NavigationViewController.xib in Resources */,
 				54DA0C911AD31A1200FA848D /* PageViewController.xib in Resources */,
+				C421A5F91AD6A298003DA8F0 /* Book3PQPage2.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
