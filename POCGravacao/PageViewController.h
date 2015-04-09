@@ -12,6 +12,7 @@
 @interface PageViewController : UIViewController <AVAudioRecorderDelegate, AVAudioPlayerDelegate>{
         
     float r, g, b, alpha;
+    UIImage *imageIniciar, *imagePausar, *imagePlay, *imageStop;
 }
 
 @property (nonatomic) CGPoint lastPoint;
