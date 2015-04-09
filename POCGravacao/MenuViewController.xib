@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController">
             <connections>
+                <outlet property="btnBook" destination="QTb-Lc-i0W" id="7v1-nm-m7A"/>
                 <outlet property="paiOuFilho" destination="Fuu-Tb-ZGO" id="HOT-Ut-Cum"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -43,6 +44,15 @@
                         <action selector="paiOuFilho:" destination="-1" eventType="valueChanged" id="7k2-qM-3Vn"/>
                     </connections>
                 </segmentedControl>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTb-Lc-i0W">
+                    <rect key="frame" x="320" y="244" width="44" height="30"/>
+                    <state key="normal" title="BOOK">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="bntBook:" destination="-1" eventType="touchUpInside" id="7aI-Wu-1To"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>

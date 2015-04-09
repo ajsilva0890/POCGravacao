@@ -21,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnDir;
 @property (nonatomic) IBOutlet UIView *viewPage;
 
+@property (weak, nonatomic) IBOutlet UIButton *btnMenu;
+
 -(instancetype) initWithPageTotal:(NSInteger)pageTotal bookName:(NSString*)bookName;
 
 @end

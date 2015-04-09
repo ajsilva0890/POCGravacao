@@ -8,9 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "BookViewController.h"
+
+
 
 @interface MenuViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *paiOuFilho;
+
+@property(nonatomic, retain) IBOutlet UIButton *btnBook;
+
+@property (nonatomic) BookViewController *book;
 
 @end

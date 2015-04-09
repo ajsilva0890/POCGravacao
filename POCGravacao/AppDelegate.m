@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "NavigationViewController.h"
 #import "BookViewController.h"
+#import "MenuViewController.h"
 
 @interface AppDelegate ()
 
@@ -18,12 +19,28 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//
+//    BookViewController *book = [[BookViewController alloc] initWithPageTotal:10 bookName:@"3PQ"];
+//    
+//    self.window.rootViewController = book;
 
-    BookViewController *book = [[BookViewController alloc] initWithPageTotal:10 bookName:@"3PQ"];
+    //BookViewController *book = [[BookViewController alloc] initWithPageTotal:5];
     
-    self.window.rootViewController = book;
+    
+    
+    // BookNavigationViewController *bookNavCon = [[BookNavigationViewController alloc] init];
+    
+    MenuViewController *menu = [[MenuViewController alloc] init];
+    
+    //    BookViewController *book = [[BookViewController alloc] initWithPageTotal:10];
+    //    NavigationViewController *navCon = [[NavigationViewController alloc] initWithRootViewController:book];
+    
+    self.navController = [[UINavigationController alloc]initWithRootViewController:menu];
+    self.navController.navigationBarHidden = YES;
+    [self.window setRootViewController:_navController];
+    //    self.window.rootViewController = navCon;
+    
     
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];

@@ -11,16 +11,13 @@
 
 @interface PageViewController ()
 
-
 @property (nonatomic) EntradaUsuario *tipoUsuario;
 
 @end
 
-
 @implementation PageViewController
 
 @synthesize btnStop, btnPlay, btnRecordPause;
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,11 +33,7 @@
     
     [self loadAudioSettings];
     [self loadImageSettings];
-    
-    
-    
 }
-
 
 - (instancetype)initWithPageNumber:(NSInteger)pageNumber{
     
@@ -53,10 +46,6 @@
     
     return self;
 }
-
-
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -72,7 +61,6 @@
     [_drawView addSubview:_drawImage];
     
     r = 0.0; g = 0.0; b = 0.0; alpha = 1.0;
-    
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -89,7 +77,6 @@
     [self drawInViewCurrentPoint:_currentPoint lastPoint:_lastPoint];
     
     [super touchesBegan: touches withEvent: event];
-    
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -102,7 +89,7 @@
     _lastPoint = _currentPoint;
 }
 
--(void) drawInViewCurrentPoint:(CGPoint)currentPoint lastPoint:(CGPoint)lastPoint{
+- (void) drawInViewCurrentPoint:(CGPoint)currentPoint lastPoint:(CGPoint)lastPoint{
     
     //Contexto da caixa de desenho.
     UIGraphicsBeginImageContext(_drawView.frame.size);
@@ -143,7 +130,7 @@
 
 }
 
--(void)loadAudioSettings{
+- (void)loadAudioSettings{
     //    definindo a arquivo de aúdio
     NSArray *pathComponents = [NSArray arrayWithObjects:
                                [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
@@ -170,10 +157,9 @@
     
 }
 
-
 - (void)viewWillAppear:(BOOL)animated{
     
-    if ([self.tipoUsuario tipoDeUsuario] == 1) {
+    if ([self.tipoUsuario tipoDeUsuario] == 0) {
         [btnStop setEnabled:NO];
         [btnRecordPause setEnabled:NO];
     }
@@ -183,13 +169,11 @@
 }
 
 
-
 - (void) audioRecorderDidFinishRecording:(AVAudioRecorder *)_recorder successfully:(BOOL)flag{
     [btnRecordPause setTitle:@"Gravar" forState:UIControlStateNormal];
     
     [btnStop setEnabled:NO];
     [btnPlay setEnabled:YES];
-    
 }
 
 - (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)_player successfully:(BOOL)flag{
@@ -200,8 +184,6 @@
                                           otherButtonTitles:nil];
     [alert show];
 }
-
-
 
 - (IBAction)recordPauseTapped:(id)sender {
     //    para a reproducao do audio antes de comecar a gravar

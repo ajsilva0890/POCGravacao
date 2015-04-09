@@ -8,6 +8,7 @@
 
 #import "MenuViewController.h"
 #import "EntradaUsuario.h"
+#import "BookViewController.h"
 
 @interface MenuViewController ()
 
@@ -30,7 +31,6 @@
     }
 }
 
-
 - (IBAction)filho:(id)sender {
     
     [self.tipoUsuario setTipoDeUsuario:0 ];
@@ -43,11 +43,16 @@
 
 }
 
+- (IBAction)bntBook:(id)sender {
+    
+    [self.navigationController pushViewController:_book  animated:YES];
+}
+
 - (instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     
     if (self){
-        self.tabBarItem.title = @"Menu";
+        //commands
     }
     
     return self;
@@ -58,6 +63,7 @@
     // Do any additional setup after loading the view from its nib.
     
     self.tipoUsuario = [EntradaUsuario instance];
+    _book = [[BookViewController alloc] initWithPageTotal:99 bookName:@"3PQ"];
 }
 
 - (void)didReceiveMemoryWarning {
