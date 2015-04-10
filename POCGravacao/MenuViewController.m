@@ -24,14 +24,12 @@
     [self.tipoUsuario setTipoDeUsuario:0 ];
     [self.navigationController pushViewController:_book  animated:YES];
 
-    
 }
 
 - (IBAction)pai:(id)sender {
 
     [self.tipoUsuario setTipoDeUsuario:1 ];
     [self.navigationController pushViewController:_book  animated:YES];
-
 
 }
 
