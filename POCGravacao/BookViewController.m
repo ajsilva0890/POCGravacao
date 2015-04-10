@@ -21,12 +21,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tipoUsuario = [EntradaUsuario instance];
-
+    
     _pageIndex = 0;
     _pages = [[NSMutableArray alloc] init];
     
+    NSMutableArray *loadedImages = [[NSMutableArray alloc] init];
+    loadedImages = [self loadImages];
+    
     for (unsigned int i=0; i<_pageTotal; i++) {
         PageViewController *page =[[PageViewController alloc] initWithPageNumber:i];
+        page.drawImage.image = [loadedImages objectAtIndex:i];
         [_pages addObject:page];
         [_viewPage addSubview:[page view]];
     }
@@ -67,13 +71,17 @@
     
     [self atualizarJogador];
     [super viewWillAppear:YES];
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> origin/master
 }
 
 - (IBAction)btnMenu:(id)sender{
     
     [self.navigationController popViewControllerAnimated:YES];
-
+    
 }
 
 - (IBAction)touchBtnEsq:(id)sender{
@@ -81,14 +89,14 @@
     if (_pageIndex <= 0 || [[_pages objectAtIndex:_pageIndex] recorder].recording){
         return;
     }
-
+    
     _pageIndex--;
     [self atualizarJogador];
     [self changePage];
 }
 
 - (IBAction)touchBtnDir:(id)sender{
-
+    
     if(_pageIndex >= _pageTotal-1 || [[_pages objectAtIndex:_pageIndex] recorder].recording){
         return;
     }
@@ -106,6 +114,25 @@
     [[_pages objectAtIndex:_pageIndex] bgView].image = [UIImage imageNamed:_pageURL];
     [_viewPage bringSubviewToFront:[[_pages objectAtIndex:_pageIndex] view]];
     
+}
+
+- (void)saveImages
+{
+    NSMutableArray *listImage;
+    for (NSInteger i = 0; i < _pageTotal; i++) {
+        [listImage  insertObject:[[_pages objectAtIndex:_pageIndex] drawView].image = [UIImage imageNamed:_pageURL] atIndex:i];
+    }
+    
+    [[NSUserDefaults standardUserDefaults] setObject:listImage forKey:@"Images"];
+}
+
+- (NSMutableArray*)loadImages
+{
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    NSMutableArray *images = [[NSUserDefaults standardUserDefaults] objectForKey:@"Images"];
+    
+    return images;
 }
 
 - (void)didReceiveMemoryWarning {

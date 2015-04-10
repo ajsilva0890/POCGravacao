@@ -25,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view from its nib.
     
     self.tipoUsuario = [EntradaUsuario instance];
@@ -34,15 +35,44 @@
     imagePausar = [UIImage imageNamed:@"Pausar.png"];
     imagePlay = [UIImage imageNamed:@"Play.png"];
     imageStop = [UIImage imageNamed:@"Stop.png"];
+<<<<<<< HEAD
 
     
     //    desabilita botao play/stop quando iniciada a aplicaçao
     [btnStop setEnabled:NO];
     [btnPlay setEnabled:YES];
+=======
+    
+    
+    //    desabilita botao play/stop quando iniciada a aplicaçao
+    [btnStop setEnabled:NO];
+<<<<<<< HEAD
+    [btnPlay setEnabled:YES];
+    
+=======
 
+    [btnPlay setEnabled:YES];
+=======
+<<<<<<< HEAD
+    [btnPlay setEnabled:YES];
+    
+    self.tabBarItem.title = [NSString stringWithFormat:@"Page %i", _pageNumber];
+<<<<<<< Updated upstream
+=======
+    [btnPlay setEnabled:NO];
+>>>>>>> origin/master
+=======
+>>>>>>> Stashed changes
+>>>>>>> origin/master
+
+>>>>>>> origin/master
     _lblPage.text = [NSString stringWithFormat:@"%i", _pageNumber+1];
     
+<<<<<<< HEAD
 //    [self loadAudioSettings];
+=======
+    //    [self loadAudioSettings];
+>>>>>>> origin/master
     [self loadImageSettings];
     
 }
@@ -128,6 +158,10 @@
     //Desenha o caminho.
     CGContextStrokePath(UIGraphicsGetCurrentContext());
     
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
     //Define o tamanho da caixa de desenho.
     [_drawImage setFrame:_drawView.bounds];
     
@@ -139,14 +173,25 @@
     
     [_drawView addSubview:_drawImage];
     //[self.view sendSubviewToBack:drawImage];
-
+    
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> origin/master
+>>>>>>> origin/master
 //- (void)loadAudioSettings{
 //    //    definindo a arquivo de aúdio
 //    NSArray *pathComponents = [NSArray arrayWithObjects:
 //                               [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
 //                               [NSString stringWithFormat:@"PageAudio%i.m4a", _pageNumber], nil ];
+<<<<<<< HEAD
 //    
 //    NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
 //    
@@ -161,13 +206,66 @@
 //    [recordSettings setValue:[NSNumber numberWithFloat:44100.0] forKey:AVSampleRateKey];
 //    [recordSettings setValue:[NSNumber numberWithInt:2] forKey:AVNumberOfChannelsKey];
 //    
+=======
+//
+//    NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
+//
+//    //    definindo sessao de audio
+//    AVAudioSession *session = [[AVAudioSession alloc]init ];
+//    [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+//
+//    //    define a configuracao de gravador
+//    NSMutableDictionary *recordSettings = [[NSMutableDictionary alloc]init];
+<<<<<<< HEAD
+//
+=======
+<<<<<<< Updated upstream
+//    
+>>>>>>> origin/master
+//    [recordSettings setValue:[NSNumber numberWithInt:kAudioFormatMPEG4AAC] forKey:AVFormatIDKey];
+//    [recordSettings setValue:[NSNumber numberWithFloat:44100.0] forKey:AVSampleRateKey];
+//    [recordSettings setValue:[NSNumber numberWithInt:2] forKey:AVNumberOfChannelsKey];
+//
+>>>>>>> origin/master
 //    //    iniciando e preparando a gravacao
 //    _recorder = [[AVAudioRecorder alloc] initWithURL:outputFileURL settings:recordSettings error:nil];
 //    _recorder.delegate  = self;
 //    _recorder.meteringEnabled = YES;
 //    [_recorder prepareToRecord];
+<<<<<<< HEAD
 //    
 //}
+=======
+//
+//}
+<<<<<<< HEAD
+=======
+=======
+- (void)loadAudioSettings{
+    //    definindo a arquivo de aúdio
+    NSArray *pathComponents = [NSArray arrayWithObjects:
+                               [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
+                               [NSString stringWithFormat:@"PageAudio%i.m4a", _pageNumber], nil ];
+    
+    NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
+    
+    //    definindo sessao de audio
+    AVAudioSession *session = [[AVAudioSession alloc]init ];
+    [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+    
+    //    define a configuracao de gravador
+    NSMutableDictionary *recordSettings = [[NSMutableDictionary alloc]init];
+>>>>>>> origin/master
+    
+    
+}
+>>>>>>> origin/master
+=======
+//
+//}
+>>>>>>> Stashed changes
+>>>>>>> origin/master
+>>>>>>> origin/master
 
 - (void)viewWillAppear:(BOOL)animated{
     
@@ -193,8 +291,13 @@
     [btnRecordPause setEnabled:YES];
     [self btnPlayPauser];
     [btnRecordPause setBackgroundImage:imageIniciar forState:UIControlStateNormal];
+<<<<<<< HEAD
 
 
+=======
+    
+    
+>>>>>>> origin/master
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Recorder"
                                                     message: @"Tocou tudo!"
                                                    delegate: nil
@@ -290,12 +393,20 @@
     [_recorder stop];
     [self btnGravarPausar];
     buscouAudio = FALSE;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> origin/master
     
     AVAudioSession *audioSession = [[AVAudioSession alloc]init ];
     [audioSession setActive:NO error:nil];
     
+<<<<<<< HEAD
     }
+=======
+}
+>>>>>>> origin/master
 
 - (IBAction)playTapped:(id)sender {
     
@@ -303,20 +414,34 @@
         if (!_recorder.recording && !buscouAudio) {
             
             NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+<<<<<<< HEAD
         
             NSString *namePathRecorer = [NSString stringWithFormat:@"RecorderPage%i", _pageNumber];
         
             temporaryRecFile = [prefs URLForKey:namePathRecorer];
         
+=======
+            
+            NSString *namePathRecorer = [NSString stringWithFormat:@"RecorderPage%i", _pageNumber];
+            
+            temporaryRecFile = [prefs URLForKey:namePathRecorer];
+            
+>>>>>>> origin/master
             _player = [[AVAudioPlayer alloc] initWithContentsOfURL:temporaryRecFile error:nil];
             [_player setDelegate:self];
             [_player setVolume:10];
             
             buscouAudio = TRUE;
         }
+<<<<<<< HEAD
 
     
 
+=======
+        
+        
+        
+>>>>>>> origin/master
         [btnRecordPause setEnabled:NO];
         [_player play];
     }
@@ -324,7 +449,11 @@
         [btnRecordPause setEnabled:YES];
         [btnRecordPause setBackgroundImage:imageIniciar forState:UIControlStateNormal];
         [_player pause];
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> origin/master
     }
     
     [self btnPlayPauser];
