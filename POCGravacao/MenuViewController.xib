@@ -6,8 +6,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController">
             <connections>
-                <outlet property="btnBook" destination="QTb-Lc-i0W" id="7v1-nm-m7A"/>
-                <outlet property="paiOuFilho" destination="Fuu-Tb-ZGO" id="HOT-Ut-Cum"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,17 +14,8 @@
             <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lvd-4r-UtS">
-                    <rect key="frame" x="35" y="8" width="44" height="30"/>
-                    <state key="normal" title="FILHO">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="filho:" destination="-1" eventType="touchUpInside" id="qSd-kx-ozr"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXg-u9-chJ">
-                    <rect key="frame" x="96" y="8" width="30" height="30"/>
+                    <rect key="frame" x="320" y="173" width="30" height="30"/>
                     <state key="normal" title="PAI">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -34,23 +23,13 @@
                         <action selector="pai:" destination="-1" eventType="touchUpInside" id="J5r-el-TT9"/>
                     </connections>
                 </button>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Fuu-Tb-ZGO">
-                    <rect key="frame" x="117" y="174" width="423" height="29"/>
-                    <segments>
-                        <segment title="Filho"/>
-                        <segment title="Pai"/>
-                    </segments>
-                    <connections>
-                        <action selector="paiOuFilho:" destination="-1" eventType="valueChanged" id="7k2-qM-3Vn"/>
-                    </connections>
-                </segmentedControl>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTb-Lc-i0W">
-                    <rect key="frame" x="320" y="244" width="44" height="30"/>
-                    <state key="normal" title="BOOK">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lvd-4r-UtS">
+                    <rect key="frame" x="313" y="89" width="44" height="30"/>
+                    <state key="normal" title="FILHO">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="bntBook:" destination="-1" eventType="touchUpInside" id="7aI-Wu-1To"/>
+                        <action selector="filho:" destination="-1" eventType="touchUpInside" id="qSd-kx-ozr"/>
                     </connections>
                 </button>
             </subviews>

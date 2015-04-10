@@ -31,16 +31,8 @@
                         <action selector="btnMenu:" destination="-1" eventType="touchUpInside" id="xdr-WH-9rs"/>
                     </connections>
                 </button>
-                <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qw1-LM-ic9" userLabel="btnEsq">
-                    <rect key="frame" x="0.0" y="150" width="50" height="84"/>
-                    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" backgroundImage="btnPassar.png"/>
-                    <connections>
-                        <action selector="touchBtnEsq:" destination="-1" eventType="touchUpInside" id="zBo-rn-EKH"/>
-                    </connections>
-                </button>
                 <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vzk-Ab-0n5" userLabel="btnDir">
-                    <rect key="frame" x="620" y="150" width="50" height="80"/>
+                    <rect key="frame" x="627" y="153" width="40" height="70"/>
                     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" backgroundImage="btnPassar.png">
                         <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -48,6 +40,14 @@
                     </state>
                     <connections>
                         <action selector="touchBtnDir:" destination="-1" eventType="touchUpInside" id="Bx4-DG-oNc"/>
+                    </connections>
+                </button>
+                <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qw1-LM-ic9" userLabel="btnEsq">
+                    <rect key="frame" x="0.0" y="153" width="40" height="70"/>
+                    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" backgroundImage="btnPassarEsq.png"/>
+                    <connections>
+                        <action selector="touchBtnEsq:" destination="-1" eventType="touchUpInside" id="zBo-rn-EKH"/>
                     </connections>
                 </button>
             </subviews>
@@ -59,5 +59,6 @@
     <resources>
         <image name="Home.png" width="212" height="224"/>
         <image name="btnPassar.png" width="164" height="311"/>
+        <image name="btnPassarEsq.png" width="164" height="311"/>
     </resources>
 </document>

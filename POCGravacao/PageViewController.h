@@ -35,4 +35,8 @@
 
 -(instancetype) initWithPageNumber:(NSInteger)pageNumber;
 
+- (void) stopPlayer;
+- (void) setImagensButtonsFilho;
+- (void) setImagensButtonsPai;
+
 @end

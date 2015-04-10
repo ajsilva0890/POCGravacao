@@ -42,6 +42,7 @@
 		C4C5F6631AD0430B00226F61 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4C5F6611AD0430B00226F61 /* MenuViewController.xib */; };
 		C4C5F6751AD0508700226F61 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4C5F6741AD0508700226F61 /* AVFoundation.framework */; };
 		C4C7FD1F1AD7FAED0073441E /* Gravar.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C7FD1E1AD7FAED0073441E /* Gravar.png */; };
+		C4C7FD211AD816DC0073441E /* btnPassarEsq.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C7FD201AD816DC0073441E /* btnPassarEsq.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		C4C5F6611AD0430B00226F61 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		C4C5F6741AD0508700226F61 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C4C7FD1E1AD7FAED0073441E /* Gravar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gravar.png; sourceTree = "<group>"; };
+		C4C7FD201AD816DC0073441E /* btnPassarEsq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnPassarEsq.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +244,7 @@
 		C4C7FD1B1AD7F9D50073441E /* imageBtn */ = {
 			isa = PBXGroup;
 			children = (
+				C4C7FD201AD816DC0073441E /* btnPassarEsq.png */,
 				C4C7FD1E1AD7FAED0073441E /* Gravar.png */,
 				C426D40D1AD72A4500F9B4E9 /* btnPassar.png */,
 				C426D40E1AD72A4500F9B4E9 /* Home.png */,
@@ -332,6 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4C7FD211AD816DC0073441E /* btnPassarEsq.png in Resources */,
 				C426D4261AD72E7800F9B4E9 /* Book3pqPage3.png in Resources */,
 				C4C5F6471AD042B300226F61 /* LaunchScreen.xib in Resources */,
 				C426D4121AD72A4500F9B4E9 /* btnPassar.png in Resources */,

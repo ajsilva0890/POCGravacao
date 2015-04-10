@@ -50,21 +50,24 @@
 
 - (void) atualizarJogador {
     
-    [[[_pages objectAtIndex:_pageIndex] player] pause];
-    
     if ([self.tipoUsuario tipoDeUsuario] == 0) {
         [[[_pages objectAtIndex:_pageIndex]btnStop]setEnabled:NO];
         [[[_pages objectAtIndex:_pageIndex]btnRecordPause]setEnabled:NO];
+        [[_pages objectAtIndex:_pageIndex] setImagensButtonsFilho];
+
         
     }
     else {
         [[[_pages objectAtIndex:_pageIndex]btnRecordPause]setEnabled:YES];
+        [[_pages objectAtIndex:_pageIndex] setImagensButtonsPai];
+
     }
     
 }
 
 - (void) viewWillAppear:(BOOL)animated {
-    
+    [[self btnDir] setAlpha:0.4];
+    [[self btnEsq] setAlpha:0.4];
     [self atualizarJogador];
     [super viewWillAppear:YES];
 
@@ -77,7 +80,6 @@
 }
 
 - (IBAction)touchBtnEsq:(id)sender{
-    
     if (_pageIndex <= 0 || [[_pages objectAtIndex:_pageIndex] recorder].recording){
         return;
     }
@@ -88,7 +90,8 @@
 }
 
 - (IBAction)touchBtnDir:(id)sender{
-
+    [[_pages objectAtIndex:_pageIndex] stopPlayer];
+    
     if(_pageIndex >= _pageTotal-1 || [[_pages objectAtIndex:_pageIndex] recorder].recording){
         return;
     }

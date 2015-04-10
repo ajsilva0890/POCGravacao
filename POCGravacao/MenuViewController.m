@@ -18,34 +18,21 @@
 
 @implementation MenuViewController
 
-@synthesize paiOuFilho;
-
-- (IBAction)paiOuFilho:(id)sender {
-    
-    if(paiOuFilho.selectedSegmentIndex == 0) {
-        [self.tipoUsuario setTipoDeUsuario:0 ];
-    }
-    
-    if(paiOuFilho.selectedSegmentIndex == 1) {
-        [self.tipoUsuario setTipoDeUsuario:1 ];
-    }
-}
 
 - (IBAction)filho:(id)sender {
     
     [self.tipoUsuario setTipoDeUsuario:0 ];
+    [self.navigationController pushViewController:_book  animated:YES];
+
     
 }
 
 - (IBAction)pai:(id)sender {
 
     [self.tipoUsuario setTipoDeUsuario:1 ];
-
-}
-
-- (IBAction)bntBook:(id)sender {
-    
     [self.navigationController pushViewController:_book  animated:YES];
+
+
 }
 
 - (instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{

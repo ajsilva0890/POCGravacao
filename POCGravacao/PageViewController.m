@@ -34,7 +34,6 @@
     imagePausar = [UIImage imageNamed:@"Pausar.png"];
     imagePlay = [UIImage imageNamed:@"Play.png"];
     imageStop = [UIImage imageNamed:@"Stop.png"];
-
     
     //    desabilita botao play/stop quando iniciada a aplicaçao
     [btnStop setEnabled:NO];
@@ -135,8 +134,6 @@
     _drawImage.image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
-    
-    
     [_drawView addSubview:_drawImage];
     //[self.view sendSubviewToBack:drawImage];
 
@@ -167,8 +164,8 @@
     [btnRecordPause setBackgroundImage:imageIniciar forState:UIControlStateNormal];
 
 
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Recorder"
-                                                    message: @"Tocou tudo!"
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Acabou a Gravação"
+                                                    message: @"Faça seu desenho e mude de página"
                                                    delegate: nil
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
@@ -182,7 +179,7 @@
     }
     
     else{
-        [btnRecordPause setBackgroundImage:imagePausar forState:UIControlStateSelected];
+        [btnRecordPause setBackgroundImage:imagePausar forState:UIControlStateNormal];
         [btnRecordPause setSelected:YES];
     }
 }
@@ -194,7 +191,7 @@
     }
     
     else{
-        [btnPlay setBackgroundImage:imagePausar forState:UIControlStateSelected];
+        [btnPlay setBackgroundImage:imagePausar forState:UIControlStateNormal];
         [btnPlay setSelected:YES];
     }
 }
@@ -231,7 +228,6 @@
         
         [prefs setURL:outputFileURL forKey:namePathRecorer];
         [prefs synchronize];
-        
         
         //    iniciando e preparando a gravacao
         _recorder = [[AVAudioRecorder alloc] initWithURL:outputFileURL settings:recordSettings error:nil];
@@ -297,13 +293,30 @@
         [_player pause];
 
     }
+
+    [btnRecordPause setEnabled:YES];
     
     [self btnPlayPauser];
 }
 
 - (void) stopPlayer{
     [_player stop];
+    [btnPlay setBackgroundImage:imagePlay forState:UIControlStateNormal];
+    [btnPlay setSelected:NO];
 }
+
+- (void) setImagensButtonsPai {
+    [btnRecordPause setBackgroundImage:imageIniciar forState:UIControlStateNormal];
+    [btnStop setBackgroundImage:imageStop forState:UIControlStateNormal];
+    [btnStop setAlpha:1];
+    [btnRecordPause setAlpha:1];
+}
+
+- (void) setImagensButtonsFilho {
+    [btnStop setAlpha:0];
+    [btnRecordPause setAlpha:0];
+}
+
 
 /*
  #pragma mark - Navigation

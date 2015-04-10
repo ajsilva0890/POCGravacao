@@ -27,7 +27,7 @@
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZD-Ju-bf6" userLabel="btnStop">
                     <rect key="frame" x="10" y="281" width="43" height="39"/>
-                    <state key="normal" backgroundImage="Stop.png">
+                    <state key="normal">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -36,9 +36,10 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Tc-5E-B3K" userLabel="btnRecordPause">
                     <rect key="frame" x="8" y="328" width="48" height="39"/>
-                    <state key="normal" backgroundImage="Gravar.png">
+                    <state key="normal">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <state key="selected" backgroundImage="Pausar.png"/>
                     <connections>
                         <action selector="recordPauseTapped:" destination="-1" eventType="touchUpInside" id="bFI-9v-Dne"/>
                     </connections>
@@ -63,8 +64,7 @@
         </view>
     </objects>
     <resources>
-        <image name="Gravar.png" width="97" height="96"/>
+        <image name="Pausar.png" width="246" height="237"/>
         <image name="Play.png" width="213" height="224"/>
-        <image name="Stop.png" width="97" height="96"/>
     </resources>
 </document>
