@@ -14,28 +14,37 @@
             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5J-kl-ryK">
-                    <rect key="frame" x="457" y="264" width="111" height="30"/>
-                    <state key="normal" title="Ouvir História">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="filho:" destination="-1" eventType="touchUpInside" id="NBW-wK-Vva"/>
-                    </connections>
-                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Fundo.png" translatesAutoresizingMaskIntoConstraints="NO" id="693-aU-PGj">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5w7-kO-B7w">
-                    <rect key="frame" x="491" y="473" width="43" height="30"/>
-                    <state key="normal" title="Narrar">
+                    <rect key="frame" x="32" y="685" width="116" height="55"/>
+                    <state key="normal" backgroundImage="BtnNarrar.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="pai:" destination="-1" eventType="touchUpInside" id="W5G-Yo-owd"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5J-kl-ryK">
+                    <rect key="frame" x="84" y="60" width="857" height="571"/>
+                    <state key="normal" backgroundImage="3pqInicio.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="filho:" destination="-1" eventType="touchUpInside" id="NBW-wK-Vva"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+            <point key="canvasLocation" x="258" y="342"/>
         </view>
     </objects>
+    <resources>
+        <image name="3pqInicio.png" width="1987" height="1115"/>
+        <image name="BtnNarrar.png" width="271" height="117"/>
+        <image name="Fundo.png" width="2050" height="1538"/>
+    </resources>
 </document>

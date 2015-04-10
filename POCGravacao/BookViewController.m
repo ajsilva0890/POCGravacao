@@ -18,6 +18,8 @@
 
 @implementation BookViewController
 
+@synthesize btnDir;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tipoUsuario = [EntradaUsuario instance];
@@ -85,6 +87,7 @@
     if (_pageIndex <= 0 || [[_pages objectAtIndex:_pageIndex] recorder].recording){
         return;
     }
+    [btnDir setEnabled:YES];
 
     _pageIndex--;
     [self atualizarJogador];
@@ -93,6 +96,10 @@
 
 - (IBAction)touchBtnDir:(id)sender{
     [[_pages objectAtIndex:_pageIndex] stopPlayer];
+    
+    if (_pageIndex == 12) {
+        [btnDir setEnabled:NO];
+    }
     
     if(_pageIndex >= _pageTotal-1 || [[_pages objectAtIndex:_pageIndex] recorder].recording){
         return;

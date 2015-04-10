@@ -22,6 +22,10 @@
 		C47216451AD831D3005EF629 /* Narrar.png in Resources */ = {isa = PBXBuildFile; fileRef = C47216441AD831D3005EF629 /* Narrar.png */; };
 		C472164E1AD83C45005EF629 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C472164C1AD83C44005EF629 /* MenuViewController.m */; };
 		C472164F1AD83C45005EF629 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C472164D1AD83C44005EF629 /* MenuViewController.xib */; };
+		C47216511AD8431F005EF629 /* LogoEraUmaVezUmDesenho.png in Resources */ = {isa = PBXBuildFile; fileRef = C47216501AD8431F005EF629 /* LogoEraUmaVezUmDesenho.png */; };
+		C47216541AD84628005EF629 /* 3pqInicio.png in Resources */ = {isa = PBXBuildFile; fileRef = C47216521AD84628005EF629 /* 3pqInicio.png */; };
+		C47216551AD84628005EF629 /* BtnNarrar.png in Resources */ = {isa = PBXBuildFile; fileRef = C47216531AD84628005EF629 /* BtnNarrar.png */; };
+		C47216571AD84854005EF629 /* Fundo.png in Resources */ = {isa = PBXBuildFile; fileRef = C47216561AD84854005EF629 /* Fundo.png */; };
 		C4C5F63C1AD042B300226F61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C5F63B1AD042B300226F61 /* main.m */; };
 		C4C5F63F1AD042B300226F61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C5F63E1AD042B300226F61 /* AppDelegate.m */; };
 		C4C5F6421AD042B300226F61 /* POCGravacao.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4C5F6401AD042B300226F61 /* POCGravacao.xcdatamodeld */; };
@@ -78,6 +82,10 @@
 		C472164B1AD83C44005EF629 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		C472164C1AD83C44005EF629 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		C472164D1AD83C44005EF629 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		C47216501AD8431F005EF629 /* LogoEraUmaVezUmDesenho.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoEraUmaVezUmDesenho.png; sourceTree = "<group>"; };
+		C47216521AD84628005EF629 /* 3pqInicio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3pqInicio.png; sourceTree = "<group>"; };
+		C47216531AD84628005EF629 /* BtnNarrar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BtnNarrar.png; sourceTree = "<group>"; };
+		C47216561AD84854005EF629 /* Fundo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fundo.png; sourceTree = "<group>"; };
 		C4C5F6361AD042B300226F61 /* POCGravacao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POCGravacao.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4C5F63A1AD042B300226F61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4C5F63B1AD042B300226F61 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -130,6 +138,10 @@
 		5443FE7A1AD59E1400E7EBD6 /* Book3PQ */ = {
 			isa = PBXGroup;
 			children = (
+				C47216561AD84854005EF629 /* Fundo.png */,
+				C47216521AD84628005EF629 /* 3pqInicio.png */,
+				C47216531AD84628005EF629 /* BtnNarrar.png */,
+				C47216501AD8431F005EF629 /* LogoEraUmaVezUmDesenho.png */,
 				C4C7FD221AD82CF90073441E /* Book3pqPage0.png */,
 				C4C7FD231AD82CF90073441E /* Book3pqPage1.png */,
 				C4C7FD241AD82CF90073441E /* Book3pqPage2.png */,
@@ -348,8 +360,10 @@
 				C426D4121AD72A4500F9B4E9 /* btnPassar.png in Resources */,
 				C4C7FD371AD82CF90073441E /* Book3pqPage7.png in Resources */,
 				C4C7FD1F1AD7FAED0073441E /* Gravar.png in Resources */,
+				C47216541AD84628005EF629 /* 3pqInicio.png in Resources */,
 				C47216451AD831D3005EF629 /* Narrar.png in Resources */,
 				545DA4571AD46BFC008A5247 /* BookViewController.xib in Resources */,
+				C47216511AD8431F005EF629 /* LogoEraUmaVezUmDesenho.png in Resources */,
 				C4C7FD3D1AD82CF90073441E /* Book3pqPage13.png in Resources */,
 				C426D4131AD72A4500F9B4E9 /* Home.png in Resources */,
 				C4C7FD391AD82CF90073441E /* Book3pqPage9.png in Resources */,
@@ -360,8 +374,10 @@
 				C4C5F6441AD042B300226F61 /* Images.xcassets in Resources */,
 				545DA4451AD45190008A5247 /* NavigationViewController.xib in Resources */,
 				C472164F1AD83C45005EF629 /* MenuViewController.xib in Resources */,
+				C47216551AD84628005EF629 /* BtnNarrar.png in Resources */,
 				C4C7FD341AD82CF90073441E /* Book3pqPage4.png in Resources */,
 				C4C7FD3A1AD82CF90073441E /* Book3pqPage10.png in Resources */,
+				C47216571AD84854005EF629 /* Fundo.png in Resources */,
 				C4C7FD301AD82CF90073441E /* Book3pqPage0.png in Resources */,
 				C426D4141AD72A4500F9B4E9 /* Pausar.png in Resources */,
 				C4C7FD361AD82CF90073441E /* Book3pqPage6.png in Resources */,

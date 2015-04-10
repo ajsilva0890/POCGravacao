@@ -19,6 +19,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [NSThread sleepForTimeInterval:2.0];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 //
 //    BookViewController *book = [[BookViewController alloc] initWithPageTotal:10 bookName:@"3PQ"];

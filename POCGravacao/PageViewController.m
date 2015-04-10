@@ -103,7 +103,11 @@
 }
 
 - (void) drawInViewCurrentPoint:(CGPoint)currentPoint lastPoint:(CGPoint)lastPoint{
-    
+
+    if ([self.tipoUsuario tipoDeUsuario] == 1) {
+        return;
+    }
+
     //Contexto da caixa de desenho.
     UIGraphicsBeginImageContext(_drawView.frame.size);
     [_drawImage.image drawInRect:_drawView.bounds];
@@ -112,7 +116,7 @@
     
     CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
     
-    CGContextSetLineWidth(UIGraphicsGetCurrentContext(), 18);
+    CGContextSetLineWidth(UIGraphicsGetCurrentContext(), 12);
     CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), r, g, b, alpha);
     
     // Altera o contexto de desenho.
@@ -138,7 +142,9 @@
     
     [_drawView addSubview:_drawImage];
     //[self.view sendSubviewToBack:drawImage];
-
+    
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -166,7 +172,7 @@
     [btnRecordPause setBackgroundImage:imageIniciar forState:UIControlStateNormal];
 
 
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Acabou a Gravação"
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Terminou de Narrar"
                                                     message: @"Faça seu desenho e mude de página"
                                                    delegate: nil
                                           cancelButtonTitle:@"OK"
