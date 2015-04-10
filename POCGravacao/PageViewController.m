@@ -28,6 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view from its nib.
     
     self.tipoUsuario = [EntradaUsuario instance];
@@ -41,18 +42,20 @@
     
     //    desabilita botao play/stop quando iniciada a aplicaçao
     [btnStop setEnabled:NO];
-<<<<<<< HEAD
+
     [btnPlay setEnabled:YES];
 =======
 <<<<<<< HEAD
     [btnPlay setEnabled:YES];
     
     self.tabBarItem.title = [NSString stringWithFormat:@"Page %i", _pageNumber];
+<<<<<<< Updated upstream
 =======
     [btnPlay setEnabled:NO];
 >>>>>>> origin/master
+=======
+>>>>>>> Stashed changes
 
->>>>>>> origin/master
     _lblPage.text = [NSString stringWithFormat:@"%i", _pageNumber+1];
     
 //    [self loadAudioSettings];
@@ -141,8 +144,7 @@
     //Desenha o caminho.
     CGContextStrokePath(UIGraphicsGetCurrentContext());
     
-<<<<<<< HEAD
-=======
+
     //Define o tamanho da caixa de desenho.
     [_drawImage setFrame:_drawView.bounds];
     
@@ -157,7 +159,10 @@
 
 }
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 //- (void)loadAudioSettings{
 //    //    definindo a arquivo de aúdio
 //    NSArray *pathComponents = [NSArray arrayWithObjects:
@@ -172,6 +177,7 @@
 //    
 //    //    define a configuracao de gravador
 //    NSMutableDictionary *recordSettings = [[NSMutableDictionary alloc]init];
+<<<<<<< Updated upstream
 //    
 //    [recordSettings setValue:[NSNumber numberWithInt:kAudioFormatMPEG4AAC] forKey:AVFormatIDKey];
 //    [recordSettings setValue:[NSNumber numberWithFloat:44100.0] forKey:AVSampleRateKey];
@@ -204,6 +210,10 @@
     
 }
 >>>>>>> origin/master
+=======
+//
+//}
+>>>>>>> Stashed changes
 
 - (void)viewWillAppear:(BOOL)animated{
     
