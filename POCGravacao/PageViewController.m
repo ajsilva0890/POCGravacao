@@ -195,10 +195,9 @@
         }
         
         else{
-            [btnPlay setBackgroundImage:imagePausar forState:UIControlStateNormal];
+            [btnPlay setBackgroundImage:imageNarrar forState:UIControlStateNormal];
             [btnPlay setSelected:YES];
         }
-        
     }
     else{
         if ([btnPlay isSelected]) {
