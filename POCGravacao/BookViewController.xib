@@ -26,16 +26,14 @@
                     <rect key="frame" x="0.0" y="108" width="50" height="162"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="ESQ">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
+                    <state key="normal" backgroundImage="btnPassar.png"/>
                     <connections>
                         <action selector="touchBtnEsq:" destination="-1" eventType="touchUpInside" id="zBo-rn-EKH"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVN-C0-Or1">
-                    <rect key="frame" x="5" y="5" width="45" height="30"/>
-                    <state key="normal" title="MENU">
+                    <rect key="frame" x="4" y="5" width="43" height="40"/>
+                    <state key="normal" backgroundImage="Home.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -46,8 +44,9 @@
                     <rect key="frame" x="617" y="108" width="50" height="162"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="DIR">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" backgroundImage="btnPassar.png">
+                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="touchBtnDir:" destination="-1" eventType="touchUpInside" id="Bx4-DG-oNc"/>
@@ -59,4 +58,8 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
         </view>
     </objects>
+    <resources>
+        <image name="Home.png" width="212" height="224"/>
+        <image name="btnPassar.png" width="164" height="311"/>
+    </resources>
 </document>

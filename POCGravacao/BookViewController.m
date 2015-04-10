@@ -50,6 +50,8 @@
 
 - (void) atualizarJogador {
     
+    [[[_pages objectAtIndex:_pageIndex] player] pause];
+    
     if ([self.tipoUsuario tipoDeUsuario] == 0) {
         [[[_pages objectAtIndex:_pageIndex]btnStop]setEnabled:NO];
         [[[_pages objectAtIndex:_pageIndex]btnRecordPause]setEnabled:NO];
@@ -64,7 +66,8 @@
 - (void) viewWillAppear:(BOOL)animated {
     
     [self atualizarJogador];
-    
+    [super viewWillAppear:YES];
+
 }
 
 - (IBAction)btnMenu:(id)sender{
@@ -98,7 +101,7 @@
 - (void)changePage{
     //Change between pages, sets background of page.
     
-    _pageURL = [NSString stringWithFormat:@"Book%@Page%ld.jpeg", _bookName, _pageIndex];
+    _pageURL = [NSString stringWithFormat:@"Book%@Page%ld.png", _bookName, _pageIndex];
     
     [[_pages objectAtIndex:_pageIndex] bgView].image = [UIImage imageNamed:_pageURL];
     [_viewPage bringSubviewToFront:[[_pages objectAtIndex:_pageIndex] view]];

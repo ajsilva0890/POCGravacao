@@ -10,6 +10,10 @@
 #import "EntradaUsuario.h"
 
 @interface PageViewController ()
+{
+    NSURL *temporaryRecFile;
+    Boolean buscouAudio;
+}
 
 @property (nonatomic) EntradaUsuario *tipoUsuario;
 
@@ -24,15 +28,23 @@
     // Do any additional setup after loading the view from its nib.
     
     self.tipoUsuario = [EntradaUsuario instance];
+    buscouAudio = FALSE;
+    
+    imageIniciar = [UIImage imageNamed:@"Play.png"];
+    imagePausar = [UIImage imageNamed:@"Pausar.png"];
+    imagePlay = [UIImage imageNamed:@"Play.png"];
+    imageStop = [UIImage imageNamed:@"Stop.png"];
+
     
     //    desabilita botao play/stop quando iniciada a aplicaçao
     [btnStop setEnabled:NO];
-    [btnPlay setEnabled:NO];
+    [btnPlay setEnabled:YES];
 
     _lblPage.text = [NSString stringWithFormat:@"%i", _pageNumber+1];
     
-    [self loadAudioSettings];
+//    [self loadAudioSettings];
     [self loadImageSettings];
+    
 }
 
 - (instancetype)initWithPageNumber:(NSInteger)pageNumber{
@@ -130,32 +142,32 @@
 
 }
 
-- (void)loadAudioSettings{
-    //    definindo a arquivo de aúdio
-    NSArray *pathComponents = [NSArray arrayWithObjects:
-                               [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
-                               [NSString stringWithFormat:@"PageAudio%i.m4a", _pageNumber], nil ];
-    
-    NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
-    
-    //    definindo sessao de audio
-    AVAudioSession *session = [[AVAudioSession alloc]init ];
-    [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
-    
-    //    define a configuracao de gravador
-    NSMutableDictionary *recordSettings = [[NSMutableDictionary alloc]init];
-    
-    [recordSettings setValue:[NSNumber numberWithInt:kAudioFormatMPEG4AAC] forKey:AVFormatIDKey];
-    [recordSettings setValue:[NSNumber numberWithFloat:44100.0] forKey:AVSampleRateKey];
-    [recordSettings setValue:[NSNumber numberWithInt:2] forKey:AVNumberOfChannelsKey];
-    
-    //    iniciando e preparando a gravacao
-    _recorder = [[AVAudioRecorder alloc] initWithURL:outputFileURL settings:recordSettings error:nil];
-    _recorder.delegate  = self;
-    _recorder.meteringEnabled = YES;
-    [_recorder prepareToRecord];
-    
-}
+//- (void)loadAudioSettings{
+//    //    definindo a arquivo de aúdio
+//    NSArray *pathComponents = [NSArray arrayWithObjects:
+//                               [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
+//                               [NSString stringWithFormat:@"PageAudio%i.m4a", _pageNumber], nil ];
+//    
+//    NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
+//    
+//    //    definindo sessao de audio
+//    AVAudioSession *session = [[AVAudioSession alloc]init ];
+//    [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+//    
+//    //    define a configuracao de gravador
+//    NSMutableDictionary *recordSettings = [[NSMutableDictionary alloc]init];
+//    
+//    [recordSettings setValue:[NSNumber numberWithInt:kAudioFormatMPEG4AAC] forKey:AVFormatIDKey];
+//    [recordSettings setValue:[NSNumber numberWithFloat:44100.0] forKey:AVSampleRateKey];
+//    [recordSettings setValue:[NSNumber numberWithInt:2] forKey:AVNumberOfChannelsKey];
+//    
+//    //    iniciando e preparando a gravacao
+//    _recorder = [[AVAudioRecorder alloc] initWithURL:outputFileURL settings:recordSettings error:nil];
+//    _recorder.delegate  = self;
+//    _recorder.meteringEnabled = YES;
+//    [_recorder prepareToRecord];
+//    
+//}
 
 - (void)viewWillAppear:(BOOL)animated{
     
@@ -166,23 +178,53 @@
     else {
         [btnRecordPause setEnabled:YES];
     }
+    [super viewWillAppear:YES];
 }
 
 
-- (void) audioRecorderDidFinishRecording:(AVAudioRecorder *)_recorder successfully:(BOOL)flag{
-    [btnRecordPause setTitle:@"Gravar" forState:UIControlStateNormal];
+- (void) audioRecorderDidFinishRecording:(AVAudioRecorder *)_record successfully:(BOOL)flag{
     
     [btnStop setEnabled:NO];
     [btnPlay setEnabled:YES];
+    
 }
 
 - (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)_player successfully:(BOOL)flag{
+    [btnRecordPause setEnabled:YES];
+    [self btnPlayPauser];
+    [btnRecordPause setBackgroundImage:imageIniciar forState:UIControlStateNormal];
+
+
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Recorder"
                                                     message: @"Tocou tudo!"
                                                    delegate: nil
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
     [alert show];
+}
+
+- (void) btnGravarPausar {
+    if ([btnRecordPause isSelected]) {
+        [btnRecordPause setBackgroundImage:imageIniciar forState:UIControlStateNormal];
+        [btnRecordPause setSelected:NO];
+    }
+    
+    else{
+        [btnRecordPause setBackgroundImage:imagePausar forState:UIControlStateSelected];
+        [btnRecordPause setSelected:YES];
+    }
+}
+
+- (void) btnPlayPauser {
+    if ([btnPlay isSelected]) {
+        [btnPlay setBackgroundImage:imagePlay forState:UIControlStateNormal];
+        [btnPlay setSelected:NO];
+    }
+    
+    else{
+        [btnPlay setBackgroundImage:imagePausar forState:UIControlStateSelected];
+        [btnPlay setSelected:YES];
+    }
 }
 
 - (IBAction)recordPauseTapped:(id)sender {
@@ -192,38 +234,104 @@
     }
     
     if (!_recorder.recording) {
-        AVAudioSession *session2 = [[AVAudioSession alloc]init ];
-        [session2 setActive:YES error:nil];
+        //    definindo a arquivo de aúdio
+        NSArray *pathComponents = [NSArray arrayWithObjects:
+                                   [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
+                                   [NSString stringWithFormat:@"PageAudio%i.m4a", _pageNumber], nil ];
+        
+        NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
+        
+        //    definindo sessao de audio
+        AVAudioSession *session = [[AVAudioSession alloc]init ];
+        [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+        
+        //    define a configuracao de gravador
+        NSMutableDictionary *recordSettings = [[NSMutableDictionary alloc]init];
+        
+        [recordSettings setValue:[NSNumber numberWithInt:kAudioFormatMPEG4AAC] forKey:AVFormatIDKey];
+        [recordSettings setValue:[NSNumber numberWithFloat:44100.0] forKey:AVSampleRateKey];
+        [recordSettings setValue:[NSNumber numberWithInt:2] forKey:AVNumberOfChannelsKey];
+        
+        //Salva o caminho da gravação
+        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+        
+        NSString *namePathRecorer = [NSString stringWithFormat:@"RecorderPage%i", _pageNumber];
+        
+        [prefs setURL:outputFileURL forKey:namePathRecorer];
+        [prefs synchronize];
+        
+        
+        //    iniciando e preparando a gravacao
+        _recorder = [[AVAudioRecorder alloc] initWithURL:outputFileURL settings:recordSettings error:nil];
+        _recorder.delegate  = self;
+        _recorder.meteringEnabled = YES;
+        [_recorder prepareToRecord];
+        
+        
+        [session setActive:YES error:nil];
         
         //        comecar a gravacao
         NSTimeInterval time = 10.0;
         [_recorder recordForDuration:time];
-        [btnRecordPause setTitle:@"Pausar" forState:UIControlStateNormal];
+        [self btnGravarPausar];
         
     } else {
         
         [_recorder pause];
-        [btnRecordPause setTitle:@"Gravar" forState:UIControlStateNormal];
+        [self btnGravarPausar];
         
     }
+    
     [btnStop setEnabled:YES];
     [btnPlay setEnabled:NO];
 }
 
 - (IBAction)stopTapped:(id)sender {
     [_recorder stop];
+    [self btnGravarPausar];
+    buscouAudio = FALSE;
+
     
     AVAudioSession *audioSession = [[AVAudioSession alloc]init ];
     [audioSession setActive:NO error:nil];
-}
+    
+    }
 
 - (IBAction)playTapped:(id)sender {
-    if (!_recorder.recording) {
-        _player = [[AVAudioPlayer alloc] initWithContentsOfURL:_recorder.url error:nil];
-        [_player setDelegate:self];
-        [_player setVolume:10];
+    
+    if (!_player.playing) {
+        if (!_recorder.recording && !buscouAudio) {
+            
+            NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+        
+            NSString *namePathRecorer = [NSString stringWithFormat:@"RecorderPage%i", _pageNumber];
+        
+            temporaryRecFile = [prefs URLForKey:namePathRecorer];
+        
+            _player = [[AVAudioPlayer alloc] initWithContentsOfURL:temporaryRecFile error:nil];
+            [_player setDelegate:self];
+            [_player setVolume:10];
+            
+            buscouAudio = TRUE;
+        }
+
+    
+
+        [btnRecordPause setEnabled:NO];
         [_player play];
     }
+    else {
+        [btnRecordPause setEnabled:YES];
+        [btnRecordPause setBackgroundImage:imageIniciar forState:UIControlStateNormal];
+        [_player pause];
+
+    }
+    
+    [self btnPlayPauser];
+}
+
+- (void) stopPlayer{
+    [_player stop];
 }
 
 /*
