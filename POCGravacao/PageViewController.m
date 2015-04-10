@@ -272,10 +272,6 @@
         [_recorder recordForDuration:time];
         [self btnGravarPausar];
         
-        buscouGravacao = YES;
-            
-        
-        
         
     } else {
         
@@ -294,6 +290,7 @@
     [btnRecordPause setSelected:NO];
     
     buscouAudio = FALSE;
+    buscouGravacao = NO;
     
     AVAudioSession *audioSession = [[AVAudioSession alloc]init ];
     [audioSession setActive:NO error:nil];
