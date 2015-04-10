@@ -66,8 +66,8 @@
 }
 
 - (void) viewWillAppear:(BOOL)animated {
-    [[self btnDir] setAlpha:0.4];
-    [[self btnEsq] setAlpha:0.4];
+    [[self btnDir] setAlpha:0.2];
+    [[self btnEsq] setAlpha:0.2];
     [self atualizarJogador];
     
     
@@ -106,7 +106,7 @@
 - (void)changePage{
     //Change between pages, sets background of page.
     
-    _pageURL = [NSString stringWithFormat:@"Book%@Page%ld.png", _bookName, _pageIndex];
+    _pageURL = [NSString stringWithFormat:@"Book%@Page%ld.png", _bookName, (long)_pageIndex];
     
     [[_pages objectAtIndex:_pageIndex] bgView].image = [UIImage imageNamed:_pageURL];
     [_viewPage bringSubviewToFront:[[_pages objectAtIndex:_pageIndex] view]];
