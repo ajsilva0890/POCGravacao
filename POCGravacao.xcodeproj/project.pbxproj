@@ -180,6 +180,25 @@
 			name = PagesHistoria;
 			sourceTree = "<group>";
 		};
+		C47216581AD857BB005EF629 /* MenuInicial */ = {
+			isa = PBXGroup;
+			children = (
+				C472164B1AD83C44005EF629 /* MenuViewController.h */,
+				C472164C1AD83C44005EF629 /* MenuViewController.m */,
+				C472164D1AD83C44005EF629 /* MenuViewController.xib */,
+			);
+			name = MenuInicial;
+			sourceTree = "<group>";
+		};
+		C47216591AD857DA005EF629 /* ControleUsuario */ = {
+			isa = PBXGroup;
+			children = (
+				C46316041AD0729800695BA1 /* EntradaUsuario.h */,
+				C46316051AD0729800695BA1 /* EntradaUsuario.m */,
+			);
+			name = ControleUsuario;
+			sourceTree = "<group>";
+		};
 		C4C5F62D1AD042B300226F61 = {
 			isa = PBXGroup;
 			children = (
@@ -204,17 +223,14 @@
 			children = (
 				C4C7FD1B1AD7F9D50073441E /* imageBtn */,
 				5443FE7A1AD59E1400E7EBD6 /* Book3PQ */,
-				C472164B1AD83C44005EF629 /* MenuViewController.h */,
-				C472164C1AD83C44005EF629 /* MenuViewController.m */,
-				C472164D1AD83C44005EF629 /* MenuViewController.xib */,
-				C4C5F6451AD042B300226F61 /* LaunchScreen.xib */,
-				C4C5F63D1AD042B300226F61 /* AppDelegate.h */,
-				C4C5F63E1AD042B300226F61 /* AppDelegate.m */,
-				C46316041AD0729800695BA1 /* EntradaUsuario.h */,
-				C46316051AD0729800695BA1 /* EntradaUsuario.m */,
+				C47216581AD857BB005EF629 /* MenuInicial */,
+				C47216591AD857DA005EF629 /* ControleUsuario */,
 				C422BD5D1AD6C92B004F7E87 /* PagesHistoria */,
 				C4C5F6731AD043A000226F61 /* BookHistoria */,
 				545DA44B1AD4614F008A5247 /* Navigator */,
+				C4C5F63D1AD042B300226F61 /* AppDelegate.h */,
+				C4C5F63E1AD042B300226F61 /* AppDelegate.m */,
+				C4C5F6451AD042B300226F61 /* LaunchScreen.xib */,
 				C4C5F6431AD042B300226F61 /* Images.xcassets */,
 				C4C5F6401AD042B300226F61 /* POCGravacao.xcdatamodeld */,
 				C4C5F6391AD042B300226F61 /* Supporting Files */,

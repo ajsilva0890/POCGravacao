@@ -12,7 +12,7 @@
 @interface PageViewController ()
 {
     NSURL *temporaryRecFile;
-    Boolean buscouAudio;
+    Boolean buscouAudio, buscouGravacao;
 }
 
 @property (nonatomic) EntradaUsuario *tipoUsuario;
@@ -29,6 +29,7 @@
     
     self.tipoUsuario = [EntradaUsuario instance];
     buscouAudio = FALSE;
+    buscouGravacao = NO;
     
     imageIniciar = [UIImage imageNamed:@"Gravar.png"];
     imagePausar = [UIImage imageNamed:@"Pausar.png"];
@@ -225,6 +226,9 @@
     }
     
     if (!_recorder.recording) {
+        
+        if (buscouGravacao == NO) {
+
         //    definindo a arquivo de aúdio
         NSArray *pathComponents = [NSArray arrayWithObjects:
                                    [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
@@ -259,11 +263,19 @@
         
         
         [session setActive:YES error:nil];
-        
+        buscouGravacao = YES;
+            
+        }
+            
         //        comecar a gravacao
         NSTimeInterval time = 10.0;
         [_recorder recordForDuration:time];
         [self btnGravarPausar];
+        
+        buscouGravacao = YES;
+            
+        
+        
         
     } else {
         
