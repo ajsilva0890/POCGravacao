@@ -159,6 +159,18 @@
 			name = PagesHistoria;
 			sourceTree = "<group>";
 		};
+		C426D4311AD7EAE000F9B4E9 /* btnImagens */ = {
+			isa = PBXGroup;
+			children = (
+				C426D40D1AD72A4500F9B4E9 /* btnPassar.png */,
+				C426D40E1AD72A4500F9B4E9 /* Home.png */,
+				C426D40F1AD72A4500F9B4E9 /* Pausar.png */,
+				C426D4101AD72A4500F9B4E9 /* Play.png */,
+				C426D4111AD72A4500F9B4E9 /* Stop.png */,
+			);
+			name = btnImagens;
+			sourceTree = "<group>";
+		};
 		C4C5F62D1AD042B300226F61 = {
 			isa = PBXGroup;
 			children = (
@@ -181,11 +193,7 @@
 		C4C5F6381AD042B300226F61 /* POCGravacao */ = {
 			isa = PBXGroup;
 			children = (
-				C426D40D1AD72A4500F9B4E9 /* btnPassar.png */,
-				C426D40E1AD72A4500F9B4E9 /* Home.png */,
-				C426D40F1AD72A4500F9B4E9 /* Pausar.png */,
-				C426D4101AD72A4500F9B4E9 /* Play.png */,
-				C426D4111AD72A4500F9B4E9 /* Stop.png */,
+				C426D4311AD7EAE000F9B4E9 /* btnImagens */,
 				5443FE7A1AD59E1400E7EBD6 /* Book3PQ */,
 				C4C5F65F1AD0430B00226F61 /* MenuViewController.h */,
 				C4C5F6601AD0430B00226F61 /* MenuViewController.m */,
@@ -195,6 +203,7 @@
 				C4C5F63E1AD042B300226F61 /* AppDelegate.m */,
 				C46316041AD0729800695BA1 /* EntradaUsuario.h */,
 				C46316051AD0729800695BA1 /* EntradaUsuario.m */,
+				C422BD5D1AD6C92B004F7E87 /* PagesHistoria */,
 				C4C5F6731AD043A000226F61 /* BookHistoria */,
 				545DA44B1AD4614F008A5247 /* Navigator */,
 				C4C5F6431AD042B300226F61 /* Images.xcassets */,
@@ -236,7 +245,6 @@
 				545DA4531AD46BFC008A5247 /* BookViewController.h */,
 				545DA4541AD46BFC008A5247 /* BookViewController.m */,
 				545DA4551AD46BFC008A5247 /* BookViewController.xib */,
-				C422BD5D1AD6C92B004F7E87 /* PagesHistoria */,
 			);
 			name = BookHistoria;
 			sourceTree = "<group>";

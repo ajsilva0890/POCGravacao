@@ -20,11 +20,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//
-//    BookViewController *book = [[BookViewController alloc] initWithPageTotal:10 bookName:@"3PQ"];
-//    
-//    self.window.rootViewController = book;
-
+    //
+    //    BookViewController *book = [[BookViewController alloc] initWithPageTotal:10 bookName:@"3PQ"];
+    //
+    //    self.window.rootViewController = book;
+    
     //BookViewController *book = [[BookViewController alloc] initWithPageTotal:5];
     
     

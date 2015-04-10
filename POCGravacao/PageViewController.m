@@ -12,10 +12,7 @@
 @interface PageViewController ()
 {
     NSURL *temporaryRecFile;
-<<<<<<< HEAD
     Boolean buscouAudio;
-=======
->>>>>>> origin/master
 }
 
 @property (nonatomic) EntradaUsuario *tipoUsuario;
@@ -37,25 +34,15 @@
     imagePausar = [UIImage imageNamed:@"Pausar.png"];
     imagePlay = [UIImage imageNamed:@"Play.png"];
     imageStop = [UIImage imageNamed:@"Stop.png"];
-
+    
     
     //    desabilita botao play/stop quando iniciada a aplicaçao
     [btnStop setEnabled:NO];
-<<<<<<< HEAD
-    [btnPlay setEnabled:YES];
-=======
-<<<<<<< HEAD
     [btnPlay setEnabled:YES];
     
-    self.tabBarItem.title = [NSString stringWithFormat:@"Page %i", _pageNumber];
-=======
-    [btnPlay setEnabled:NO];
->>>>>>> origin/master
-
->>>>>>> origin/master
     _lblPage.text = [NSString stringWithFormat:@"%i", _pageNumber+1];
     
-//    [self loadAudioSettings];
+    //    [self loadAudioSettings];
     [self loadImageSettings];
     
 }
@@ -141,8 +128,6 @@
     //Desenha o caminho.
     CGContextStrokePath(UIGraphicsGetCurrentContext());
     
-<<<<<<< HEAD
-=======
     //Define o tamanho da caixa de desenho.
     [_drawImage setFrame:_drawView.bounds];
     
@@ -154,56 +139,35 @@
     
     [_drawView addSubview:_drawImage];
     //[self.view sendSubviewToBack:drawImage];
-
+    
 }
 
-<<<<<<< HEAD
 //- (void)loadAudioSettings{
 //    //    definindo a arquivo de aúdio
 //    NSArray *pathComponents = [NSArray arrayWithObjects:
 //                               [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
 //                               [NSString stringWithFormat:@"PageAudio%i.m4a", _pageNumber], nil ];
-//    
+//
 //    NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
-//    
+//
 //    //    definindo sessao de audio
 //    AVAudioSession *session = [[AVAudioSession alloc]init ];
 //    [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
-//    
+//
 //    //    define a configuracao de gravador
 //    NSMutableDictionary *recordSettings = [[NSMutableDictionary alloc]init];
-//    
+//
 //    [recordSettings setValue:[NSNumber numberWithInt:kAudioFormatMPEG4AAC] forKey:AVFormatIDKey];
 //    [recordSettings setValue:[NSNumber numberWithFloat:44100.0] forKey:AVSampleRateKey];
 //    [recordSettings setValue:[NSNumber numberWithInt:2] forKey:AVNumberOfChannelsKey];
-//    
+//
 //    //    iniciando e preparando a gravacao
 //    _recorder = [[AVAudioRecorder alloc] initWithURL:outputFileURL settings:recordSettings error:nil];
 //    _recorder.delegate  = self;
 //    _recorder.meteringEnabled = YES;
 //    [_recorder prepareToRecord];
-//    
+//
 //}
-=======
-- (void)loadAudioSettings{
-    //    definindo a arquivo de aúdio
-    NSArray *pathComponents = [NSArray arrayWithObjects:
-                               [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
-                               [NSString stringWithFormat:@"PageAudio%i.m4a", _pageNumber], nil ];
-    
-    NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
-    
-    //    definindo sessao de audio
-    AVAudioSession *session = [[AVAudioSession alloc]init ];
-    [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
-    
-    //    define a configuracao de gravador
-    NSMutableDictionary *recordSettings = [[NSMutableDictionary alloc]init];
->>>>>>> origin/master
-    
-    
-}
->>>>>>> origin/master
 
 - (void)viewWillAppear:(BOOL)animated{
     
@@ -229,8 +193,8 @@
     [btnRecordPause setEnabled:YES];
     [self btnPlayPauser];
     [btnRecordPause setBackgroundImage:imageIniciar forState:UIControlStateNormal];
-
-
+    
+    
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Recorder"
                                                     message: @"Tocou tudo!"
                                                    delegate: nil
@@ -295,11 +259,7 @@
         
         [prefs setURL:outputFileURL forKey:namePathRecorer];
         [prefs synchronize];
-<<<<<<< HEAD
         
-=======
-
->>>>>>> origin/master
         
         //    iniciando e preparando a gravacao
         _recorder = [[AVAudioRecorder alloc] initWithURL:outputFileURL settings:recordSettings error:nil];
@@ -330,57 +290,41 @@
     [_recorder stop];
     [self btnGravarPausar];
     buscouAudio = FALSE;
-
+    
     
     AVAudioSession *audioSession = [[AVAudioSession alloc]init ];
     [audioSession setActive:NO error:nil];
     
-    }
+}
 
 - (IBAction)playTapped:(id)sender {
-<<<<<<< HEAD
     
     if (!_player.playing) {
         if (!_recorder.recording && !buscouAudio) {
             
             NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-        
+            
             NSString *namePathRecorer = [NSString stringWithFormat:@"RecorderPage%i", _pageNumber];
-        
+            
             temporaryRecFile = [prefs URLForKey:namePathRecorer];
-        
+            
             _player = [[AVAudioPlayer alloc] initWithContentsOfURL:temporaryRecFile error:nil];
             [_player setDelegate:self];
             [_player setVolume:10];
             
             buscouAudio = TRUE;
         }
-
-    
-
+        
+        
+        
         [btnRecordPause setEnabled:NO];
-=======
-    if (!_recorder.recording) {
-        
-        //Carrega o caminho da gravação
-        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-        
-        NSString *namePathRecorer = [NSString stringWithFormat:@"RecorderPage%i", _pageNumber];
-        
-        temporaryRecFile = [prefs URLForKey:namePathRecorer];
-        
-        
-        _player = [[AVAudioPlayer alloc] initWithContentsOfURL:temporaryRecFile error:nil];
-        [_player setDelegate:self];
-        [_player setVolume:10];
->>>>>>> origin/master
         [_player play];
     }
     else {
         [btnRecordPause setEnabled:YES];
         [btnRecordPause setBackgroundImage:imageIniciar forState:UIControlStateNormal];
         [_player pause];
-
+        
     }
     
     [self btnPlayPauser];

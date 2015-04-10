@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tipoUsuario = [EntradaUsuario instance];
-
+    
     _pageIndex = 0;
     _pages = [[NSMutableArray alloc] init];
     
@@ -67,13 +67,13 @@
     
     [self atualizarJogador];
     [super viewWillAppear:YES];
-
+    
 }
 
 - (IBAction)btnMenu:(id)sender{
     
     [self.navigationController popViewControllerAnimated:YES];
-
+    
 }
 
 - (IBAction)touchBtnEsq:(id)sender{
@@ -81,14 +81,14 @@
     if (_pageIndex <= 0 || [[_pages objectAtIndex:_pageIndex] recorder].recording){
         return;
     }
-
+    
     _pageIndex--;
     [self atualizarJogador];
     [self changePage];
 }
 
 - (IBAction)touchBtnDir:(id)sender{
-
+    
     if(_pageIndex >= _pageTotal-1 || [[_pages objectAtIndex:_pageIndex] recorder].recording){
         return;
     }
