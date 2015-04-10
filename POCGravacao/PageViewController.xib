@@ -11,7 +11,6 @@
                 <outlet property="btnRecordPause" destination="4Tc-5E-B3K" id="Jpi-8x-NJa"/>
                 <outlet property="btnStop" destination="qZD-Ju-bf6" id="m0w-a9-nxb"/>
                 <outlet property="drawView" destination="T81-Ez-59k" id="Zrk-Fn-pkE"/>
-                <outlet property="lblPage" destination="tnc-Lb-KBI" id="Jld-5B-ptn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,17 +25,8 @@
                 <imageView multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T81-Ez-59k" userLabel="drawView">
                     <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Tc-5E-B3K" userLabel="btnRecordPause">
-                    <rect key="frame" x="505" y="3" width="48" height="39"/>
-                    <state key="normal" backgroundImage="Play.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="recordPauseTapped:" destination="-1" eventType="touchUpInside" id="bFI-9v-Dne"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZD-Ju-bf6" userLabel="btnStop">
-                    <rect key="frame" x="562" y="3" width="43" height="39"/>
+                    <rect key="frame" x="10" y="281" width="43" height="39"/>
                     <state key="normal" backgroundImage="Stop.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -44,8 +34,17 @@
                         <action selector="stopTapped:" destination="-1" eventType="touchUpInside" id="Q8Z-X5-JiN"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Tc-5E-B3K" userLabel="btnRecordPause">
+                    <rect key="frame" x="8" y="328" width="48" height="39"/>
+                    <state key="normal" backgroundImage="Gravar.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="recordPauseTapped:" destination="-1" eventType="touchUpInside" id="bFI-9v-Dne"/>
+                    </connections>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m4y-Fw-KbN" userLabel="btnPlay">
-                    <rect key="frame" x="613" y="3" width="48" height="38.5"/>
+                    <rect key="frame" x="601" y="315" width="48" height="38.5"/>
                     <state key="normal" backgroundImage="Play.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -56,12 +55,6 @@
                         <action selector="playTapped:" destination="-1" eventType="touchUpInside" id="UWV-GJ-Wg8"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnc-Lb-KBI" userLabel="lblPage">
-                    <rect key="frame" x="3" y="350" width="27" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -70,7 +63,8 @@
         </view>
     </objects>
     <resources>
+        <image name="Gravar.png" width="97" height="96"/>
         <image name="Play.png" width="213" height="224"/>
-        <image name="Stop.png" width="212" height="224"/>
+        <image name="Stop.png" width="97" height="96"/>
     </resources>
 </document>

@@ -30,7 +30,7 @@
     self.tipoUsuario = [EntradaUsuario instance];
     buscouAudio = FALSE;
     
-    imageIniciar = [UIImage imageNamed:@"Play.png"];
+    imageIniciar = [UIImage imageNamed:@"Gravar.png"];
     imagePausar = [UIImage imageNamed:@"Pausar.png"];
     imagePlay = [UIImage imageNamed:@"Play.png"];
     imageStop = [UIImage imageNamed:@"Stop.png"];
@@ -142,35 +142,7 @@
 
 }
 
-//- (void)loadAudioSettings{
-//    //    definindo a arquivo de aúdio
-//    NSArray *pathComponents = [NSArray arrayWithObjects:
-//                               [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
-//                               [NSString stringWithFormat:@"PageAudio%i.m4a", _pageNumber], nil ];
-//    
-//    NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
-//    
-//    //    definindo sessao de audio
-//    AVAudioSession *session = [[AVAudioSession alloc]init ];
-//    [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
-//    
-//    //    define a configuracao de gravador
-//    NSMutableDictionary *recordSettings = [[NSMutableDictionary alloc]init];
-//    
-//    [recordSettings setValue:[NSNumber numberWithInt:kAudioFormatMPEG4AAC] forKey:AVFormatIDKey];
-//    [recordSettings setValue:[NSNumber numberWithFloat:44100.0] forKey:AVSampleRateKey];
-//    [recordSettings setValue:[NSNumber numberWithInt:2] forKey:AVNumberOfChannelsKey];
-//    
-//    //    iniciando e preparando a gravacao
-//    _recorder = [[AVAudioRecorder alloc] initWithURL:outputFileURL settings:recordSettings error:nil];
-//    _recorder.delegate  = self;
-//    _recorder.meteringEnabled = YES;
-//    [_recorder prepareToRecord];
-//    
-//}
-
 - (void)viewWillAppear:(BOOL)animated{
-    
     if ([self.tipoUsuario tipoDeUsuario] == 0) {
         [btnStop setEnabled:NO];
         [btnRecordPause setEnabled:NO];
@@ -288,9 +260,10 @@
 
 - (IBAction)stopTapped:(id)sender {
     [_recorder stop];
-    [self btnGravarPausar];
+    [btnRecordPause setBackgroundImage:imageIniciar forState:UIControlStateNormal];
+    [btnRecordPause setSelected:NO];
+    
     buscouAudio = FALSE;
-
     
     AVAudioSession *audioSession = [[AVAudioSession alloc]init ];
     [audioSession setActive:NO error:nil];
@@ -314,8 +287,6 @@
             
             buscouAudio = TRUE;
         }
-
-    
 
         [btnRecordPause setEnabled:NO];
         [_player play];

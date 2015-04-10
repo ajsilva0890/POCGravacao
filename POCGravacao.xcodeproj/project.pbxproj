@@ -41,6 +41,7 @@
 		C4C5F6621AD0430B00226F61 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C5F6601AD0430B00226F61 /* MenuViewController.m */; };
 		C4C5F6631AD0430B00226F61 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4C5F6611AD0430B00226F61 /* MenuViewController.xib */; };
 		C4C5F6751AD0508700226F61 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4C5F6741AD0508700226F61 /* AVFoundation.framework */; };
+		C4C7FD1F1AD7FAED0073441E /* Gravar.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C7FD1E1AD7FAED0073441E /* Gravar.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		C4C5F6601AD0430B00226F61 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		C4C5F6611AD0430B00226F61 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		C4C5F6741AD0508700226F61 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		C4C7FD1E1AD7FAED0073441E /* Gravar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gravar.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,11 +183,7 @@
 		C4C5F6381AD042B300226F61 /* POCGravacao */ = {
 			isa = PBXGroup;
 			children = (
-				C426D40D1AD72A4500F9B4E9 /* btnPassar.png */,
-				C426D40E1AD72A4500F9B4E9 /* Home.png */,
-				C426D40F1AD72A4500F9B4E9 /* Pausar.png */,
-				C426D4101AD72A4500F9B4E9 /* Play.png */,
-				C426D4111AD72A4500F9B4E9 /* Stop.png */,
+				C4C7FD1B1AD7F9D50073441E /* imageBtn */,
 				5443FE7A1AD59E1400E7EBD6 /* Book3PQ */,
 				C4C5F65F1AD0430B00226F61 /* MenuViewController.h */,
 				C4C5F6601AD0430B00226F61 /* MenuViewController.m */,
@@ -195,6 +193,7 @@
 				C4C5F63E1AD042B300226F61 /* AppDelegate.m */,
 				C46316041AD0729800695BA1 /* EntradaUsuario.h */,
 				C46316051AD0729800695BA1 /* EntradaUsuario.m */,
+				C422BD5D1AD6C92B004F7E87 /* PagesHistoria */,
 				C4C5F6731AD043A000226F61 /* BookHistoria */,
 				545DA44B1AD4614F008A5247 /* Navigator */,
 				C4C5F6431AD042B300226F61 /* Images.xcassets */,
@@ -236,9 +235,21 @@
 				545DA4531AD46BFC008A5247 /* BookViewController.h */,
 				545DA4541AD46BFC008A5247 /* BookViewController.m */,
 				545DA4551AD46BFC008A5247 /* BookViewController.xib */,
-				C422BD5D1AD6C92B004F7E87 /* PagesHistoria */,
 			);
 			name = BookHistoria;
+			sourceTree = "<group>";
+		};
+		C4C7FD1B1AD7F9D50073441E /* imageBtn */ = {
+			isa = PBXGroup;
+			children = (
+				C4C7FD1E1AD7FAED0073441E /* Gravar.png */,
+				C426D40D1AD72A4500F9B4E9 /* btnPassar.png */,
+				C426D40E1AD72A4500F9B4E9 /* Home.png */,
+				C426D40F1AD72A4500F9B4E9 /* Pausar.png */,
+				C426D4101AD72A4500F9B4E9 /* Play.png */,
+				C426D4111AD72A4500F9B4E9 /* Stop.png */,
+			);
+			name = imageBtn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,6 +341,7 @@
 				C426D4291AD72E7800F9B4E9 /* Book3pqPage6.png in Resources */,
 				C426D4281AD72E7800F9B4E9 /* Book3pqPage5.png in Resources */,
 				C426D42E1AD72E7800F9B4E9 /* Book3pqPage11.png in Resources */,
+				C4C7FD1F1AD7FAED0073441E /* Gravar.png in Resources */,
 				545DA4571AD46BFC008A5247 /* BookViewController.xib in Resources */,
 				C426D42B1AD72E7800F9B4E9 /* Book3pqPage8.png in Resources */,
 				C426D4131AD72A4500F9B4E9 /* Home.png in Resources */,
