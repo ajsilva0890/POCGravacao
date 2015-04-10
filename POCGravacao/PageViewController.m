@@ -25,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view from its nib.
     
     self.tipoUsuario = [EntradaUsuario instance];
@@ -38,8 +39,25 @@
     
     //    desabilita botao play/stop quando iniciada a aplicaçao
     [btnStop setEnabled:NO];
+<<<<<<< HEAD
     [btnPlay setEnabled:YES];
     
+=======
+
+    [btnPlay setEnabled:YES];
+=======
+<<<<<<< HEAD
+    [btnPlay setEnabled:YES];
+    
+    self.tabBarItem.title = [NSString stringWithFormat:@"Page %i", _pageNumber];
+<<<<<<< Updated upstream
+=======
+    [btnPlay setEnabled:NO];
+>>>>>>> origin/master
+=======
+>>>>>>> Stashed changes
+
+>>>>>>> origin/master
     _lblPage.text = [NSString stringWithFormat:@"%i", _pageNumber+1];
     
     //    [self loadAudioSettings];
@@ -128,6 +146,10 @@
     //Desenha o caminho.
     CGContextStrokePath(UIGraphicsGetCurrentContext());
     
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
     //Define o tamanho da caixa de desenho.
     [_drawImage setFrame:_drawView.bounds];
     
@@ -142,6 +164,13 @@
     
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> origin/master
 //- (void)loadAudioSettings{
 //    //    definindo a arquivo de aúdio
 //    NSArray *pathComponents = [NSArray arrayWithObjects:
@@ -156,7 +185,12 @@
 //
 //    //    define a configuracao de gravador
 //    NSMutableDictionary *recordSettings = [[NSMutableDictionary alloc]init];
+<<<<<<< HEAD
 //
+=======
+<<<<<<< Updated upstream
+//    
+>>>>>>> origin/master
 //    [recordSettings setValue:[NSNumber numberWithInt:kAudioFormatMPEG4AAC] forKey:AVFormatIDKey];
 //    [recordSettings setValue:[NSNumber numberWithFloat:44100.0] forKey:AVSampleRateKey];
 //    [recordSettings setValue:[NSNumber numberWithInt:2] forKey:AVNumberOfChannelsKey];
@@ -168,6 +202,33 @@
 //    [_recorder prepareToRecord];
 //
 //}
+<<<<<<< HEAD
+=======
+=======
+- (void)loadAudioSettings{
+    //    definindo a arquivo de aúdio
+    NSArray *pathComponents = [NSArray arrayWithObjects:
+                               [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
+                               [NSString stringWithFormat:@"PageAudio%i.m4a", _pageNumber], nil ];
+    
+    NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
+    
+    //    definindo sessao de audio
+    AVAudioSession *session = [[AVAudioSession alloc]init ];
+    [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+    
+    //    define a configuracao de gravador
+    NSMutableDictionary *recordSettings = [[NSMutableDictionary alloc]init];
+>>>>>>> origin/master
+    
+    
+}
+>>>>>>> origin/master
+=======
+//
+//}
+>>>>>>> Stashed changes
+>>>>>>> origin/master
 
 - (void)viewWillAppear:(BOOL)animated{
     
