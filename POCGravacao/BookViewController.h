@@ -24,6 +24,5 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnMenu;
 
 -(instancetype) initWithPageTotal:(NSInteger)pageTotal bookName:(NSString*)bookName;
-- (void)saveImages;
 
 @end

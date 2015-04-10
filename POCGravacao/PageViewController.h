@@ -10,7 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 
 @interface PageViewController : UIViewController <AVAudioRecorderDelegate, AVAudioPlayerDelegate>{
-    
+        
     float r, g, b, alpha;
     UIImage *imageIniciar, *imagePausar, *imagePlay, *imageStop;
 }
