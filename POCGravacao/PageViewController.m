@@ -34,6 +34,8 @@
     imagePausar = [UIImage imageNamed:@"Pausar.png"];
     imagePlay = [UIImage imageNamed:@"Play.png"];
     imageStop = [UIImage imageNamed:@"Stop.png"];
+    imageNarrar = [UIImage imageNamed:@"Narrar.png"];
+
     
     //    desabilita botao play/stop quando iniciada a aplicaçao
     [btnStop setEnabled:NO];
@@ -185,14 +187,29 @@
 }
 
 - (void) btnPlayPauser {
-    if ([btnPlay isSelected]) {
-        [btnPlay setBackgroundImage:imagePlay forState:UIControlStateNormal];
-        [btnPlay setSelected:NO];
-    }
     
+    if ([self.tipoUsuario tipoDeUsuario] == 0) {
+        if ([btnPlay isSelected]) {
+            [btnPlay setBackgroundImage:imageNarrar forState:UIControlStateNormal];
+            [btnPlay setSelected:NO];
+        }
+        
+        else{
+            [btnPlay setBackgroundImage:imagePausar forState:UIControlStateNormal];
+            [btnPlay setSelected:YES];
+        }
+        
+    }
     else{
-        [btnPlay setBackgroundImage:imagePausar forState:UIControlStateNormal];
-        [btnPlay setSelected:YES];
+        if ([btnPlay isSelected]) {
+            [btnPlay setBackgroundImage:imagePlay forState:UIControlStateNormal];
+            [btnPlay setSelected:NO];
+        }
+    
+        else{
+            [btnPlay setBackgroundImage:imagePausar forState:UIControlStateNormal];
+            [btnPlay setSelected:YES];
+        }
     }
 }
 
@@ -308,11 +325,14 @@
 - (void) setImagensButtonsPai {
     [btnRecordPause setBackgroundImage:imageIniciar forState:UIControlStateNormal];
     [btnStop setBackgroundImage:imageStop forState:UIControlStateNormal];
+    [btnPlay setBackgroundImage:imagePlay forState:UIControlStateNormal];
+    
     [btnStop setAlpha:1];
     [btnRecordPause setAlpha:1];
 }
 
 - (void) setImagensButtonsFilho {
+    [btnPlay setBackgroundImage:imageNarrar forState:UIControlStateNormal];
     [btnStop setAlpha:0];
     [btnRecordPause setAlpha:0];
 }

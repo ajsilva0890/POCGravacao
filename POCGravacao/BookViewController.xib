@@ -57,7 +57,7 @@
         </view>
     </objects>
     <resources>
-        <image name="Home.png" width="212" height="224"/>
+        <image name="Home.png" width="155" height="153"/>
         <image name="btnPassar.png" width="164" height="311"/>
         <image name="btnPassarEsq.png" width="164" height="311"/>
     </resources>

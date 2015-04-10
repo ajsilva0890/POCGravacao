@@ -69,6 +69,8 @@
     [[self btnDir] setAlpha:0.4];
     [[self btnEsq] setAlpha:0.4];
     [self atualizarJogador];
+    
+    
     [super viewWillAppear:YES];
 
 }
