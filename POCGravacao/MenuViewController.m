@@ -48,7 +48,7 @@
     // Do any additional setup after loading the view from its nib.
     
     self.tipoUsuario = [EntradaUsuario instance];
-    _book = [[BookViewController alloc] initWithPageTotal:14 bookName:@"3pq"];
+    self.book = [[BookViewController alloc] initWithPageTotal:14 bookName:@"3pq"];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -16,7 +16,6 @@
 @property (nonatomic) NSString* bookName;
 @property (nonatomic) NSString* pageURL;
 
-
 @property (weak, nonatomic) IBOutlet UIButton *btnEsq;
 @property (weak, nonatomic) IBOutlet UIButton *btnDir;
 @property (nonatomic) IBOutlet UIView *viewPage;

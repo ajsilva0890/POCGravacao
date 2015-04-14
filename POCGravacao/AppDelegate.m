@@ -21,29 +21,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [NSThread sleepForTimeInterval:2.0];
-    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//
-//    BookViewController *book = [[BookViewController alloc] initWithPageTotal:10 bookName:@"3PQ"];
-//    
-//    self.window.rootViewController = book;
-
-    //BookViewController *book = [[BookViewController alloc] initWithPageTotal:5];
-    
-    
-    
-    // BookNavigationViewController *bookNavCon = [[BookNavigationViewController alloc] init];
     
     MenuViewController *menu = [[MenuViewController alloc] init];
     
-    //    BookViewController *book = [[BookViewController alloc] initWithPageTotal:10];
-    //    NavigationViewController *navCon = [[NavigationViewController alloc] initWithRootViewController:book];
-    
     self.navController = [[UINavigationController alloc]initWithRootViewController:menu];
     self.navController.navigationBarHidden = YES;
-    [self.window setRootViewController:_navController];
-    //    self.window.rootViewController = navCon;
     
+    [self.window setRootViewController:_navController];
     
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
