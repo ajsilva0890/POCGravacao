@@ -56,15 +56,11 @@
         [[[_pages objectAtIndex:_pageIndex]btnStop]setEnabled:NO];
         [[[_pages objectAtIndex:_pageIndex]btnRecordPause]setEnabled:NO];
         [[_pages objectAtIndex:_pageIndex] setImagensButtonsFilho];
-
-        
     }
     else {
         [[[_pages objectAtIndex:_pageIndex]btnRecordPause]setEnabled:YES];
         [[_pages objectAtIndex:_pageIndex] setImagensButtonsPai];
-
     }
-    
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -72,13 +68,12 @@
     [[self btnEsq] setAlpha:0.2];
     [self atualizarJogador];
     
-    
     [super viewWillAppear:YES];
-
 }
 
 - (IBAction)btnMenu:(id)sender{
     
+    [[_pages objectAtIndex:_pageIndex] stopPlayer];
     [self.navigationController popViewControllerAnimated:YES];
 
 }
