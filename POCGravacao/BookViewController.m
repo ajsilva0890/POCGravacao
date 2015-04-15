@@ -18,7 +18,7 @@
 
 @implementation BookViewController
 
-@synthesize btnDir;
+@synthesize btnDir, btnEsq;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,6 +26,8 @@
 
     _pageIndex = 0;
     _pages = [[NSMutableArray alloc] init];
+    
+    [btnEsq setHidden:YES];
     
     for (unsigned int i=0; i<_pageTotal; i++) {
         PageViewController *page =[[PageViewController alloc] initWithPageNumber:i];
@@ -38,13 +40,14 @@
     
 }
 
-- (instancetype) initWithPageTotal:(NSInteger)pageTotal bookName:(NSString*)bookName{
+- (instancetype) initWithPageTotal:(NSInteger)pageTotal bookName:(NSString*)bookName bookID:(NSString *)bookID{
     
     self = [super init];
     
     if(self){
         _pageTotal = pageTotal;
         _bookName = bookName;
+        _bookID = bookID;
     }
     
     return self;
@@ -82,23 +85,34 @@
     if (_pageIndex <= 0 || [[_pages objectAtIndex:_pageIndex] recorder].recording){
         return;
     }
-    [btnDir setEnabled:YES];
+    
+    [[_pages objectAtIndex:_pageIndex] stopPlayer];
+    
+    [btnDir setHidden:NO];
 
+    if (_pageIndex == 1) {
+        [btnEsq setHidden:YES];
+    }
+    
     _pageIndex--;
     [self atualizarJogador];
     [self changePage];
 }
 
 - (IBAction)touchBtnDir:(id)sender{
-    [[_pages objectAtIndex:_pageIndex] stopPlayer];
-    
-    if (_pageIndex == 12) {
-        [btnDir setEnabled:NO];
-    }
-    
     if(_pageIndex >= _pageTotal-1 || [[_pages objectAtIndex:_pageIndex] recorder].recording){
         return;
     }
+    
+    [[_pages objectAtIndex:_pageIndex] stopPlayer];
+    
+    [btnEsq setHidden:NO];
+    
+    if (_pageIndex == _pageTotal-2) {
+        [btnDir setHidden:YES];
+    }
+    
+
     
     _pageIndex++;
     [self atualizarJogador];

@@ -12,6 +12,6 @@
 
 @interface MenuViewController : UIViewController
 
-@property (nonatomic) BookViewController *book;
+@property (nonatomic) BookViewController *bookTemp;
 
 @end
