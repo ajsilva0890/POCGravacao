@@ -13,5 +13,11 @@
 @interface MenuViewController : UIViewController
 
 @property (nonatomic) BookViewController *bookTemp;
+@property (nonatomic) BookViewController *bookSelected;
+@property (nonatomic) NSMutableArray *bookShelfButtons;
+
+
+@property (nonatomic) IBOutlet UIView *scrollContentView;
+@property (nonatomic) IBOutlet UIScrollView *scrollViewShelf;
 
 @end

@@ -11,6 +11,7 @@
 		545DA4451AD45190008A5247 /* NavigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545DA4431AD45190008A5247 /* NavigationViewController.xib */; };
 		545DA4561AD46BFC008A5247 /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545DA4541AD46BFC008A5247 /* BookViewController.m */; };
 		545DA4571AD46BFC008A5247 /* BookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545DA4551AD46BFC008A5247 /* BookViewController.xib */; };
+		547E19E81AE0219600E0F755 /* BookShelf.m in Sources */ = {isa = PBXBuildFile; fileRef = 547E19E71AE0219600E0F755 /* BookShelf.m */; };
 		54DA0C901AD31A1200FA848D /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DA0C8E1AD31A1200FA848D /* PageViewController.m */; };
 		54DA0C911AD31A1200FA848D /* PageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54DA0C8F1AD31A1200FA848D /* PageViewController.xib */; };
 		C426D4121AD72A4500F9B4E9 /* btnPassar.png in Resources */ = {isa = PBXBuildFile; fileRef = C426D40D1AD72A4500F9B4E9 /* btnPassar.png */; };
@@ -68,6 +69,8 @@
 		545DA4531AD46BFC008A5247 /* BookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookViewController.h; sourceTree = "<group>"; };
 		545DA4541AD46BFC008A5247 /* BookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookViewController.m; sourceTree = "<group>"; };
 		545DA4551AD46BFC008A5247 /* BookViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookViewController.xib; sourceTree = "<group>"; };
+		547E19E61AE0219600E0F755 /* BookShelf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookShelf.h; sourceTree = "<group>"; };
+		547E19E71AE0219600E0F755 /* BookShelf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookShelf.m; sourceTree = "<group>"; };
 		54DA0C8D1AD31A1200FA848D /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
 		54DA0C8E1AD31A1200FA848D /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 		54DA0C8F1AD31A1200FA848D /* PageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageViewController.xib; sourceTree = "<group>"; };
@@ -186,6 +189,8 @@
 				C472164B1AD83C44005EF629 /* MenuViewController.h */,
 				C472164C1AD83C44005EF629 /* MenuViewController.m */,
 				C472164D1AD83C44005EF629 /* MenuViewController.xib */,
+				547E19E61AE0219600E0F755 /* BookShelf.h */,
+				547E19E71AE0219600E0F755 /* BookShelf.m */,
 			);
 			name = MenuInicial;
 			sourceTree = "<group>";
@@ -420,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				545DA4561AD46BFC008A5247 /* BookViewController.m in Sources */,
+				547E19E81AE0219600E0F755 /* BookShelf.m in Sources */,
 				C472164E1AD83C45005EF629 /* MenuViewController.m in Sources */,
 				C4C5F63F1AD042B300226F61 /* AppDelegate.m in Sources */,
 				C4C5F6421AD042B300226F61 /* POCGravacao.xcdatamodeld in Sources */,

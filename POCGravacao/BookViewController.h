@@ -15,7 +15,7 @@
 @property (nonatomic) NSInteger pageTotal;
 @property (nonatomic) NSString* bookName;
 @property (nonatomic) NSString* pageURL;
-@property (nonatomic) NSString* bookID;
+@property (nonatomic) NSString* bookKey;
 
 
 @property (weak, nonatomic) IBOutlet UIButton *btnEsq;
@@ -24,6 +24,6 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *btnMenu;
 
--(instancetype) initWithPageTotal:(NSInteger)pageTotal bookName:(NSString*)bookName bookID:(NSString *)bookID;
+-(instancetype) initWithPageTotal:(NSInteger)pageTotal bookName:(NSString*)bookName bookKey:(NSString*)bookKey;
 
 @end

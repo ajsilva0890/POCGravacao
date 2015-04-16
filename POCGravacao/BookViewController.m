@@ -40,14 +40,14 @@
     
 }
 
-- (instancetype) initWithPageTotal:(NSInteger)pageTotal bookName:(NSString*)bookName bookID:(NSString *)bookID{
+- (instancetype) initWithPageTotal:(NSInteger)pageTotal bookName:(NSString*)bookName bookKey:(NSString*)bookKey{
     
     self = [super init];
     
     if(self){
         _pageTotal = pageTotal;
         _bookName = bookName;
-        _bookID = bookID;
+        _bookKey = bookKey;
     }
     
     return self;

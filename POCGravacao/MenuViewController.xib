@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController">
             <connections>
+                <outlet property="scrollContentView" destination="XXU-XJ-5B7" id="GjJ-cp-oUt"/>
+                <outlet property="scrollViewShelf" destination="V2r-ec-m0e" id="ucC-ko-nlx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,24 +19,33 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Fundo.png" translatesAutoresizingMaskIntoConstraints="NO" id="693-aU-PGj">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5w7-kO-B7w">
-                    <rect key="frame" x="32" y="685" width="116" height="55"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5w7-kO-B7w" userLabel="btnPai">
+                    <rect key="frame" x="825" y="363" width="116" height="55"/>
                     <state key="normal" backgroundImage="BtnNarrar.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="pai:" destination="-1" eventType="touchUpInside" id="W5G-Yo-owd"/>
+                        <action selector="btnPai:" destination="-1" eventType="touchUpInside" id="Toj-F0-uhs"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5J-kl-ryK">
-                    <rect key="frame" x="84" y="60" width="857" height="571"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5J-kl-ryK" userLabel="btnFilho">
+                    <rect key="frame" x="541" y="60" width="400" height="266"/>
                     <state key="normal" backgroundImage="3pqInicio.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="filho:" destination="-1" eventType="touchUpInside" id="NBW-wK-Vva"/>
+                        <action selector="btnFilho:" destination="-1" eventType="touchUpInside" id="npp-GS-AlN"/>
                     </connections>
                 </button>
+                <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2r-ec-m0e" userLabel="scrollViewShelf">
+                    <rect key="frame" x="8" y="249" width="500" height="500"/>
+                    <subviews>
+                        <view alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XXU-XJ-5B7" userLabel="scrollContentView">
+                            <rect key="frame" x="0.0" y="0.0" width="500" height="500"/>
+                            <color key="backgroundColor" red="0.47034801136363635" green="0.29409532025388707" blue="0.058070008418745808" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                    </subviews>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
