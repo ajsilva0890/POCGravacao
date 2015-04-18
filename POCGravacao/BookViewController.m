@@ -13,16 +13,19 @@
 @interface BookViewController ()
 
 @property (nonatomic) EntradaUsuario *tipoUsuario;
+@property (weak, nonatomic) IBOutlet UIButton *btnActLequeCor;
+
 
 @end
 
 @implementation BookViewController
 
-@synthesize btnDir, btnEsq;
+@synthesize btnDir, btnEsq, btnActLequeCor;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tipoUsuario = [EntradaUsuario instance];
+    self.btnLequeCor = [[NSMutableArray alloc] init];
 
     _pageIndex = 0;
     _pages = [[NSMutableArray alloc] init];
@@ -37,6 +40,26 @@
     
     [self changePage];
     [_viewPage bringSubviewToFront:[[_pages objectAtIndex:0] view]];
+    
+    /*  Criacao dos botoes cor */
+    int w = 50, h = 50, margin = 20;
+    
+    UIButton *btnCor;
+
+    for (int i = 0; i < 9; i++) {
+        
+        btnCor = [[UIButton alloc] initWithFrame:CGRectMake(i*(w+20)+margin+w, self.view.frame.size.height - w - margin, w, h)];
+        [btnCor setBackgroundImage:[UIImage imageNamed:@"Home.png"]
+                          forState:UIControlStateNormal];
+        [btnCor setTag:i];
+        [self.btnLequeCor addObject:btnCor];
+    }
+
+    for(UIButton *btnCor in self.btnLequeCor){
+        [self.view addSubview:btnCor];
+        [btnCor addTarget:self action:@selector(btnCor:) forControlEvents:UIControlEventTouchUpInside];
+        [btnCor setHidden:YES];
+    }
     
 }
 
@@ -126,8 +149,64 @@
     
     [[_pages objectAtIndex:_pageIndex] bgView].image = [UIImage imageNamed:_pageURL];
     [_viewPage bringSubviewToFront:[[_pages objectAtIndex:_pageIndex] view]];
-    
+
 }
+
+
+- (IBAction)btnActLequeCor:(id)sender{
+    
+    if (![btnActLequeCor isSelected]) {
+        for(UIButton *btnCor in self.btnLequeCor){
+            [btnCor setHidden:NO];
+        }
+        [btnActLequeCor setSelected:YES];
+    }
+    
+    else{
+        for(UIButton *btnCor in self.btnLequeCor){
+            [btnCor setHidden:YES];
+        }
+        [btnActLequeCor setSelected:NO];
+    }
+}
+
+-(void)btnCor:(id)sender{
+    if ([sender tag] == 0) {
+        //commands
+    }
+    
+    else if ([sender tag] == 1) {
+        //commands
+    }
+    
+    else if ([sender tag] == 2) {
+        //commands
+    }
+    
+    else if ([sender tag] == 3) {
+        //commands
+    }
+    
+    else if ([sender tag] == 4) {
+        //commands
+    }
+    else if ([sender tag] == 5) {
+        //commands
+    }
+    
+    else if ([sender tag] == 6) {
+        //commands
+    }
+    
+    else if ([sender tag] == 7) {
+        //commands
+    }
+    
+    else {
+        //commands
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

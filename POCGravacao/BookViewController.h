@@ -17,6 +17,7 @@
 @property (nonatomic) NSString* pageURL;
 @property (nonatomic) NSString* bookKey;
 
+@property (nonatomic) NSMutableArray *btnLequeCor;
 
 @property (weak, nonatomic) IBOutlet UIButton *btnEsq;
 @property (weak, nonatomic) IBOutlet UIButton *btnDir;
