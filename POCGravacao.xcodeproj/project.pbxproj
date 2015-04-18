@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		541FB7891AE1C6B9008DB9CC /* FundoTelaInicial-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 541FB7881AE1C6B9008DB9CC /* FundoTelaInicial-01.png */; };
 		545DA4441AD45190008A5247 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545DA4421AD45190008A5247 /* NavigationViewController.m */; };
 		545DA4451AD45190008A5247 /* NavigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545DA4431AD45190008A5247 /* NavigationViewController.xib */; };
 		545DA4561AD46BFC008A5247 /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545DA4541AD46BFC008A5247 /* BookViewController.m */; };
@@ -63,6 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		541FB7881AE1C6B9008DB9CC /* FundoTelaInicial-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FundoTelaInicial-01.png"; sourceTree = "<group>"; };
 		545DA4411AD45190008A5247 /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
 		545DA4421AD45190008A5247 /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
 		545DA4431AD45190008A5247 /* NavigationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationViewController.xib; sourceTree = "<group>"; };
@@ -138,6 +140,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		541FB78A1AE1C6CA008DB9CC /* Imagens */ = {
+			isa = PBXGroup;
+			children = (
+				541FB7881AE1C6B9008DB9CC /* FundoTelaInicial-01.png */,
+			);
+			name = Imagens;
+			sourceTree = "<group>";
+		};
 		5443FE7A1AD59E1400E7EBD6 /* Book3PQ */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +196,7 @@
 		C47216581AD857BB005EF629 /* MenuInicial */ = {
 			isa = PBXGroup;
 			children = (
+				541FB78A1AE1C6CA008DB9CC /* Imagens */,
 				C472164B1AD83C44005EF629 /* MenuViewController.h */,
 				C472164C1AD83C44005EF629 /* MenuViewController.m */,
 				C472164D1AD83C44005EF629 /* MenuViewController.xib */,
@@ -403,6 +414,7 @@
 				C4C7FD301AD82CF90073441E /* Book3pqPage0.png in Resources */,
 				C426D4141AD72A4500F9B4E9 /* Pausar.png in Resources */,
 				C4C7FD361AD82CF90073441E /* Book3pqPage6.png in Resources */,
+				541FB7891AE1C6B9008DB9CC /* FundoTelaInicial-01.png in Resources */,
 				C4C7FD381AD82CF90073441E /* Book3pqPage8.png in Resources */,
 				54DA0C911AD31A1200FA848D /* PageViewController.xib in Resources */,
 				C4C7FD3B1AD82CF90073441E /* Book3pqPage11.png in Resources */,

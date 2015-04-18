@@ -16,8 +16,9 @@
 @property (nonatomic) BookViewController *bookSelected;
 @property (nonatomic) NSMutableArray *bookShelfButtons;
 
+@property (nonatomic) NSString *selectedBookButton;
 
-@property (nonatomic) IBOutlet UIView *scrollContentView;
+@property (nonatomic) UIView *viewContent;
 @property (nonatomic) IBOutlet UIScrollView *scrollViewShelf;
 
 @end
