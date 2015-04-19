@@ -13,6 +13,7 @@
 
 
 + (instancetype)bookShelf;
+
 - (void)setBook:(BookViewController*)book forKey:(NSString *)key;
 - (BookViewController *)bookForKey:(NSString *)key;
 - (void)deleteBookForKey:(NSString *)key;

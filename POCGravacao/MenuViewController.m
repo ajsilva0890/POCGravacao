@@ -39,12 +39,11 @@
     
     self.tipoUsuario = [EntradaUsuario instance];
     
-    //[self createBook:14 bookName:@"3pq"];
     
-    for (int i = 0; i < 20; i++) {
+    for (int i = 0; i < 2; i++) {
         [self createBook:10 bookName:@"teste123"];
         [self createBook:10 bookName:@"lol"];
-        [self createBook:100 bookName:@"3pq"];
+        [self createBook:14 bookName:@"3pq"];
     }
 
 
@@ -57,13 +56,19 @@
     [self sortButtonArray];
     
     
-    //    for(_bookKey in _bookShelf){
-    //        [self bookForKey:_bookKey];
-    //    }
-    
-    
 }
 
+-(void) viewDidLayoutSubviews{
+    
+    // Arruma tamanho e posição das labels de informação do livro.
+    [_lblDescription sizeToFit];
+    
+    CGRect descBounds = _lblDescription.frame;
+    CGSize authorSize = _lblAuthor.frame.size;
+    
+    [_lblAuthor setFrame:CGRectMake(descBounds.origin.x, descBounds.origin.y + descBounds.size.height + authorSize.height, authorSize.width, authorSize.height)];
+    
+}
 
 - (IBAction) btnFilho:(id)sender {
     
@@ -82,16 +87,20 @@
 - (void) selectedButton:(id)sender{
     _selectedBookButton = [NSString stringWithFormat:@"%ld", (long)[sender tag]];
     _bookSelected = [[BookShelf bookShelf] bookForKey:_selectedBookButton];
-
+    
+    _lblTitle.text = [_bookSelected bookFantasyName];
+    _lblDescription.text = [_bookSelected bookDescription];
+    _lblAuthor.text = [_bookSelected bookAuthor];
+    
+    _imageViewCover.image = [UIImage imageNamed:[_bookSelected bookCoverURL]];
+    
 }
 
 
 
 - (void) createBook:(NSInteger)bookTotalPages bookName:(NSString*)bookName{
     
-    NSString *key = [[NSString alloc] init];
-    
-    key = [NSString stringWithFormat:@"%lu", [BookShelf bookShelf].bookTotal];
+    NSString *key = [NSString stringWithFormat:@"%lu", [BookShelf bookShelf].bookTotal];
     
     //NSLog(@"KEY >> %@", key);
     
@@ -109,7 +118,7 @@
     UIButton *btnBook;
     
     int tagCount = 0;
-    int colunas = 3, w = 140, h = 140, margin = 30;
+    int colunas = 3, w = 184, h = 184, margin = 40;
     unsigned long int bookTotal = [BookShelf bookShelf].bookTotal;
     unsigned long int linhas = bookTotal/3;
     
@@ -123,7 +132,7 @@
             
             CGRect originalSize = _viewContent.bounds;
             
-            NSLog(@"%f, %f, %f, %f", originalSize.origin.x, originalSize.origin.y, originalSize.size.width, originalSize.size.height);
+            //NSLog(@"%f, %f, %f, %f", originalSize.origin.x, originalSize.origin.y, originalSize.size.width, originalSize.size.height);
             
             CGRect newSize = CGRectMake(originalSize.origin.x, originalSize.origin.y, originalSize.size.width, originalSize.size.height + h);
             
@@ -136,9 +145,9 @@
         
         for (int j = 0; j < colunas && bookTotal > 0; j++) {
             bookTotal--;
-            btnBook = [[UIButton alloc] initWithFrame:CGRectMake(j*w+(margin*1.8), i*h+margin, w-margin, h-margin)];
-            btnBook.tag = tagCount;
+            btnBook = [[UIButton alloc] initWithFrame:CGRectMake(j * w +(margin-8), i*h+margin, w-margin, h-margin)];
             
+            btnBook.tag = tagCount;
             tagCount++;
             
             //[btnBook setTitle:@"BUTTON" forState:UIControlStateNormal];

@@ -21,4 +21,15 @@
 @property (nonatomic) UIView *viewContent;
 @property (nonatomic) IBOutlet UIScrollView *scrollViewShelf;
 
+@property (nonatomic) IBOutlet UIImageView *imageViewCover;
+
+@property (nonatomic) IBOutlet UILabel *lblTitle;
+@property (nonatomic) IBOutlet UILabel *lblDescription;
+@property (nonatomic) IBOutlet UILabel *lblAuthor;
+
+@property (nonatomic) IBOutlet UIButton *btnFilho;
+@property (nonatomic) IBOutlet UIButton *btnPai;
+
+
+
 @end

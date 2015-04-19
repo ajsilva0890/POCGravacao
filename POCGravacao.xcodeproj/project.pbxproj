@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		541FB7891AE1C6B9008DB9CC /* FundoTelaInicial-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 541FB7881AE1C6B9008DB9CC /* FundoTelaInicial-01.png */; };
-		545DA4441AD45190008A5247 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545DA4421AD45190008A5247 /* NavigationViewController.m */; };
-		545DA4451AD45190008A5247 /* NavigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545DA4431AD45190008A5247 /* NavigationViewController.xib */; };
 		545DA4561AD46BFC008A5247 /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545DA4541AD46BFC008A5247 /* BookViewController.m */; };
 		545DA4571AD46BFC008A5247 /* BookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545DA4551AD46BFC008A5247 /* BookViewController.xib */; };
 		547E19E81AE0219600E0F755 /* BookShelf.m in Sources */ = {isa = PBXBuildFile; fileRef = 547E19E71AE0219600E0F755 /* BookShelf.m */; };
+		5494F8B11AE357AD00B58D57 /* CardenioModernBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5494F8B01AE357AD00B58D57 /* CardenioModernBold.ttf */; };
+		54BB84341AE308AB003A53F4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54BB84331AE308AB003A53F4 /* Images.xcassets */; };
+		54BB84361AE3207C003A53F4 /* 3pqTXT.txt in Resources */ = {isa = PBXBuildFile; fileRef = 54BB84351AE3207C003A53F4 /* 3pqTXT.txt */; };
+		54BB84381AE32E4F003A53F4 /* lolTXT.txt in Resources */ = {isa = PBXBuildFile; fileRef = 54BB84371AE32E4F003A53F4 /* lolTXT.txt */; };
 		54DA0C901AD31A1200FA848D /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DA0C8E1AD31A1200FA848D /* PageViewController.m */; };
 		54DA0C911AD31A1200FA848D /* PageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54DA0C8F1AD31A1200FA848D /* PageViewController.xib */; };
 		C426D4121AD72A4500F9B4E9 /* btnPassar.png in Resources */ = {isa = PBXBuildFile; fileRef = C426D40D1AD72A4500F9B4E9 /* btnPassar.png */; };
@@ -25,13 +26,12 @@
 		C472164E1AD83C45005EF629 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C472164C1AD83C44005EF629 /* MenuViewController.m */; };
 		C472164F1AD83C45005EF629 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C472164D1AD83C44005EF629 /* MenuViewController.xib */; };
 		C47216511AD8431F005EF629 /* LogoEraUmaVezUmDesenho.png in Resources */ = {isa = PBXBuildFile; fileRef = C47216501AD8431F005EF629 /* LogoEraUmaVezUmDesenho.png */; };
-		C47216541AD84628005EF629 /* 3pqInicio.png in Resources */ = {isa = PBXBuildFile; fileRef = C47216521AD84628005EF629 /* 3pqInicio.png */; };
+		C47216541AD84628005EF629 /* 3pqCover.png in Resources */ = {isa = PBXBuildFile; fileRef = C47216521AD84628005EF629 /* 3pqCover.png */; };
 		C47216551AD84628005EF629 /* BtnNarrar.png in Resources */ = {isa = PBXBuildFile; fileRef = C47216531AD84628005EF629 /* BtnNarrar.png */; };
 		C47216571AD84854005EF629 /* Fundo.png in Resources */ = {isa = PBXBuildFile; fileRef = C47216561AD84854005EF629 /* Fundo.png */; };
 		C4C5F63C1AD042B300226F61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C5F63B1AD042B300226F61 /* main.m */; };
 		C4C5F63F1AD042B300226F61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C5F63E1AD042B300226F61 /* AppDelegate.m */; };
 		C4C5F6421AD042B300226F61 /* POCGravacao.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4C5F6401AD042B300226F61 /* POCGravacao.xcdatamodeld */; };
-		C4C5F6441AD042B300226F61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4C5F6431AD042B300226F61 /* Images.xcassets */; };
 		C4C5F6471AD042B300226F61 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4C5F6451AD042B300226F61 /* LaunchScreen.xib */; };
 		C4C5F6531AD042B400226F61 /* POCGravacaoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C5F6521AD042B400226F61 /* POCGravacaoTests.m */; };
 		C4C5F6751AD0508700226F61 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4C5F6741AD0508700226F61 /* AVFoundation.framework */; };
@@ -64,15 +64,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		541FB7881AE1C6B9008DB9CC /* FundoTelaInicial-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FundoTelaInicial-01.png"; sourceTree = "<group>"; };
-		545DA4411AD45190008A5247 /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
-		545DA4421AD45190008A5247 /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
-		545DA4431AD45190008A5247 /* NavigationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationViewController.xib; sourceTree = "<group>"; };
 		545DA4531AD46BFC008A5247 /* BookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookViewController.h; sourceTree = "<group>"; };
 		545DA4541AD46BFC008A5247 /* BookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookViewController.m; sourceTree = "<group>"; };
 		545DA4551AD46BFC008A5247 /* BookViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookViewController.xib; sourceTree = "<group>"; };
 		547E19E61AE0219600E0F755 /* BookShelf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookShelf.h; sourceTree = "<group>"; };
 		547E19E71AE0219600E0F755 /* BookShelf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookShelf.m; sourceTree = "<group>"; };
+		5494F8B01AE357AD00B58D57 /* CardenioModernBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CardenioModernBold.ttf; sourceTree = "<group>"; };
+		54BB84331AE308AB003A53F4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		54BB84351AE3207C003A53F4 /* 3pqTXT.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 3pqTXT.txt; sourceTree = "<group>"; };
+		54BB84371AE32E4F003A53F4 /* lolTXT.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lolTXT.txt; sourceTree = "<group>"; };
 		54DA0C8D1AD31A1200FA848D /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
 		54DA0C8E1AD31A1200FA848D /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 		54DA0C8F1AD31A1200FA848D /* PageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageViewController.xib; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 		C472164C1AD83C44005EF629 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		C472164D1AD83C44005EF629 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		C47216501AD8431F005EF629 /* LogoEraUmaVezUmDesenho.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoEraUmaVezUmDesenho.png; sourceTree = "<group>"; };
-		C47216521AD84628005EF629 /* 3pqInicio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3pqInicio.png; sourceTree = "<group>"; };
+		C47216521AD84628005EF629 /* 3pqCover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3pqCover.png; sourceTree = "<group>"; };
 		C47216531AD84628005EF629 /* BtnNarrar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BtnNarrar.png; sourceTree = "<group>"; };
 		C47216561AD84854005EF629 /* Fundo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fundo.png; sourceTree = "<group>"; };
 		C4C5F6361AD042B300226F61 /* POCGravacao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POCGravacao.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,7 +97,6 @@
 		C4C5F63D1AD042B300226F61 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C4C5F63E1AD042B300226F61 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C4C5F6411AD042B300226F61 /* POCGravacao.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = POCGravacao.xcdatamodel; sourceTree = "<group>"; };
-		C4C5F6431AD042B300226F61 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C4C5F6461AD042B300226F61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C4C5F64C1AD042B400226F61 /* POCGravacaoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = POCGravacaoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4C5F6511AD042B400226F61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -140,20 +139,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		541FB78A1AE1C6CA008DB9CC /* Imagens */ = {
-			isa = PBXGroup;
-			children = (
-				541FB7881AE1C6B9008DB9CC /* FundoTelaInicial-01.png */,
-			);
-			name = Imagens;
-			sourceTree = "<group>";
-		};
 		5443FE7A1AD59E1400E7EBD6 /* Book3PQ */ = {
 			isa = PBXGroup;
 			children = (
 				C47216561AD84854005EF629 /* Fundo.png */,
-				C47216521AD84628005EF629 /* 3pqInicio.png */,
-				C47216531AD84628005EF629 /* BtnNarrar.png */,
+				C47216521AD84628005EF629 /* 3pqCover.png */,
 				C47216501AD8431F005EF629 /* LogoEraUmaVezUmDesenho.png */,
 				C4C7FD221AD82CF90073441E /* Book3pqPage0.png */,
 				C4C7FD231AD82CF90073441E /* Book3pqPage1.png */,
@@ -169,18 +159,18 @@
 				C4C7FD2D1AD82CF90073441E /* Book3pqPage11.png */,
 				C4C7FD2E1AD82CF90073441E /* Book3pqPage12.png */,
 				C4C7FD2F1AD82CF90073441E /* Book3pqPage13.png */,
+				54BB84351AE3207C003A53F4 /* 3pqTXT.txt */,
+				54BB84371AE32E4F003A53F4 /* lolTXT.txt */,
 			);
 			name = Book3PQ;
 			sourceTree = "<group>";
 		};
-		545DA44B1AD4614F008A5247 /* Navigator */ = {
+		5494F8B21AE357C800B58D57 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				545DA4411AD45190008A5247 /* NavigationViewController.h */,
-				545DA4421AD45190008A5247 /* NavigationViewController.m */,
-				545DA4431AD45190008A5247 /* NavigationViewController.xib */,
+				5494F8B01AE357AD00B58D57 /* CardenioModernBold.ttf */,
 			);
-			name = Navigator;
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		C422BD5D1AD6C92B004F7E87 /* PagesHistoria */ = {
@@ -196,7 +186,6 @@
 		C47216581AD857BB005EF629 /* MenuInicial */ = {
 			isa = PBXGroup;
 			children = (
-				541FB78A1AE1C6CA008DB9CC /* Imagens */,
 				C472164B1AD83C44005EF629 /* MenuViewController.h */,
 				C472164C1AD83C44005EF629 /* MenuViewController.m */,
 				C472164D1AD83C44005EF629 /* MenuViewController.xib */,
@@ -240,15 +229,15 @@
 				C4C7FD1B1AD7F9D50073441E /* imageBtn */,
 				5443FE7A1AD59E1400E7EBD6 /* Book3PQ */,
 				C47216581AD857BB005EF629 /* MenuInicial */,
-				C47216591AD857DA005EF629 /* ControleUsuario */,
 				C422BD5D1AD6C92B004F7E87 /* PagesHistoria */,
 				C4C5F6731AD043A000226F61 /* BookHistoria */,
-				545DA44B1AD4614F008A5247 /* Navigator */,
+				C47216591AD857DA005EF629 /* ControleUsuario */,
+				5494F8B21AE357C800B58D57 /* Fonts */,
 				C4C5F63D1AD042B300226F61 /* AppDelegate.h */,
 				C4C5F63E1AD042B300226F61 /* AppDelegate.m */,
 				C4C5F6451AD042B300226F61 /* LaunchScreen.xib */,
-				C4C5F6431AD042B300226F61 /* Images.xcassets */,
 				C4C5F6401AD042B300226F61 /* POCGravacao.xcdatamodeld */,
+				54BB84331AE308AB003A53F4 /* Images.xcassets */,
 				C4C5F6391AD042B300226F61 /* Supporting Files */,
 			);
 			path = POCGravacao;
@@ -293,6 +282,7 @@
 		C4C7FD1B1AD7F9D50073441E /* imageBtn */ = {
 			isa = PBXGroup;
 			children = (
+				C47216531AD84628005EF629 /* BtnNarrar.png */,
 				C47216441AD831D3005EF629 /* Narrar.png */,
 				C4C7FD201AD816DC0073441E /* btnPassarEsq.png */,
 				C4C7FD1E1AD7FAED0073441E /* Gravar.png */,
@@ -392,8 +382,9 @@
 				C4C5F6471AD042B300226F61 /* LaunchScreen.xib in Resources */,
 				C426D4121AD72A4500F9B4E9 /* btnPassar.png in Resources */,
 				C4C7FD371AD82CF90073441E /* Book3pqPage7.png in Resources */,
+				54BB84361AE3207C003A53F4 /* 3pqTXT.txt in Resources */,
 				C4C7FD1F1AD7FAED0073441E /* Gravar.png in Resources */,
-				C47216541AD84628005EF629 /* 3pqInicio.png in Resources */,
+				C47216541AD84628005EF629 /* 3pqCover.png in Resources */,
 				C47216451AD831D3005EF629 /* Narrar.png in Resources */,
 				545DA4571AD46BFC008A5247 /* BookViewController.xib in Resources */,
 				C47216511AD8431F005EF629 /* LogoEraUmaVezUmDesenho.png in Resources */,
@@ -401,12 +392,12 @@
 				C426D4131AD72A4500F9B4E9 /* Home.png in Resources */,
 				C4C7FD391AD82CF90073441E /* Book3pqPage9.png in Resources */,
 				C426D4151AD72A4500F9B4E9 /* Play.png in Resources */,
+				54BB84341AE308AB003A53F4 /* Images.xcassets in Resources */,
 				C4C7FD351AD82CF90073441E /* Book3pqPage5.png in Resources */,
 				C4C7FD311AD82CF90073441E /* Book3pqPage1.png in Resources */,
 				C426D4161AD72A4500F9B4E9 /* Stop.png in Resources */,
-				C4C5F6441AD042B300226F61 /* Images.xcassets in Resources */,
-				545DA4451AD45190008A5247 /* NavigationViewController.xib in Resources */,
 				C472164F1AD83C45005EF629 /* MenuViewController.xib in Resources */,
+				5494F8B11AE357AD00B58D57 /* CardenioModernBold.ttf in Resources */,
 				C47216551AD84628005EF629 /* BtnNarrar.png in Resources */,
 				C4C7FD341AD82CF90073441E /* Book3pqPage4.png in Resources */,
 				C4C7FD3A1AD82CF90073441E /* Book3pqPage10.png in Resources */,
@@ -414,9 +405,9 @@
 				C4C7FD301AD82CF90073441E /* Book3pqPage0.png in Resources */,
 				C426D4141AD72A4500F9B4E9 /* Pausar.png in Resources */,
 				C4C7FD361AD82CF90073441E /* Book3pqPage6.png in Resources */,
-				541FB7891AE1C6B9008DB9CC /* FundoTelaInicial-01.png in Resources */,
 				C4C7FD381AD82CF90073441E /* Book3pqPage8.png in Resources */,
 				54DA0C911AD31A1200FA848D /* PageViewController.xib in Resources */,
+				54BB84381AE32E4F003A53F4 /* lolTXT.txt in Resources */,
 				C4C7FD3B1AD82CF90073441E /* Book3pqPage11.png in Resources */,
 				C4C7FD331AD82CF90073441E /* Book3pqPage3.png in Resources */,
 			);
@@ -442,7 +433,6 @@
 				C4C5F63F1AD042B300226F61 /* AppDelegate.m in Sources */,
 				C4C5F6421AD042B300226F61 /* POCGravacao.xcdatamodeld in Sources */,
 				C46316061AD0729800695BA1 /* EntradaUsuario.m in Sources */,
-				545DA4441AD45190008A5247 /* NavigationViewController.m in Sources */,
 				54DA0C901AD31A1200FA848D /* PageViewController.m in Sources */,
 				C4C5F63C1AD042B300226F61 /* main.m in Sources */,
 			);
@@ -558,6 +548,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = POCGravacao/Info.plist;
@@ -573,6 +564,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = POCGravacao/Info.plist;
