@@ -28,13 +28,8 @@
     [super viewDidLoad];
     self.tipoUsuario = [EntradaUsuario instance];
     self.btnLequeCor = [[NSMutableArray alloc] init];
-<<<<<<< HEAD
     self.btnLequeEspessura = [[NSMutableArray alloc] init];
 
-
-=======
-    
->>>>>>> origin/master
     _pageIndex = 0;
     _pages = [[NSMutableArray alloc] init];
     
@@ -54,17 +49,10 @@
     int w = 50, h = 50, margin = 5, distancia=15, qntdCor = 12, qntdEspessura = 3;
     
     UIButton *btnCor;
-<<<<<<< HEAD
 
     for (int i = 0; i < qntdCor; i++) {
 
         btnCor = [[UIButton alloc] initWithFrame:CGRectMake(i*(w+distancia)+margin+w, self.view.frame.size.height - h - margin, w, h)];
-=======
-    
-    for (int i = 0; i < 9; i++) {
-        
-        btnCor = [[UIButton alloc] initWithFrame:CGRectMake(i*(w+20)+margin+w, self.view.frame.size.height - w - margin, w, h)];
->>>>>>> origin/master
         [btnCor setBackgroundImage:[UIImage imageNamed:@"Home.png"]
                           forState:UIControlStateNormal];
         [btnCor setTag:i];
@@ -202,12 +190,7 @@
     if (_pageIndex == _pageTotal-2) {
         [btnDir setHidden:YES];
     }
-    
-<<<<<<< HEAD
-=======
-    
-    
->>>>>>> origin/master
+
     _pageIndex++;
     [self atualizarUsuario];
     [self changePage];

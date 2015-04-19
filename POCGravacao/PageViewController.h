@@ -11,16 +11,10 @@
 
 
 
-@interface PageViewController : UIViewController <AVAudioRecorderDelegate, AVAudioPlayerDelegate>{
-        
-<<<<<<< HEAD
-    UIImage *imageIniciar, *imagePausar, *imagePlay, *imageStop, *imageNarrar;
-    float r, g, b, alpha;
-
-=======
+@interface PageViewController : UIViewController <AVAudioRecorderDelegate, AVAudioPlayerDelegate>
+{
     float r, g, b, alpha;
     UIImage *imageGravar, *imagePausar, *imagePlay, *imageStop, *imageNarrar;
->>>>>>> origin/master
 }
 
 @property (nonatomic) CGPoint lastPoint;
@@ -45,11 +39,11 @@
 @property (nonatomic) AVAudioRecorder *recorder;
 @property (nonatomic) AVAudioPlayer *player;
 
-<<<<<<< HEAD
-- (instancetype) initWithPageNumber:(NSInteger)pageNumber;
-=======
+//<<<<<<< HEAD
+//- (instancetype) initWithPageNumber:(NSInteger)pageNumber;
+//=======
 -(instancetype) initWithPageNumber:(NSInteger)pageNumber bookKey:(NSString*)bookKey;
->>>>>>> origin/master
+//>>>>>>> origin/master
 
 - (void) stopPlayer;
 - (void) setImagensButtonsFilho;

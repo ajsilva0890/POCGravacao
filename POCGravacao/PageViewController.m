@@ -169,9 +169,6 @@
     
     [self playPauseConfig];
     
-    
-    
-    
     //    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Terminou de Narrar"
     //                                                    message: @"Faça seu desenho e mude de página"
     //                                                   delegate: nil
