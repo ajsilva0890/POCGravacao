@@ -18,6 +18,8 @@
 @property (nonatomic) NSString* bookKey;
 
 @property (nonatomic) NSMutableArray *btnLequeCor;
+@property (nonatomic) NSMutableArray *btnLequeEspessura;
+
 
 @property (weak, nonatomic) IBOutlet UIButton *btnEsq;
 @property (weak, nonatomic) IBOutlet UIButton *btnDir;

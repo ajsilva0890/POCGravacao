@@ -13,6 +13,7 @@
 {
     NSURL *temporaryRecFile;
     Boolean buscouAudio, buscouGravacao;
+
 }
 
 @property (nonatomic) EntradaUsuario *tipoUsuario;
@@ -74,7 +75,7 @@
     _drawImage.frame = _drawView.frame;
     [_drawView addSubview:_drawImage];
     
-    r = 0.0; g = 0.0; b = 0.0; alpha = 1.0;
+//    r = 0.0; g = 0.0; b = 0.0; alpha = 1.0;
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -117,7 +118,7 @@
     
     CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
     
-    CGContextSetLineWidth(UIGraphicsGetCurrentContext(), 12);
+    CGContextSetLineWidth(UIGraphicsGetCurrentContext(), self.espessura);
     CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), r, g, b, alpha);
     
     // Altera o contexto de desenho.
@@ -143,8 +144,6 @@
     
     [_drawView addSubview:_drawImage];
     //[self.view sendSubviewToBack:drawImage];
-    
-    
     
 }
 
@@ -351,6 +350,17 @@
     [btnRecordPause setAlpha:0];
 }
 
+- (void) setEspesura:(NSInteger)p {
+    
+}
+
+- (void) setCores:(float)R G:(float)G B:(float)B {
+    
+    r = R;
+    g = G;
+    b = B;
+    alpha = 1.0;
+}
 
 /*
  #pragma mark - Navigation

@@ -11,10 +11,12 @@
 #import "EntradaUsuario.h"
 
 @interface BookViewController ()
+{
+    NSInteger corSelecionada, espessuraSelecionada;
+}
 
 @property (nonatomic) EntradaUsuario *tipoUsuario;
 @property (weak, nonatomic) IBOutlet UIButton *btnActLequeCor;
-
 
 @end
 
@@ -26,6 +28,8 @@
     [super viewDidLoad];
     self.tipoUsuario = [EntradaUsuario instance];
     self.btnLequeCor = [[NSMutableArray alloc] init];
+    self.btnLequeEspessura = [[NSMutableArray alloc] init];
+
 
     _pageIndex = 0;
     _pages = [[NSMutableArray alloc] init];
@@ -42,13 +46,13 @@
     [_viewPage bringSubviewToFront:[[_pages objectAtIndex:0] view]];
     
     /*  Criacao dos botoes cor */
-    int w = 50, h = 50, margin = 20;
+    int w = 50, h = 50, margin = 5, distancia=15, qntdCor = 12, qntdEspessura = 3;
     
     UIButton *btnCor;
 
-    for (int i = 0; i < 9; i++) {
-        
-        btnCor = [[UIButton alloc] initWithFrame:CGRectMake(i*(w+20)+margin+w, self.view.frame.size.height - w - margin, w, h)];
+    for (int i = 0; i < qntdCor; i++) {
+
+        btnCor = [[UIButton alloc] initWithFrame:CGRectMake(i*(w+distancia)+margin+w, self.view.frame.size.height - h - margin, w, h)];
         [btnCor setBackgroundImage:[UIImage imageNamed:@"Home.png"]
                           forState:UIControlStateNormal];
         [btnCor setTag:i];
@@ -61,6 +65,23 @@
         [btnCor setHidden:YES];
     }
     
+    /* criacao espessura */
+    UIButton *btnEspessura;
+    
+    for (int i = 0; i < qntdEspessura; i++) {
+        
+        btnEspessura = [[UIButton alloc] initWithFrame:CGRectMake(margin, self.view.frame.size.height - i*(h+distancia)-margin-(2*h), w, h)];
+        [btnEspessura setBackgroundImage:[UIImage imageNamed:@"Play.png"]
+                          forState:UIControlStateNormal];
+        [btnEspessura setTag:i];
+        [self.btnLequeEspessura addObject:btnEspessura];
+    }
+    
+    for(UIButton *btnEspessura in self.btnLequeEspessura){
+        [self.view addSubview:btnEspessura];
+        [btnEspessura addTarget:self action:@selector(btnEspessura:) forControlEvents:UIControlEventTouchUpInside];
+        [btnEspessura setHidden:YES];
+    }
 }
 
 - (instancetype) initWithPageTotal:(NSInteger)pageTotal bookName:(NSString*)bookName bookKey:(NSString*)bookKey{
@@ -82,10 +103,12 @@
         [[[_pages objectAtIndex:_pageIndex]btnStop]setEnabled:NO];
         [[[_pages objectAtIndex:_pageIndex]btnRecordPause]setEnabled:NO];
         [[_pages objectAtIndex:_pageIndex] setImagensButtonsFilho];
+        [btnActLequeCor setHidden:NO];
     }
     else {
         [[[_pages objectAtIndex:_pageIndex]btnRecordPause]setEnabled:YES];
         [[_pages objectAtIndex:_pageIndex] setImagensButtonsPai];
+        [btnActLequeCor setHidden:YES];
     }
 }
 
@@ -109,8 +132,7 @@
         return;
     }
     
-    [[_pages objectAtIndex:_pageIndex] stopPlayer];
-    
+    [[_pages objectAtIndex:_pageIndex] stopPlayer];    
     [btnDir setHidden:NO];
 
     if (_pageIndex == 1) {
@@ -120,6 +142,8 @@
     _pageIndex--;
     [self atualizarJogador];
     [self changePage];
+    [self corSelecionada:corSelecionada];
+    [self espessuraSelecionada:espessuraSelecionada];
 }
 
 - (IBAction)touchBtnDir:(id)sender{
@@ -128,23 +152,23 @@
     }
     
     [[_pages objectAtIndex:_pageIndex] stopPlayer];
-    
     [btnEsq setHidden:NO];
+    
     
     if (_pageIndex == _pageTotal-2) {
         [btnDir setHidden:YES];
     }
     
-
-    
     _pageIndex++;
     [self atualizarJogador];
     [self changePage];
+    [self corSelecionada:corSelecionada];
+    [self espessuraSelecionada:espessuraSelecionada];
 }
 
 - (void)changePage{
     //Change between pages, sets background of page.
-    
+//    
     _pageURL = [NSString stringWithFormat:@"Book%@Page%ld.png", _bookName, (long)_pageIndex];
     
     [[_pages objectAtIndex:_pageIndex] bgView].image = [UIImage imageNamed:_pageURL];
@@ -154,11 +178,15 @@
 
 
 - (IBAction)btnActLequeCor:(id)sender{
-    
+
     if (![btnActLequeCor isSelected]) {
         for(UIButton *btnCor in self.btnLequeCor){
             [btnCor setHidden:NO];
         }
+        for(UIButton *btnEspessura in self.btnLequeEspessura){
+            [btnEspessura setHidden:NO];
+        }
+        
         [btnActLequeCor setSelected:YES];
     }
     
@@ -166,44 +194,89 @@
         for(UIButton *btnCor in self.btnLequeCor){
             [btnCor setHidden:YES];
         }
+        for(UIButton *btnEspessura in self.btnLequeEspessura){
+            [btnEspessura setHidden:YES];
+        }
+        
         [btnActLequeCor setSelected:NO];
     }
 }
 
--(void)btnCor:(id)sender{
-    if ([sender tag] == 0) {
-        //commands
+- (void)btnCor:(id)sender{
+    
+    [self corSelecionada:[sender tag]];
+    corSelecionada = [sender tag];
+    
+}
+
+- (void)corSelecionada:(NSInteger)selecao {
+    
+    if (selecao == 0) {
+        [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:0.0 B:0.0];
     }
     
-    else if ([sender tag] == 1) {
-        //commands
+    else if (selecao == 1) {
+        [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:1.0 B:0.0];
     }
     
-    else if ([sender tag] == 2) {
-        //commands
+    else if (selecao == 2) {
+        [[_pages objectAtIndex:_pageIndex] setCores:0.1 G:0.8 B:0.2];
     }
     
-    else if ([sender tag] == 3) {
-        //commands
+    else if (selecao == 3) {
+        [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:0.45 B:0.85];
     }
     
-    else if ([sender tag] == 4) {
-        //commands
-    }
-    else if ([sender tag] == 5) {
-        //commands
+    else if (selecao == 4) {
+        [[_pages objectAtIndex:_pageIndex] setCores:1.0 G:1.0 B:0.0];
     }
     
-    else if ([sender tag] == 6) {
-        //commands
+    else if (selecao == 5) {
+        [[_pages objectAtIndex:_pageIndex] setCores:1.0 G:1.0 B:1.0];
     }
     
-    else if ([sender tag] == 7) {
-        //commands
+    else if (selecao == 6) {
+        [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:1.0 B:1.0];
     }
     
-    else {
-        //commands
+    else if (selecao == 7) {
+        [[_pages objectAtIndex:_pageIndex] setCores:1.0 G:0.0 B:1.0];
+    }
+    
+    else if (selecao == 8) {
+        [[_pages objectAtIndex:_pageIndex] setCores:0.5 G:0.5 B:0.0];
+    }
+    
+    else if (selecao == 9) {
+        [[_pages objectAtIndex:_pageIndex] setCores:0.5 G:0.5 B:0.0];
+    }
+    
+    else if (selecao == 10) {
+        [[_pages objectAtIndex:_pageIndex] setCores:0.5 G:0.5 B:0.0];
+    }
+    
+    else if (selecao == 11) {
+        [[_pages objectAtIndex:_pageIndex] setCores:0.5 G:0.5 B:0.0];
+    }
+    
+}
+
+
+- (void)btnEspessura:(id)sender{
+    
+    [self espessuraSelecionada:[sender tag]];
+    espessuraSelecionada = [sender tag];
+}
+
+- (void)espessuraSelecionada:(NSInteger)selecao {
+    if (selecao == 0) {
+        [[_pages objectAtIndex:_pageIndex] setEspessura:10];
+    }
+    else if (selecao == 1) {
+        [[_pages objectAtIndex:_pageIndex] setEspessura:12];
+    }
+    else if (selecao == 2) {
+        [[_pages objectAtIndex:_pageIndex] setEspessura:14];
     }
 }
 

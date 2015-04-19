@@ -52,8 +52,8 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwN-hM-jY9">
-                    <rect key="frame" x="15" y="720" width="46" height="30"/>
-                    <state key="normal" title="Button">
+                    <rect key="frame" x="8" y="730" width="30" height="30"/>
+                    <state key="normal" title="O">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
