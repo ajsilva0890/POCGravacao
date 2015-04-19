@@ -263,7 +263,7 @@
             [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:0.0 B:0.8];
             break;
         case 3: // azul claro
-            [[_pages objectAtIndex:_pageIndex] setCores:0.2 G:0.6 B:1.0];
+            [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:0.8 B:1.0];
             break;
         case 4: // verde claro
             [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:1.0 B:0.4];
