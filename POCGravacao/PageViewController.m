@@ -9,6 +9,7 @@
 #import "PageViewController.h"
 #import "EntradaUsuario.h"
 
+
 @interface PageViewController ()
 {
     NSURL *temporaryRecFile;
@@ -29,33 +30,38 @@
     // Do any additional setup after loading the view from its nib.
     
     self.tipoUsuario = [EntradaUsuario instance];
-    buscouAudio = FALSE;
+    buscouAudio = NO;
     buscouGravacao = NO;
     
-    imageIniciar = [UIImage imageNamed:@"Gravar.png"];
+    imageGravar = [UIImage imageNamed:@"Gravar.png"];
     imagePausar = [UIImage imageNamed:@"Pausar.png"];
     imagePlay = [UIImage imageNamed:@"Play.png"];
     imageStop = [UIImage imageNamed:@"Stop.png"];
     imageNarrar = [UIImage imageNamed:@"Narrar.png"];
-
     
-    //    desabilita botao play/stop quando iniciada a aplicaçao
-    [btnStop setEnabled:NO];
+    
+    //Se for pai, libera botao de gravação.
+    if ([self.tipoUsuario tipoDeUsuario] == 1) {
+        [btnRecordPause setEnabled:YES];
+    }
+    
     [btnPlay setEnabled:YES];
-
+    
+    
     _lblPage.text = [NSString stringWithFormat:@"%i", _pageNumber+1];
     
-//    [self loadAudioSettings];
+    //    [self loadAudioSettings];
     [self loadImageSettings];
     
 }
 
-- (instancetype)initWithPageNumber:(NSInteger)pageNumber{
+- (instancetype)initWithPageNumber:(NSInteger)pageNumber bookKey:(NSString*)bookKey{
     
     self = [super init];
     
     if (self){
         _pageNumber = (unsigned int)pageNumber;
+        _bookKey = bookKey;
         
     }
     
@@ -82,10 +88,6 @@
     
     UITouch *touch = [[event allTouches] anyObject];
     
-    if ([touch tapCount] == 2 ) {
-        _drawView.image = nil;
-    }
-    
     _currentPoint = [touch locationInView:touch.view];
     _lastPoint = [touch locationInView:_drawView];
     
@@ -105,11 +107,11 @@
 }
 
 - (void) drawInViewCurrentPoint:(CGPoint)currentPoint lastPoint:(CGPoint)lastPoint{
-
+    
     if ([self.tipoUsuario tipoDeUsuario] == 1) {
         return;
     }
-
+    
     //Contexto da caixa de desenho.
     UIGraphicsBeginImageContext(_drawView.frame.size);
     [_drawImage.image drawInRect:_drawView.bounds];
@@ -148,13 +150,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    if ([self.tipoUsuario tipoDeUsuario] == 0) {
-        [btnStop setEnabled:NO];
-        [btnRecordPause setEnabled:NO];
-    }
-    else {
-        [btnRecordPause setEnabled:YES];
-    }
+    
     [super viewWillAppear:YES];
 }
 
@@ -167,53 +163,51 @@
 }
 
 - (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)_player successfully:(BOOL)flag{
+    
     [btnRecordPause setEnabled:YES];
-    [self btnPlayPauser];
-    [btnRecordPause setBackgroundImage:imageIniciar forState:UIControlStateNormal];
-
-
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Terminou de Narrar"
-                                                    message: @"Faça seu desenho e mude de página"
-                                                   delegate: nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
+    [btnRecordPause setBackgroundImage:imageGravar forState:UIControlStateNormal];
+    
+    [self playPauseConfig];
+    
+    
+    
+    
+    //    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Terminou de Narrar"
+    //                                                    message: @"Faça seu desenho e mude de página"
+    //                                                   delegate: nil
+    //                                          cancelButtonTitle:@"OK"
+    //                                          otherButtonTitles:nil];
+    //    [alert show];
 }
 
-- (void) btnGravarPausar {
-    if ([btnRecordPause isSelected]) {
-        [btnRecordPause setBackgroundImage:imageIniciar forState:UIControlStateNormal];
-        [btnRecordPause setSelected:NO];
+- (void) recordPauseConfig {
+    if (btnRecordPause.currentBackgroundImage == imageGravar) {
+        [btnRecordPause setBackgroundImage:imagePausar forState:UIControlStateNormal];
     }
     
     else{
-        [btnRecordPause setBackgroundImage:imagePausar forState:UIControlStateNormal];
-        [btnRecordPause setSelected:YES];
+        [btnRecordPause setBackgroundImage:imageGravar forState:UIControlStateNormal];
     }
 }
 
-- (void) btnPlayPauser {
+- (void) playPauseConfig {
     
     if ([self.tipoUsuario tipoDeUsuario] == 0) {
-        if ([btnPlay isSelected]) {
-            [btnPlay setBackgroundImage:imageNarrar forState:UIControlStateNormal];
-            [btnPlay setSelected:NO];
+        if (btnPlay.currentBackgroundImage == imageNarrar) {
+            [btnPlay setBackgroundImage:imagePausar forState:UIControlStateNormal];
         }
         
         else{
             [btnPlay setBackgroundImage:imageNarrar forState:UIControlStateNormal];
-            [btnPlay setSelected:YES];
         }
     }
     else{
-        if ([btnPlay isSelected]) {
-            [btnPlay setBackgroundImage:imagePlay forState:UIControlStateNormal];
-            [btnPlay setSelected:NO];
-        }
-    
-        else{
+        if (btnPlay.currentBackgroundImage == imagePlay) {
             [btnPlay setBackgroundImage:imagePausar forState:UIControlStateNormal];
-            [btnPlay setSelected:YES];
+        }
+        
+        else{
+            [btnPlay setBackgroundImage:imagePlay forState:UIControlStateNormal];
         }
     }
 }
@@ -227,55 +221,56 @@
     if (!_recorder.recording) {
         
         if (buscouGravacao == NO) {
-
-        //    definindo a arquivo de aúdio
-        NSArray *pathComponents = [NSArray arrayWithObjects:
-                                   [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
-                                   [NSString stringWithFormat:@"PageAudio%i.m4a", _pageNumber], nil ];
-        
-        NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
-        
-        //    definindo sessao de audio
-        AVAudioSession *session = [[AVAudioSession alloc]init ];
-        [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
-        
-        //    define a configuracao de gravador
-        NSMutableDictionary *recordSettings = [[NSMutableDictionary alloc]init];
-        
-        [recordSettings setValue:[NSNumber numberWithInt:kAudioFormatMPEG4AAC] forKey:AVFormatIDKey];
-        [recordSettings setValue:[NSNumber numberWithFloat:44100.0] forKey:AVSampleRateKey];
-        [recordSettings setValue:[NSNumber numberWithInt:2] forKey:AVNumberOfChannelsKey];
-        
-        //Salva o caminho da gravação
-        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-        
-        NSString *namePathRecorer = [NSString stringWithFormat:@"RecorderPage%i", _pageNumber];
-        
-        [prefs setURL:outputFileURL forKey:namePathRecorer];
-        [prefs synchronize];
-        
-        //    iniciando e preparando a gravacao
-        _recorder = [[AVAudioRecorder alloc] initWithURL:outputFileURL settings:recordSettings error:nil];
-        _recorder.delegate  = self;
-        _recorder.meteringEnabled = YES;
-        [_recorder prepareToRecord];
-        
-        
-        [session setActive:YES error:nil];
-        buscouGravacao = YES;
+            
+            //    definindo a arquivo de aúdio
+            NSArray *pathComponents = [NSArray arrayWithObjects:
+                                       [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
+                                       [NSString stringWithFormat:@"Book%@PageAudio%i.m4a", _bookKey, _pageNumber], nil ];
+            
+            NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
+            
+            //    definindo sessao de audio
+            AVAudioSession *session = [[AVAudioSession alloc]init ];
+            [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+            
+            //    define a configuracao de gravador
+            NSMutableDictionary *recordSettings = [[NSMutableDictionary alloc]init];
+            
+            [recordSettings setValue:[NSNumber numberWithInt:kAudioFormatMPEG4AAC] forKey:AVFormatIDKey];
+            [recordSettings setValue:[NSNumber numberWithFloat:44100.0] forKey:AVSampleRateKey];
+            [recordSettings setValue:[NSNumber numberWithInt:2] forKey:AVNumberOfChannelsKey];
+            
+            //Salva o caminho da gravação
+            NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+            
+            NSString *namePathRecorer = [NSString stringWithFormat:@"RecorderBook%@Page%i", _bookKey, _pageNumber];
+            
+            [prefs setURL:outputFileURL forKey:namePathRecorer];
+            [prefs synchronize];
+            
+            //    iniciando e preparando a gravacao
+            _recorder = [[AVAudioRecorder alloc] initWithURL:outputFileURL settings:recordSettings error:nil];
+            _recorder.delegate  = self;
+            _recorder.meteringEnabled = YES;
+            [_recorder prepareToRecord];
+            
+            
+            [session setActive:YES error:nil];
+            buscouGravacao = YES;
             
         }
-            
-        //        comecar a gravacao
-        NSTimeInterval time = 10.0;
+        
+        //        Começar a gravacao
+        NSTimeInterval time = 60.0; // Um minuto.
         [_recorder recordForDuration:time];
-        [self btnGravarPausar];
+        [self recordPauseConfig];
         
         
-    } else {
+    }
+    else {
         
         [_recorder pause];
-        [self btnGravarPausar];
+        [self recordPauseConfig];
         
     }
     
@@ -285,16 +280,17 @@
 
 - (IBAction)stopTapped:(id)sender {
     [_recorder stop];
-    [btnRecordPause setBackgroundImage:imageIniciar forState:UIControlStateNormal];
-    [btnRecordPause setSelected:NO];
     
-    buscouAudio = FALSE;
+    [btnRecordPause setBackgroundImage:imageGravar forState:UIControlStateNormal];
+    [btnStop setEnabled:NO];
+    
+    buscouAudio = NO;
     buscouGravacao = NO;
     
-    AVAudioSession *audioSession = [[AVAudioSession alloc]init ];
+    AVAudioSession *audioSession = [[AVAudioSession alloc] init];
     [audioSession setActive:NO error:nil];
     
-    }
+}
 
 - (IBAction)playTapped:(id)sender {
     
@@ -302,52 +298,55 @@
         if (!_recorder.recording && !buscouAudio) {
             
             NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-        
-            NSString *namePathRecorer = [NSString stringWithFormat:@"RecorderPage%i", _pageNumber];
-        
+            
+            NSString *namePathRecorer = [NSString stringWithFormat:@"RecorderBook%@Page%i", _bookKey, _pageNumber];
+            
             temporaryRecFile = [prefs URLForKey:namePathRecorer];
-        
+            
             _player = [[AVAudioPlayer alloc] initWithContentsOfURL:temporaryRecFile error:nil];
             [_player setDelegate:self];
             [_player setVolume:10];
             
-            buscouAudio = TRUE;
+            buscouAudio = YES;
         }
-
+        
         [btnRecordPause setEnabled:NO];
         [_player play];
     }
     else {
         [btnRecordPause setEnabled:YES];
-        [btnRecordPause setBackgroundImage:imageIniciar forState:UIControlStateNormal];
+        [btnRecordPause setBackgroundImage:imageGravar forState:UIControlStateNormal];
         [_player pause];
-
+        
     }
-
-    [btnRecordPause setEnabled:YES];
     
-    [self btnPlayPauser];
+    if (btnPlay.currentBackgroundImage == imagePausar) {
+        [btnRecordPause setEnabled:YES];
+    }
+    
+    [self playPauseConfig];
 }
 
 - (void) stopPlayer{
     [_player stop];
     [btnPlay setBackgroundImage:imagePlay forState:UIControlStateNormal];
-    [btnPlay setSelected:NO];
+    [btnRecordPause setBackgroundImage:imageGravar forState:UIControlStateNormal];
+    
 }
 
 - (void) setImagensButtonsPai {
-    [btnRecordPause setBackgroundImage:imageIniciar forState:UIControlStateNormal];
+    [btnRecordPause setBackgroundImage:imageGravar forState:UIControlStateNormal];
     [btnStop setBackgroundImage:imageStop forState:UIControlStateNormal];
     [btnPlay setBackgroundImage:imagePlay forState:UIControlStateNormal];
     
-    [btnStop setAlpha:1];
-    [btnRecordPause setAlpha:1];
+    [btnStop setHidden:NO];
+    [btnRecordPause setHidden:NO];
 }
 
 - (void) setImagensButtonsFilho {
     [btnPlay setBackgroundImage:imageNarrar forState:UIControlStateNormal];
-    [btnStop setAlpha:0];
-    [btnRecordPause setAlpha:0];
+    [btnStop setHidden:YES];
+    [btnRecordPause setHidden:YES];
 }
 
 - (void) setEspesura:(NSInteger)p {

@@ -17,13 +17,19 @@
 @property (nonatomic) NSString* pageURL;
 @property (nonatomic) NSString* bookKey;
 
+@property (nonatomic) NSString* bookFantasyName;
+@property (nonatomic) NSString* bookDescription;
+@property (nonatomic) NSString* bookAuthor;
+@property (nonatomic) NSString* bookCoverURL;
+
+
 @property (nonatomic) NSMutableArray *btnLequeCor;
 @property (nonatomic) NSMutableArray *btnLequeEspessura;
 
 
 @property (weak, nonatomic) IBOutlet UIButton *btnEsq;
 @property (weak, nonatomic) IBOutlet UIButton *btnDir;
-@property (nonatomic) IBOutlet UIView *viewPage;
+@property (weak, nonatomic) IBOutlet UIView *viewPage;
 
 @property (weak, nonatomic) IBOutlet UIButton *btnMenu;
 

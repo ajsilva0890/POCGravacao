@@ -3,9 +3,23 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="CardenioModernBold.ttf">
+            <string>CardenioModern-Bold</string>
+            <string>CardenioModern-Bold</string>
+            <string>CardenioModern-Bold</string>
+            <string>CardenioModern-Bold</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController">
             <connections>
+                <outlet property="btnFilho" destination="h5J-kl-ryK" id="0ig-HD-HaS"/>
+                <outlet property="btnPai" destination="5w7-kO-B7w" id="XuD-Qa-EeA"/>
+                <outlet property="imageViewCover" destination="pRD-nJ-pTi" id="Z13-gB-ZHJ"/>
+                <outlet property="lblAuthor" destination="8k2-Dk-9OK" id="WjP-Ie-xDQ"/>
+                <outlet property="lblDescription" destination="YWB-ZK-YMe" id="ocH-PM-iqZ"/>
+                <outlet property="lblTitle" destination="235-k0-87y" id="eNO-v0-WOE"/>
                 <outlet property="scrollViewShelf" destination="V2r-ec-m0e" id="Mrd-76-tNI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -18,8 +32,49 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Fundo.png" translatesAutoresizingMaskIntoConstraints="NO" id="693-aU-PGj">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                 </imageView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2r-ec-m0e" userLabel="scrollViewShelf">
+                    <rect key="frame" x="8" y="260" width="564" height="500"/>
+                </scrollView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LogoEraUmaVezUmDesenho.png" translatesAutoresizingMaskIntoConstraints="NO" id="hvQ-P9-bAe" userLabel="viewLogo">
+                    <rect key="frame" x="246" y="0.0" width="532" height="283"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Df-cp-sPq" userLabel="imageViewInfo">
+                    <rect key="frame" x="580" y="260" width="436" height="500"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5J-kl-ryK" userLabel="btnFilho">
+                    <rect key="frame" x="696" y="270" width="208" height="50"/>
+                    <fontDescription key="fontDescription" name="CardenioModern-Bold" family="Cardenio Modern" pointSize="32"/>
+                    <state key="normal" title="LER">
+                        <color key="titleColor" red="0.3616043244949495" green="0.22477007870409646" blue="0.043191358990867519" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnFilho:" destination="-1" eventType="touchUpInside" id="npp-GS-AlN"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TITLE" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="235-k0-87y" userLabel="lblTitle">
+                    <rect key="frame" x="619" y="556" width="363" height="29"/>
+                    <fontDescription key="fontDescription" name="CardenioModern-Bold" family="Cardenio Modern" pointSize="24"/>
+                    <color key="textColor" red="0.36160432450000002" green="0.22477007869999999" blue="0.043191358989999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DESCRIPTION" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YWB-ZK-YMe" userLabel="lblDescription">
+                    <rect key="frame" x="619" y="590" width="363" height="23"/>
+                    <fontDescription key="fontDescription" name="CardenioModern-Bold" family="Cardenio Modern" pointSize="20"/>
+                    <color key="textColor" red="0.36160432450000002" green="0.22477007869999999" blue="0.043191358989999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AUTHOR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8k2-Dk-9OK" userLabel="lblAuthor">
+                    <rect key="frame" x="619" y="621" width="363" height="21"/>
+                    <fontDescription key="fontDescription" name="CardenioModern-Bold" family="Cardenio Modern" pointSize="18"/>
+                    <color key="textColor" red="0.36160432450000002" green="0.22477007869999999" blue="0.043191358989999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pRD-nJ-pTi" userLabel="imageViewCover">
+                    <rect key="frame" x="696" y="340" width="208" height="208"/>
+                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5w7-kO-B7w" userLabel="btnPai">
-                    <rect key="frame" x="825" y="363" width="116" height="55"/>
+                    <rect key="frame" x="892" y="697" width="116" height="55"/>
                     <state key="normal" backgroundImage="BtnNarrar.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -27,21 +82,6 @@
                         <action selector="btnPai:" destination="-1" eventType="touchUpInside" id="Toj-F0-uhs"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5J-kl-ryK" userLabel="btnFilho">
-                    <rect key="frame" x="541" y="60" width="400" height="266"/>
-                    <state key="normal" backgroundImage="3pqInicio.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="btnFilho:" destination="-1" eventType="touchUpInside" id="npp-GS-AlN"/>
-                    </connections>
-                </button>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2r-ec-m0e" userLabel="scrollViewShelf">
-                    <rect key="frame" x="8" y="260" width="500" height="500"/>
-                </scrollView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LogoEraUmaVezUmDesenho.png" translatesAutoresizingMaskIntoConstraints="NO" id="hvQ-P9-bAe" userLabel="viewLogo">
-                    <rect key="frame" x="8" y="13" width="449" height="239"/>
-                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -50,7 +90,6 @@
         </view>
     </objects>
     <resources>
-        <image name="3pqInicio.png" width="1987" height="1115"/>
         <image name="BtnNarrar.png" width="271" height="117"/>
         <image name="Fundo.png" width="2050" height="1538"/>
         <image name="LogoEraUmaVezUmDesenho.png" width="2048" height="1536"/>

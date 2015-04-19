@@ -9,17 +9,25 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
+
+
 @interface PageViewController : UIViewController <AVAudioRecorderDelegate, AVAudioPlayerDelegate>{
         
+<<<<<<< HEAD
     UIImage *imageIniciar, *imagePausar, *imagePlay, *imageStop, *imageNarrar;
     float r, g, b, alpha;
 
+=======
+    float r, g, b, alpha;
+    UIImage *imageGravar, *imagePausar, *imagePlay, *imageStop, *imageNarrar;
+>>>>>>> origin/master
 }
 
 @property (nonatomic) CGPoint lastPoint;
 @property (nonatomic) CGPoint currentPoint;
 @property (nonatomic) CGPoint location;
 @property (nonatomic) UIImageView *drawImage;
+@property (nonatomic) NSString *bookKey;
 
 @property (nonatomic) NSInteger espessura;
 
@@ -37,7 +45,11 @@
 @property (nonatomic) AVAudioRecorder *recorder;
 @property (nonatomic) AVAudioPlayer *player;
 
+<<<<<<< HEAD
 - (instancetype) initWithPageNumber:(NSInteger)pageNumber;
+=======
+-(instancetype) initWithPageNumber:(NSInteger)pageNumber bookKey:(NSString*)bookKey;
+>>>>>>> origin/master
 
 - (void) stopPlayer;
 - (void) setImagensButtonsFilho;

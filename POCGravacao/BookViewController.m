@@ -28,16 +28,20 @@
     [super viewDidLoad];
     self.tipoUsuario = [EntradaUsuario instance];
     self.btnLequeCor = [[NSMutableArray alloc] init];
+<<<<<<< HEAD
     self.btnLequeEspessura = [[NSMutableArray alloc] init];
 
 
+=======
+    
+>>>>>>> origin/master
     _pageIndex = 0;
     _pages = [[NSMutableArray alloc] init];
     
     [btnEsq setHidden:YES];
     
     for (unsigned int i=0; i<_pageTotal; i++) {
-        PageViewController *page =[[PageViewController alloc] initWithPageNumber:i];
+        PageViewController *page =[[PageViewController alloc] initWithPageNumber:i bookKey:_bookKey];
         [_pages addObject:page];
         [_viewPage addSubview:[page view]];
     }
@@ -45,20 +49,28 @@
     [self changePage];
     [_viewPage bringSubviewToFront:[[_pages objectAtIndex:0] view]];
     
+    
     /*  Criacao dos botoes cor */
     int w = 50, h = 50, margin = 5, distancia=15, qntdCor = 12, qntdEspessura = 3;
     
     UIButton *btnCor;
+<<<<<<< HEAD
 
     for (int i = 0; i < qntdCor; i++) {
 
         btnCor = [[UIButton alloc] initWithFrame:CGRectMake(i*(w+distancia)+margin+w, self.view.frame.size.height - h - margin, w, h)];
+=======
+    
+    for (int i = 0; i < 9; i++) {
+        
+        btnCor = [[UIButton alloc] initWithFrame:CGRectMake(i*(w+20)+margin+w, self.view.frame.size.height - w - margin, w, h)];
+>>>>>>> origin/master
         [btnCor setBackgroundImage:[UIImage imageNamed:@"Home.png"]
                           forState:UIControlStateNormal];
         [btnCor setTag:i];
         [self.btnLequeCor addObject:btnCor];
     }
-
+    
     for(UIButton *btnCor in self.btnLequeCor){
         [self.view addSubview:btnCor];
         [btnCor addTarget:self action:@selector(btnCor:) forControlEvents:UIControlEventTouchUpInside];
@@ -92,12 +104,44 @@
         _pageTotal = pageTotal;
         _bookName = bookName;
         _bookKey = bookKey;
+        [self getBookDescription];
     }
     
     return self;
 }
 
-- (void) atualizarJogador {
+- (void) getBookDescription{
+    
+    _bookCoverURL = [NSString stringWithFormat:@"%@Cover", _bookName];
+    
+    NSString *descriptionPath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@TXT", _bookName]
+                                                                ofType:@"txt"];
+    
+    NSString *descriptionContent = [NSString stringWithContentsOfFile:descriptionPath
+                                                             encoding:NSUTF8StringEncoding
+                                                                error:nil];
+    
+    int lineCount = 0;
+    for (NSString *line in [descriptionContent componentsSeparatedByString:@"\n"]) {
+        
+        switch (lineCount) {
+            case 0:
+                _bookFantasyName = line;
+                break;
+            case 1:
+                _bookDescription = line;
+            case 2:
+                _bookAuthor = line;
+            default:
+                break;
+        }
+        
+        lineCount++;
+    }
+    
+}
+
+- (void) atualizarUsuario {
     
     if ([self.tipoUsuario tipoDeUsuario] == 0) {
         [[[_pages objectAtIndex:_pageIndex]btnStop]setEnabled:NO];
@@ -115,7 +159,7 @@
 - (void) viewWillAppear:(BOOL)animated {
     [[self btnDir] setAlpha:0.2];
     [[self btnEsq] setAlpha:0.2];
-    [self atualizarJogador];
+    [self atualizarUsuario];
     
     [super viewWillAppear:YES];
 }
@@ -124,7 +168,7 @@
     
     [[_pages objectAtIndex:_pageIndex] stopPlayer];
     [self.navigationController popViewControllerAnimated:YES];
-
+    
 }
 
 - (IBAction)touchBtnEsq:(id)sender{
@@ -134,13 +178,13 @@
     
     [[_pages objectAtIndex:_pageIndex] stopPlayer];    
     [btnDir setHidden:NO];
-
+    
     if (_pageIndex == 1) {
         [btnEsq setHidden:YES];
     }
     
     _pageIndex--;
-    [self atualizarJogador];
+    [self atualizarUsuario];
     [self changePage];
     [self corSelecionada:corSelecionada];
     [self espessuraSelecionada:espessuraSelecionada];
@@ -159,8 +203,13 @@
         [btnDir setHidden:YES];
     }
     
+<<<<<<< HEAD
+=======
+    
+    
+>>>>>>> origin/master
     _pageIndex++;
-    [self atualizarJogador];
+    [self atualizarUsuario];
     [self changePage];
     [self corSelecionada:corSelecionada];
     [self espessuraSelecionada:espessuraSelecionada];
@@ -173,7 +222,7 @@
     
     [[_pages objectAtIndex:_pageIndex] bgView].image = [UIImage imageNamed:_pageURL];
     [_viewPage bringSubviewToFront:[[_pages objectAtIndex:_pageIndex] view]];
-
+    
 }
 
 
