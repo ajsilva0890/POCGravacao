@@ -44,14 +44,33 @@
     [self changePage];
     [_viewPage bringSubviewToFront:[[_pages objectAtIndex:0] view]];
     
+    [self createButtons];
+    
+}
+
+- (instancetype) initWithPageTotal:(NSInteger)pageTotal bookName:(NSString*)bookName bookKey:(NSString*)bookKey{
+    
+    self = [super init];
+    
+    if(self){
+        _pageTotal = pageTotal;
+        _bookName = bookName;
+        _bookKey = bookKey;
+        [self getBookDescription];
+    }
+    
+    return self;
+}
+
+- (void) createButtons {
     
     /*  Criacao dos botoes cor */
     int w = 50, h = 50, margin = 5, distancia=15, qntdCor = 12, qntdEspessura = 3;
     
     UIButton *btnCor;
-
+    
     for (int i = 0; i < qntdCor; i++) {
-
+        
         btnCor = [[UIButton alloc] initWithFrame:CGRectMake(i*(w+distancia)+margin+w, self.view.frame.size.height - h - margin, w, h)];
         [btnCor setBackgroundImage:[UIImage imageNamed:@"Home.png"]
                           forState:UIControlStateNormal];
@@ -72,7 +91,7 @@
         
         btnEspessura = [[UIButton alloc] initWithFrame:CGRectMake(margin, self.view.frame.size.height - i*(h+distancia)-margin-(2*h), w, h)];
         [btnEspessura setBackgroundImage:[UIImage imageNamed:@"Play.png"]
-                          forState:UIControlStateNormal];
+                                forState:UIControlStateNormal];
         [btnEspessura setTag:i];
         [self.btnLequeEspessura addObject:btnEspessura];
     }
@@ -85,20 +104,7 @@
     
     [self corSelecionada:0];
     [self espessuraSelecionada:0];
-}
 
-- (instancetype) initWithPageTotal:(NSInteger)pageTotal bookName:(NSString*)bookName bookKey:(NSString*)bookKey{
-    
-    self = [super init];
-    
-    if(self){
-        _pageTotal = pageTotal;
-        _bookName = bookName;
-        _bookKey = bookKey;
-        [self getBookDescription];
-    }
-    
-    return self;
 }
 
 - (void) getBookDescription{
@@ -283,10 +289,10 @@
         case 9: // pele
             [[_pages objectAtIndex:_pageIndex] setCores:1.0 G:0.8 B:0.5];
             break;
-        case 10: // branco
+        case 10: // preto
             [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:0.0 B:0.0];
             break;
-        case 11: // preto
+        case 11: // brano
             [[_pages objectAtIndex:_pageIndex] setCores:1.0 G:1.0 B:1.0];
             break;
         default:

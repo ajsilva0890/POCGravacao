@@ -48,7 +48,6 @@
 - (void) stopPlayer;
 - (void) setImagensButtonsFilho;
 - (void) setImagensButtonsPai;
-- (void) setEspesura:(NSInteger)p;
 - (void) setCores:(float)R G:(float)G B:(float)B;
 
 
