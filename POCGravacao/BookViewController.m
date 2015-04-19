@@ -82,6 +82,9 @@
         [btnEspessura addTarget:self action:@selector(btnEspessura:) forControlEvents:UIControlEventTouchUpInside];
         [btnEspessura setHidden:YES];
     }
+    
+    [self corSelecionada:0];
+    [self espessuraSelecionada:0];
 }
 
 - (instancetype) initWithPageTotal:(NSInteger)pageTotal bookName:(NSString*)bookName bookKey:(NSString*)bookKey{
@@ -141,6 +144,12 @@
         [[[_pages objectAtIndex:_pageIndex]btnRecordPause]setEnabled:YES];
         [[_pages objectAtIndex:_pageIndex] setImagensButtonsPai];
         [btnActLequeCor setHidden:YES];
+        
+        for(UIButton *btnCor in self.btnLequeCor)
+            [btnCor setHidden:YES];
+        
+        for(UIButton *btnEspessura in self.btnLequeEspessura)
+            [btnEspessura setHidden:YES];
     }
 }
 
@@ -243,54 +252,47 @@
 
 - (void)corSelecionada:(NSInteger)selecao {
     
-    if (selecao == 0) {
-        [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:0.0 B:0.0];
+    switch (selecao) {
+        case 0:
+            [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:0.0 B:0.0];
+            break;
+        case 1:
+            [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:1.0 B:0.0];
+            break;
+        case 2:
+            [[_pages objectAtIndex:_pageIndex] setCores:0.1 G:0.8 B:0.2];
+            break;
+        case 3:
+            [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:0.45 B:0.85];
+            break;
+        case 4:
+            [[_pages objectAtIndex:_pageIndex] setCores:1.0 G:1.0 B:0.0];
+            break;
+        case 5:
+            [[_pages objectAtIndex:_pageIndex] setCores:1.0 G:1.0 B:1.0];
+            break;
+        case 6:
+            [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:1.0 B:1.0];
+            break;
+        case 7:
+            [[_pages objectAtIndex:_pageIndex] setCores:1.0 G:0.0 B:1.0];
+            break;
+        case 8:
+            [[_pages objectAtIndex:_pageIndex] setCores:0.5 G:0.5 B:0.0];
+            break;
+        case 9:
+            [[_pages objectAtIndex:_pageIndex] setCores:0.5 G:0.5 B:0.0];
+            break;
+        case 10:
+            [[_pages objectAtIndex:_pageIndex] setCores:0.5 G:0.5 B:0.0];
+            break;
+        case 11:
+            [[_pages objectAtIndex:_pageIndex] setCores:0.5 G:0.5 B:0.0];
+            break;
+        default:
+            [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:0.0 B:0.0];
+            break;
     }
-    
-    else if (selecao == 1) {
-        [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:1.0 B:0.0];
-    }
-    
-    else if (selecao == 2) {
-        [[_pages objectAtIndex:_pageIndex] setCores:0.1 G:0.8 B:0.2];
-    }
-    
-    else if (selecao == 3) {
-        [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:0.45 B:0.85];
-    }
-    
-    else if (selecao == 4) {
-        [[_pages objectAtIndex:_pageIndex] setCores:1.0 G:1.0 B:0.0];
-    }
-    
-    else if (selecao == 5) {
-        [[_pages objectAtIndex:_pageIndex] setCores:1.0 G:1.0 B:1.0];
-    }
-    
-    else if (selecao == 6) {
-        [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:1.0 B:1.0];
-    }
-    
-    else if (selecao == 7) {
-        [[_pages objectAtIndex:_pageIndex] setCores:1.0 G:0.0 B:1.0];
-    }
-    
-    else if (selecao == 8) {
-        [[_pages objectAtIndex:_pageIndex] setCores:0.5 G:0.5 B:0.0];
-    }
-    
-    else if (selecao == 9) {
-        [[_pages objectAtIndex:_pageIndex] setCores:0.5 G:0.5 B:0.0];
-    }
-    
-    else if (selecao == 10) {
-        [[_pages objectAtIndex:_pageIndex] setCores:0.5 G:0.5 B:0.0];
-    }
-    
-    else if (selecao == 11) {
-        [[_pages objectAtIndex:_pageIndex] setCores:0.5 G:0.5 B:0.0];
-    }
-    
 }
 
 
@@ -301,14 +303,20 @@
 }
 
 - (void)espessuraSelecionada:(NSInteger)selecao {
-    if (selecao == 0) {
-        [[_pages objectAtIndex:_pageIndex] setEspessura:10];
-    }
-    else if (selecao == 1) {
-        [[_pages objectAtIndex:_pageIndex] setEspessura:12];
-    }
-    else if (selecao == 2) {
-        [[_pages objectAtIndex:_pageIndex] setEspessura:14];
+    
+    switch (selecao) {
+        case 0:
+            [[_pages objectAtIndex:_pageIndex] setEspessura:10];
+            break;
+        case 1:
+            [[_pages objectAtIndex:_pageIndex] setEspessura:12];
+            break;
+        case 2:
+            [[_pages objectAtIndex:_pageIndex] setEspessura:14];
+            break;
+        default:
+            [[_pages objectAtIndex:_pageIndex] setEspessura:10];
+            break;
     }
 }
 

@@ -96,8 +96,6 @@
     
 }
 
-
-
 - (void) createBook:(NSInteger)bookTotalPages bookName:(NSString*)bookName{
     
     NSString *key = [NSString stringWithFormat:@"%lu", [BookShelf bookShelf].bookTotal];
@@ -111,7 +109,6 @@
     [[BookShelf bookShelf] setBook:_bookTemp forKey:self.bookTemp.bookKey];
     
 }
-
 
 - (void) sortButtonArray{
     
@@ -155,17 +152,13 @@
                                forState:UIControlStateNormal];
             [self.bookShelfButtons addObject:btnBook];
         }
-
     }
     
     for(UIButton *btnBook in self.bookShelfButtons){
         [_viewContent addSubview:btnBook];
         [btnBook addTarget:self action:@selector(selectedButton:) forControlEvents:UIControlEventTouchUpInside];
     }
-    
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
