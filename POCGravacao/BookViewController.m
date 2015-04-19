@@ -209,7 +209,7 @@
 
 - (void)changePage{
     //Change between pages, sets background of page.
-//    
+
     _pageURL = [NSString stringWithFormat:@"Book%@Page%ld.png", _bookName, (long)_pageIndex];
     
     [[_pages objectAtIndex:_pageIndex] bgView].image = [UIImage imageNamed:_pageURL];
@@ -253,41 +253,41 @@
 - (void)corSelecionada:(NSInteger)selecao {
     
     switch (selecao) {
-        case 0:
+        case 0: // marrom
+            [[_pages objectAtIndex:_pageIndex] setCores:0.4 G:0.0 B:0.0];
+            break;
+        case 1: // roxo
+            [[_pages objectAtIndex:_pageIndex] setCores:0.6 G:0.0 B:0.6];
+            break;
+        case 2: // azul escuro
+            [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:0.0 B:0.8];
+            break;
+        case 3: // azul claro
+            [[_pages objectAtIndex:_pageIndex] setCores:0.2 G:0.6 B:1.0];
+            break;
+        case 4: // verde claro
+            [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:1.0 B:0.4];
+            break;
+        case 5: // verde escuro
+            [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:0.4 B:0.0];
+            break;
+        case 6: // amarelo
+            [[_pages objectAtIndex:_pageIndex] setCores:1.0 G:1.0 B:0.3];
+            break;
+        case 7: // laranja
+            [[_pages objectAtIndex:_pageIndex] setCores:1.0 G:0.6 B:0.0];
+            break;
+        case 8: // vermelho
+            [[_pages objectAtIndex:_pageIndex] setCores:1.0 G:0.0 B:0.0];
+            break;
+        case 9: // pele
+            [[_pages objectAtIndex:_pageIndex] setCores:1.0 G:0.8 B:0.5];
+            break;
+        case 10: // branco
             [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:0.0 B:0.0];
             break;
-        case 1:
-            [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:1.0 B:0.0];
-            break;
-        case 2:
-            [[_pages objectAtIndex:_pageIndex] setCores:0.1 G:0.8 B:0.2];
-            break;
-        case 3:
-            [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:0.45 B:0.85];
-            break;
-        case 4:
-            [[_pages objectAtIndex:_pageIndex] setCores:1.0 G:1.0 B:0.0];
-            break;
-        case 5:
+        case 11: // preto
             [[_pages objectAtIndex:_pageIndex] setCores:1.0 G:1.0 B:1.0];
-            break;
-        case 6:
-            [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:1.0 B:1.0];
-            break;
-        case 7:
-            [[_pages objectAtIndex:_pageIndex] setCores:1.0 G:0.0 B:1.0];
-            break;
-        case 8:
-            [[_pages objectAtIndex:_pageIndex] setCores:0.5 G:0.5 B:0.0];
-            break;
-        case 9:
-            [[_pages objectAtIndex:_pageIndex] setCores:0.5 G:0.5 B:0.0];
-            break;
-        case 10:
-            [[_pages objectAtIndex:_pageIndex] setCores:0.5 G:0.5 B:0.0];
-            break;
-        case 11:
-            [[_pages objectAtIndex:_pageIndex] setCores:0.5 G:0.5 B:0.0];
             break;
         default:
             [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:0.0 B:0.0];
