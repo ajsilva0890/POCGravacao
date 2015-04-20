@@ -10,7 +10,10 @@
 #import <AVFoundation/AVFoundation.h>
 #import "BookViewController.h"
 
-@interface MenuViewController : UIViewController
+@interface MenuViewController : UIViewController{
+    
+    UIImage *shelfTop, *shelfBottom, *shelfMiddle;
+}
 
 @property (nonatomic) BookViewController *bookTemp;
 @property (nonatomic) BookViewController *bookSelected;
@@ -19,8 +22,10 @@
 @property (nonatomic) NSString *selectedBookButton;
 
 @property (nonatomic) UIView *viewContent;
+
 @property (nonatomic) IBOutlet UIScrollView *scrollViewShelf;
 
+@property (nonatomic) UIImageView *imageViewShelf;
 @property (nonatomic) IBOutlet UIImageView *imageViewCover;
 
 @property (nonatomic) IBOutlet UILabel *lblTitle;

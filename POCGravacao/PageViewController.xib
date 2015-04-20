@@ -45,7 +45,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m4y-Fw-KbN" userLabel="btnPlay">
-                    <rect key="frame" x="893" y="649" width="96" height="86"/>
+                    <rect key="frame" x="877" y="630" width="112" height="100"/>
                     <state key="normal" backgroundImage="Play.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
