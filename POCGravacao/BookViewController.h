@@ -25,7 +25,10 @@
 
 @property (nonatomic) NSMutableArray *btnLequeCor;
 @property (nonatomic) NSMutableArray *btnLequeEspessura;
+@property (nonatomic) NSMutableArray *pagesText;
 
+
+@property (nonatomic) bool loadImagesForPages;
 
 @property (weak, nonatomic) IBOutlet UIButton *btnEsq;
 @property (weak, nonatomic) IBOutlet UIButton *btnDir;

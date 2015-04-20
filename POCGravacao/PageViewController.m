@@ -14,7 +14,7 @@
 {
     NSURL *temporaryRecFile;
     Boolean buscouAudio, buscouGravacao;
-
+    
 }
 
 @property (nonatomic) EntradaUsuario *tipoUsuario;
@@ -47,8 +47,7 @@
     
     [btnPlay setEnabled:YES];
     
-    
-    _lblPage.text = [NSString stringWithFormat:@"%i", _pageNumber+1];
+    _lblPageIndex.text = [NSString stringWithFormat:@"%i", _pageNumber+1];
     
     //    [self loadAudioSettings];
     [self loadImageSettings];
@@ -81,7 +80,7 @@
     _drawImage.frame = _drawView.frame;
     [_drawView addSubview:_drawImage];
     
-//    r = 0.0; g = 0.0; b = 0.0; alpha = 1.0;
+    //    r = 0.0; g = 0.0; b = 0.0; alpha = 1.0;
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -126,7 +125,6 @@
     // Altera o contexto de desenho.
     CGContextSetBlendMode(UIGraphicsGetCurrentContext(), kCGBlendModeNormal);
     
-    
     //Começa o caminho de desenho.
     CGContextBeginPath(UIGraphicsGetCurrentContext());
     
@@ -147,11 +145,6 @@
     [_drawView addSubview:_drawImage];
     //[self.view sendSubviewToBack:drawImage];
     
-}
-
-- (void)viewWillAppear:(BOOL)animated{
-    
-    [super viewWillAppear:YES];
 }
 
 
@@ -326,7 +319,12 @@
 
 - (void) stopPlayer{
     [_player stop];
-    [btnPlay setBackgroundImage:imagePlay forState:UIControlStateNormal];
+    if ([self.tipoUsuario tipoDeUsuario] == 0) {
+        [btnPlay setBackgroundImage:imageNarrar forState:UIControlStateNormal];
+    }
+    else{
+        [btnPlay setBackgroundImage:imagePlay forState:UIControlStateNormal];
+    }
     [btnRecordPause setBackgroundImage:imageGravar forState:UIControlStateNormal];
     
 }
@@ -346,12 +344,21 @@
     [btnRecordPause setHidden:YES];
 }
 
+- (void)viewDidLayoutSubviews{
+    [_lblPageText sizeToFit];
+}
+
+- (void) setPageText:(NSString*)text{
+    _lblPageText.text = text;
+}
+
 - (void) setCores:(float)R G:(float)G B:(float)B {
     
     r = R;
     g = G;
     b = B;
     alpha = 1.0;
+    
 }
 
 /*

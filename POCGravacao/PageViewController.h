@@ -31,7 +31,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnPlay;
 @property (weak, nonatomic) IBOutlet UIImageView *bgView;
 @property (nonatomic) IBOutlet UIImageView *drawView;
-@property (weak, nonatomic) IBOutlet UILabel *lblPage;
+
+@property (weak, nonatomic) IBOutlet UILabel *lblPageText;
+@property (weak, nonatomic) IBOutlet UILabel *lblPageIndex;
+
 
 
 @property (nonatomic) unsigned int pageNumber;
@@ -39,15 +42,15 @@
 @property (nonatomic) AVAudioRecorder *recorder;
 @property (nonatomic) AVAudioPlayer *player;
 
-//<<<<<<< HEAD
-//- (instancetype) initWithPageNumber:(NSInteger)pageNumber;
-//=======
+
+
 -(instancetype) initWithPageNumber:(NSInteger)pageNumber bookKey:(NSString*)bookKey;
-//>>>>>>> origin/master
+
 
 - (void) stopPlayer;
 - (void) setImagensButtonsFilho;
 - (void) setImagensButtonsPai;
+- (void) setPageText:(NSString*)text;
 - (void) setCores:(float)R G:(float)G B:(float)B;
 
 

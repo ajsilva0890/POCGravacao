@@ -19,6 +19,7 @@
 		54BB84381AE32E4F003A53F4 /* lolTXT.txt in Resources */ = {isa = PBXBuildFile; fileRef = 54BB84371AE32E4F003A53F4 /* lolTXT.txt */; };
 		54DA0C901AD31A1200FA848D /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DA0C8E1AD31A1200FA848D /* PageViewController.m */; };
 		54DA0C911AD31A1200FA848D /* PageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54DA0C8F1AD31A1200FA848D /* PageViewController.xib */; };
+		54DD04381AE4B56D00169C26 /* MODELO.txt in Resources */ = {isa = PBXBuildFile; fileRef = 54DD04371AE4B56D00169C26 /* MODELO.txt */; };
 		54DD27E11AE4951400C15530 /* Narrar.png in Resources */ = {isa = PBXBuildFile; fileRef = 54DD27E01AE4951400C15530 /* Narrar.png */; };
 		C41285FB1AE4AE53000D323E /* cor1.png in Resources */ = {isa = PBXBuildFile; fileRef = C47395651AE43665006C9AFA /* cor1.png */; };
 		C41285FC1AE4AE53000D323E /* cor11.png in Resources */ = {isa = PBXBuildFile; fileRef = C473956F1AE43665006C9AFA /* cor11.png */; };
@@ -99,6 +100,7 @@
 		54DA0C8D1AD31A1200FA848D /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
 		54DA0C8E1AD31A1200FA848D /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 		54DA0C8F1AD31A1200FA848D /* PageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageViewController.xib; sourceTree = "<group>"; };
+		54DD04371AE4B56D00169C26 /* MODELO.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MODELO.txt; sourceTree = "<group>"; };
 		54DD27E01AE4951400C15530 /* Narrar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Narrar.png; sourceTree = "<group>"; };
 		C426D40D1AD72A4500F9B4E9 /* btnPassar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnPassar.png; sourceTree = "<group>"; };
 		C426D40E1AD72A4500F9B4E9 /* Home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Home.png; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				C4C7FD2E1AD82CF90073441E /* Book3pqPage12.png */,
 				C4C7FD2F1AD82CF90073441E /* Book3pqPage13.png */,
 				54BB84351AE3207C003A53F4 /* 3pqTXT.txt */,
+				54DD04371AE4B56D00169C26 /* MODELO.txt */,
 				54BB84371AE32E4F003A53F4 /* lolTXT.txt */,
 			);
 			name = Book3PQ;
@@ -469,12 +472,17 @@
 				54A2EF1E1AE4569200648E72 /* shelfMiddle.png in Resources */,
 				54DD27E11AE4951400C15530 /* Narrar.png in Resources */,
 				C47216541AD84628005EF629 /* 3pqCover.png in Resources */,
-				C41285FE1AE4AE53000D323E /* Narrar-02.png in Resources */,
+
 				C47395841AE45F50006C9AFA /* pageProx.mp3 in Resources */,
-				C41285FB1AE4AE53000D323E /* cor1.png in Resources */,
-				C41285FD1AE4AE53000D323E /* cor5.png in Resources */,
-				C41285FC1AE4AE53000D323E /* cor11.png in Resources */,
+
+				C47216451AD831D3005EF629 /* Narrar-02.png in Resources */,
 				C47395781AE43665006C9AFA /* cor8.png in Resources */,
+				C47395611AE430EC006C9AFA /* clickButton.mp3 in Resources */,
+				C47395711AE43665006C9AFA /* cor1.png in Resources */,
+				C47395751AE43665006C9AFA /* cor5.png in Resources */,
+				C473957B1AE43665006C9AFA /* cor11.png in Resources */,
+				C47395621AE430EC006C9AFA /* page.mp3 in Resources */,
+
 				545DA4571AD46BFC008A5247 /* BookViewController.xib in Resources */,
 				C47216511AD8431F005EF629 /* LogoEraUmaVezUmDesenho.png in Resources */,
 				C4C7FD3D1AD82CF90073441E /* Book3pqPage13.png in Resources */,
@@ -503,6 +511,7 @@
 				C4C7FD381AD82CF90073441E /* Book3pqPage8.png in Resources */,
 				54DA0C911AD31A1200FA848D /* PageViewController.xib in Resources */,
 				54BB84381AE32E4F003A53F4 /* lolTXT.txt in Resources */,
+				54DD04381AE4B56D00169C26 /* MODELO.txt in Resources */,
 				C4C7FD3B1AD82CF90073441E /* Book3pqPage11.png in Resources */,
 				C473957A1AE43665006C9AFA /* cor10.png in Resources */,
 				C4C7FD331AD82CF90073441E /* Book3pqPage3.png in Resources */,

@@ -3,6 +3,12 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="CardenioModernBold.ttf">
+            <string>CardenioModern-Bold</string>
+            <string>CardenioModern-Bold</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PageViewController">
             <connections>
@@ -11,6 +17,8 @@
                 <outlet property="btnRecordPause" destination="4Tc-5E-B3K" id="Jpi-8x-NJa"/>
                 <outlet property="btnStop" destination="qZD-Ju-bf6" id="m0w-a9-nxb"/>
                 <outlet property="drawView" destination="T81-Ez-59k" id="Zrk-Fn-pkE"/>
+                <outlet property="lblPageIndex" destination="eTB-MH-b8U" id="yAg-dY-ojC"/>
+                <outlet property="lblPageText" destination="Cba-Oa-Lqk" id="4o6-7j-DZl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -56,6 +64,18 @@
                         <action selector="playTapped:" destination="-1" eventType="touchUpInside" id="UWV-GJ-Wg8"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTB-MH-b8U" userLabel="lblPageIndex">
+                    <rect key="frame" x="982" y="732" width="34" height="28"/>
+                    <fontDescription key="fontDescription" name="CardenioModern-Bold" family="Cardenio Modern" pointSize="20"/>
+                    <color key="textColor" red="0.36160432450000002" green="0.22477007869999999" blue="0.043191358989999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PAGE TEXT" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cba-Oa-Lqk" userLabel="lblPageText">
+                    <rect key="frame" x="28" y="108" width="961" height="191"/>
+                    <fontDescription key="fontDescription" name="CardenioModern-Bold" family="Cardenio Modern" pointSize="26"/>
+                    <color key="textColor" red="0.36160432450000002" green="0.22477007869999999" blue="0.043191358989999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>
