@@ -60,17 +60,14 @@
     [_scrollViewShelf addSubview:_imageViewShelf];
     [_scrollViewShelf addSubview:_viewContent];
     
-<<<<<<< HEAD
     [self sortButtonArray];
     [self somClickBook];
-=======
     shelfTop = [UIImage imageNamed:@"shelfTop.png"];
     shelfMiddle = [UIImage imageNamed:@"shelfMiddle.png"];
     shelfBottom = [UIImage imageNamed:@"shelfBottom.png"];
     
     
     [self sortButtonArray];
->>>>>>> origin/master
     
 }
 

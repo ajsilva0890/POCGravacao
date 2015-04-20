@@ -20,13 +20,16 @@
 		54DA0C901AD31A1200FA848D /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DA0C8E1AD31A1200FA848D /* PageViewController.m */; };
 		54DA0C911AD31A1200FA848D /* PageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54DA0C8F1AD31A1200FA848D /* PageViewController.xib */; };
 		54DD27E11AE4951400C15530 /* Narrar.png in Resources */ = {isa = PBXBuildFile; fileRef = 54DD27E01AE4951400C15530 /* Narrar.png */; };
+		C41285FB1AE4AE53000D323E /* cor1.png in Resources */ = {isa = PBXBuildFile; fileRef = C47395651AE43665006C9AFA /* cor1.png */; };
+		C41285FC1AE4AE53000D323E /* cor11.png in Resources */ = {isa = PBXBuildFile; fileRef = C473956F1AE43665006C9AFA /* cor11.png */; };
+		C41285FD1AE4AE53000D323E /* cor5.png in Resources */ = {isa = PBXBuildFile; fileRef = C47395691AE43665006C9AFA /* cor5.png */; };
+		C41285FE1AE4AE53000D323E /* Narrar-02.png in Resources */ = {isa = PBXBuildFile; fileRef = C47216441AD831D3005EF629 /* Narrar-02.png */; };
 		C426D4121AD72A4500F9B4E9 /* btnPassar.png in Resources */ = {isa = PBXBuildFile; fileRef = C426D40D1AD72A4500F9B4E9 /* btnPassar.png */; };
 		C426D4131AD72A4500F9B4E9 /* Home.png in Resources */ = {isa = PBXBuildFile; fileRef = C426D40E1AD72A4500F9B4E9 /* Home.png */; };
 		C426D4141AD72A4500F9B4E9 /* Pausar.png in Resources */ = {isa = PBXBuildFile; fileRef = C426D40F1AD72A4500F9B4E9 /* Pausar.png */; };
 		C426D4151AD72A4500F9B4E9 /* Play.png in Resources */ = {isa = PBXBuildFile; fileRef = C426D4101AD72A4500F9B4E9 /* Play.png */; };
 		C426D4161AD72A4500F9B4E9 /* Stop.png in Resources */ = {isa = PBXBuildFile; fileRef = C426D4111AD72A4500F9B4E9 /* Stop.png */; };
 		C46316061AD0729800695BA1 /* EntradaUsuario.m in Sources */ = {isa = PBXBuildFile; fileRef = C46316051AD0729800695BA1 /* EntradaUsuario.m */; };
-		C47216451AD831D3005EF629 /* Narrar-02.png in Resources */ = {isa = PBXBuildFile; fileRef = C47216441AD831D3005EF629 /* Narrar-02.png */; };
 		C472164E1AD83C45005EF629 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C472164C1AD83C44005EF629 /* MenuViewController.m */; };
 		C472164F1AD83C45005EF629 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C472164D1AD83C44005EF629 /* MenuViewController.xib */; };
 		C47216511AD8431F005EF629 /* LogoEraUmaVezUmDesenho.png in Resources */ = {isa = PBXBuildFile; fileRef = C47216501AD8431F005EF629 /* LogoEraUmaVezUmDesenho.png */; };
@@ -34,17 +37,14 @@
 		C47216551AD84628005EF629 /* BtnNarrar.png in Resources */ = {isa = PBXBuildFile; fileRef = C47216531AD84628005EF629 /* BtnNarrar.png */; };
 		C47216571AD84854005EF629 /* Fundo.png in Resources */ = {isa = PBXBuildFile; fileRef = C47216561AD84854005EF629 /* Fundo.png */; };
 		C47395701AE43665006C9AFA /* cor0.png in Resources */ = {isa = PBXBuildFile; fileRef = C47395641AE43665006C9AFA /* cor0.png */; };
-		C47395711AE43665006C9AFA /* cor1.png in Resources */ = {isa = PBXBuildFile; fileRef = C47395651AE43665006C9AFA /* cor1.png */; };
 		C47395721AE43665006C9AFA /* cor2.png in Resources */ = {isa = PBXBuildFile; fileRef = C47395661AE43665006C9AFA /* cor2.png */; };
 		C47395731AE43665006C9AFA /* cor3.png in Resources */ = {isa = PBXBuildFile; fileRef = C47395671AE43665006C9AFA /* cor3.png */; };
 		C47395741AE43665006C9AFA /* cor4.png in Resources */ = {isa = PBXBuildFile; fileRef = C47395681AE43665006C9AFA /* cor4.png */; };
-		C47395751AE43665006C9AFA /* cor5.png in Resources */ = {isa = PBXBuildFile; fileRef = C47395691AE43665006C9AFA /* cor5.png */; };
 		C47395761AE43665006C9AFA /* cor6.png in Resources */ = {isa = PBXBuildFile; fileRef = C473956A1AE43665006C9AFA /* cor6.png */; };
 		C47395771AE43665006C9AFA /* cor7.png in Resources */ = {isa = PBXBuildFile; fileRef = C473956B1AE43665006C9AFA /* cor7.png */; };
 		C47395781AE43665006C9AFA /* cor8.png in Resources */ = {isa = PBXBuildFile; fileRef = C473956C1AE43665006C9AFA /* cor8.png */; };
 		C47395791AE43665006C9AFA /* cor9.png in Resources */ = {isa = PBXBuildFile; fileRef = C473956D1AE43665006C9AFA /* cor9.png */; };
 		C473957A1AE43665006C9AFA /* cor10.png in Resources */ = {isa = PBXBuildFile; fileRef = C473956E1AE43665006C9AFA /* cor10.png */; };
-		C473957B1AE43665006C9AFA /* cor11.png in Resources */ = {isa = PBXBuildFile; fileRef = C473956F1AE43665006C9AFA /* cor11.png */; };
 		C47395811AE45F50006C9AFA /* clickButton.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C473957D1AE45F50006C9AFA /* clickButton.mp3 */; };
 		C47395821AE45F50006C9AFA /* home.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C473957E1AE45F50006C9AFA /* home.mp3 */; };
 		C47395831AE45F50006C9AFA /* page.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C473957F1AE45F50006C9AFA /* page.mp3 */; };
@@ -415,12 +415,12 @@
 		C4C5F62E1AD042B300226F61 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Anderson José da Silva";
 				TargetAttributes = {
 					C4C5F6351AD042B300226F61 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = ECD4M22565;
+						DevelopmentTeam = 4TM3YLSYM4;
 					};
 					C4C5F64B1AD042B400226F61 = {
 						CreatedOnToolsVersion = 6.2;
@@ -466,27 +466,15 @@
 				54BB84361AE3207C003A53F4 /* 3pqTXT.txt in Resources */,
 				C47395701AE43665006C9AFA /* cor0.png in Resources */,
 				C4C7FD1F1AD7FAED0073441E /* Gravar.png in Resources */,
-
 				54A2EF1E1AE4569200648E72 /* shelfMiddle.png in Resources */,
 				54DD27E11AE4951400C15530 /* Narrar.png in Resources */,
 				C47216541AD84628005EF629 /* 3pqCover.png in Resources */,
-<<<<<<< HEAD
-				C47216451AD831D3005EF629 /* Narrar.png in Resources */,
+				C41285FE1AE4AE53000D323E /* Narrar-02.png in Resources */,
 				C47395841AE45F50006C9AFA /* pageProx.mp3 in Resources */,
-				C47395711AE43665006C9AFA /* cor1.png in Resources */,
-				C47395751AE43665006C9AFA /* cor5.png in Resources */,
-				C473957B1AE43665006C9AFA /* cor11.png in Resources */,
-=======
-				C47216451AD831D3005EF629 /* Narrar-02.png in Resources */,
-
+				C41285FB1AE4AE53000D323E /* cor1.png in Resources */,
+				C41285FD1AE4AE53000D323E /* cor5.png in Resources */,
+				C41285FC1AE4AE53000D323E /* cor11.png in Resources */,
 				C47395781AE43665006C9AFA /* cor8.png in Resources */,
-				C47395611AE430EC006C9AFA /* clickButton.mp3 in Resources */,
-				C47395711AE43665006C9AFA /* cor1.png in Resources */,
-				C47395751AE43665006C9AFA /* cor5.png in Resources */,
-				C473957B1AE43665006C9AFA /* cor11.png in Resources */,
-				C47395621AE430EC006C9AFA /* page.mp3 in Resources */,
-
->>>>>>> origin/master
 				545DA4571AD46BFC008A5247 /* BookViewController.xib in Resources */,
 				C47216511AD8431F005EF629 /* LogoEraUmaVezUmDesenho.png in Resources */,
 				C4C7FD3D1AD82CF90073441E /* Book3pqPage13.png in Resources */,
