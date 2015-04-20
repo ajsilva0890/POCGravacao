@@ -51,16 +51,26 @@
         [self createBook:10 bookName:@"lol"];
         [self createBook:14 bookName:@"3pq"];
     }
-
-
+    
+    
     _bookShelfButtons = [[NSMutableArray alloc] init];
-    _viewContent = [[UIView alloc] initWithFrame:_scrollViewShelf.frame];
+    _viewContent = [[UIView alloc] initWithFrame:_scrollViewShelf.bounds];
+    _imageViewShelf = [[UIImageView alloc] initWithFrame:_scrollViewShelf.bounds];
     
+    [_scrollViewShelf addSubview:_imageViewShelf];
     [_scrollViewShelf addSubview:_viewContent];
-
     
+<<<<<<< HEAD
     [self sortButtonArray];
     [self somClickBook];
+=======
+    shelfTop = [UIImage imageNamed:@"shelfTop.png"];
+    shelfMiddle = [UIImage imageNamed:@"shelfMiddle.png"];
+    shelfBottom = [UIImage imageNamed:@"shelfBottom.png"];
+    
+    
+    [self sortButtonArray];
+>>>>>>> origin/master
     
 }
 
@@ -131,9 +141,18 @@
     UIButton *btnBook;
     
     int tagCount = 0;
-    int colunas = 3, w = 184, h = 184, margin = 40;
+    int colunas = 3, w = 150, h = 150, marginX = 32, marginY = 32; // Configs dos botões de livro.
     unsigned long int bookTotal = [BookShelf bookShelf].bookTotal;
     unsigned long int linhas = bookTotal/3;
+    
+    
+    CGSize shelfImageSize, auxSize;
+    CGFloat shelfTopMaxHeight = 40, shelfMiddleMaxHeight = 150, shelfBottomMaxHeight = 200; // Tamanho maximo de altura de cada divisao.
+    shelfImageSize.width = _imageViewShelf.frame.size.width; // Largura da scroll view. Não mude isso.
+    shelfImageSize.height = shelfTopMaxHeight;
+    _imageViewShelf.image = shelfTop;
+    
+    
     
     if (linhas % 3 != 0) {
         linhas++;
@@ -141,24 +160,62 @@
     
     
     for(int i = 0; i <= linhas; i++){
-        if (i > 2 || i == 0) {
+        if (i > 3 || i == 0) {
             
             CGRect originalSize = _viewContent.bounds;
-            
-            //NSLog(@"%f, %f, %f, %f", originalSize.origin.x, originalSize.origin.y, originalSize.size.width, originalSize.size.height);
-            
             CGRect newSize = CGRectMake(originalSize.origin.x, originalSize.origin.y, originalSize.size.width, originalSize.size.height + h);
             
             //[_viewContent setBackgroundColor:[UIColor redColor]];
             
             _scrollViewShelf.contentSize = CGSizeMake(newSize.size.width, newSize.size.height);
             [_viewContent setFrame:newSize];
-
+            
         }
+        
+        // DESENHAR ESTANTE
+        auxSize.height = shelfImageSize.height;
+        shelfImageSize.height += shelfMiddleMaxHeight;
+        
+        //Se ultima linha, prepara desenho da divisao de baixo.
+        if (i == linhas) {
+            UIGraphicsBeginImageContext(CGSizeMake(shelfImageSize.width, shelfImageSize.height + shelfBottomMaxHeight));
+        }
+        else{
+            UIGraphicsBeginImageContext(shelfImageSize);
+        }
+        
+        
+        // Copia a imagem atual para a tela de draw.
+        [_imageViewShelf.image drawInRect:CGRectMake(0, 0, shelfImageSize.width, auxSize.height)];
+        
+        //Aplica a proxima imagem na tela de draw, logo abaixo a anterior.
+        [shelfMiddle drawInRect:CGRectMake(0, auxSize.height, shelfImageSize.width, shelfMiddleMaxHeight)];
+        
+        
+        if (i == linhas) {
+            auxSize.height += shelfMiddleMaxHeight;
+            [shelfBottom drawInRect:CGRectMake(0, auxSize.height, shelfImageSize.width, shelfBottomMaxHeight)];
+        }
+        
+        //Atualiza a imagem.
+        _imageViewShelf.image = UIGraphicsGetImageFromCurrentImageContext();
+        
+        UIGraphicsEndImageContext();
+        
+        //Atualiza o tamanho da imagem.
+        [_imageViewShelf setFrame:CGRectMake(_imageViewShelf.frame.origin.x, _imageViewShelf.frame.origin.y, shelfImageSize.width, shelfImageSize.height)];
+        
         
         for (int j = 0; j < colunas && bookTotal > 0; j++) {
             bookTotal--;
-            btnBook = [[UIButton alloc] initWithFrame:CGRectMake(j * w +(margin-8), i*h+margin, w-margin, h-margin)];
+            
+            int spaceY = i*h+marginY;
+            
+            if (i > 0) {
+                spaceY = i*h+(marginY);
+            }
+            
+            btnBook = [[UIButton alloc] initWithFrame:CGRectMake(j*w+(marginX*j+marginX), spaceY, w-marginX, h-marginX)];
             
             btnBook.tag = tagCount;
             tagCount++;
@@ -175,6 +232,7 @@
         [btnBook addTarget:self action:@selector(selectedButton:) forControlEvents:UIControlEventTouchUpInside];
     }
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
