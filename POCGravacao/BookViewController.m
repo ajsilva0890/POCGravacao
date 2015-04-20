@@ -44,16 +44,37 @@
     [self changePage];
     [_viewPage bringSubviewToFront:[[_pages objectAtIndex:0] view]];
     
+    [self createButtons];
+    
+}
+
+- (instancetype) initWithPageTotal:(NSInteger)pageTotal bookName:(NSString*)bookName bookKey:(NSString*)bookKey{
+    
+    self = [super init];
+    
+    if(self){
+        _pageTotal = pageTotal;
+        _bookName = bookName;
+        _bookKey = bookKey;
+        [self getBookDescription];
+    }
+    
+    return self;
+}
+
+- (void) createButtons {
     
     /*  Criacao dos botoes cor */
     int w = 50, h = 50, margin = 5, distancia=15, qntdCor = 12, qntdEspessura = 3;
     
     UIButton *btnCor;
-
+    
     for (int i = 0; i < qntdCor; i++) {
-
+        
         btnCor = [[UIButton alloc] initWithFrame:CGRectMake(i*(w+distancia)+margin+w, self.view.frame.size.height - h - margin, w, h)];
-        [btnCor setBackgroundImage:[UIImage imageNamed:@"Home.png"]
+        
+        NSString *imageCor = [NSString stringWithFormat:@"cor%d.png", i];
+        [btnCor setBackgroundImage:[UIImage imageNamed:imageCor]
                           forState:UIControlStateNormal];
         [btnCor setTag:i];
         [self.btnLequeCor addObject:btnCor];
@@ -72,7 +93,7 @@
         
         btnEspessura = [[UIButton alloc] initWithFrame:CGRectMake(margin, self.view.frame.size.height - i*(h+distancia)-margin-(2*h), w, h)];
         [btnEspessura setBackgroundImage:[UIImage imageNamed:@"Play.png"]
-                          forState:UIControlStateNormal];
+                                forState:UIControlStateNormal];
         [btnEspessura setTag:i];
         [self.btnLequeEspessura addObject:btnEspessura];
     }
@@ -83,22 +104,9 @@
         [btnEspessura setHidden:YES];
     }
     
-    [self corSelecionada:0];
-    [self espessuraSelecionada:0];
-}
+    [self corSelecionada:INTMAX_MAX];
+    [self espessuraSelecionada:INTMAX_MAX];
 
-- (instancetype) initWithPageTotal:(NSInteger)pageTotal bookName:(NSString*)bookName bookKey:(NSString*)bookKey{
-    
-    self = [super init];
-    
-    if(self){
-        _pageTotal = pageTotal;
-        _bookName = bookName;
-        _bookKey = bookKey;
-        [self getBookDescription];
-    }
-    
-    return self;
 }
 
 - (void) getBookDescription{
@@ -139,11 +147,13 @@
         [[[_pages objectAtIndex:_pageIndex]btnRecordPause]setEnabled:NO];
         [[_pages objectAtIndex:_pageIndex] setImagensButtonsFilho];
         [btnActLequeCor setHidden:NO];
+        [btnActLequeCor setSelected:NO];
     }
     else {
         [[[_pages objectAtIndex:_pageIndex]btnRecordPause]setEnabled:YES];
         [[_pages objectAtIndex:_pageIndex] setImagensButtonsPai];
         [btnActLequeCor setHidden:YES];
+        [btnActLequeCor setSelected:YES];
         
         for(UIButton *btnCor in self.btnLequeCor)
             [btnCor setHidden:YES];
@@ -209,7 +219,7 @@
 
 - (void)changePage{
     //Change between pages, sets background of page.
-//    
+
     _pageURL = [NSString stringWithFormat:@"Book%@Page%ld.png", _bookName, (long)_pageIndex];
     
     [[_pages objectAtIndex:_pageIndex] bgView].image = [UIImage imageNamed:_pageURL];
@@ -253,41 +263,41 @@
 - (void)corSelecionada:(NSInteger)selecao {
     
     switch (selecao) {
-        case 0:
-            [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:0.0 B:0.0];
+        case 0: // vermelho
+            [[_pages objectAtIndex:_pageIndex] setCores:1.0 G:0.0 B:0.0];
             break;
-        case 1:
-            [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:1.0 B:0.0];
+        case 1:// rosa
+            [[_pages objectAtIndex:_pageIndex] setCores:0.9 G:0.07 B:0.7];
             break;
-        case 2:
-            [[_pages objectAtIndex:_pageIndex] setCores:0.1 G:0.8 B:0.2];
+        case 2:// roxo
+            [[_pages objectAtIndex:_pageIndex] setCores:0.4 G:0.0 B:0.6];
             break;
-        case 3:
-            [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:0.45 B:0.85];
+        case 3:// azul escuro
+            [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:0.0 B:0.8];
             break;
-        case 4:
-            [[_pages objectAtIndex:_pageIndex] setCores:1.0 G:1.0 B:0.0];
+        case 4:// azul claro
+            [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:0.8 B:1.0];
             break;
-        case 5:
+        case 5:// verde claro
+            [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:1.0 B:0.4];
+            break;
+        case 6:// verde escuro
+            [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:0.4 B:0.0];
+            break;
+        case 7:// amarelo
+            [[_pages objectAtIndex:_pageIndex] setCores:1.0 G:1.0 B:0.3];
+            break;
+        case 8:// laranja
+            [[_pages objectAtIndex:_pageIndex] setCores:1.0 G:0.6 B:0.0];
+            break;
+        case 9: // brano
             [[_pages objectAtIndex:_pageIndex] setCores:1.0 G:1.0 B:1.0];
             break;
-        case 6:
-            [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:1.0 B:1.0];
+        case 10: // preto
+            [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:0.0 B:0.0];
             break;
-        case 7:
-            [[_pages objectAtIndex:_pageIndex] setCores:1.0 G:0.0 B:1.0];
-            break;
-        case 8:
-            [[_pages objectAtIndex:_pageIndex] setCores:0.5 G:0.5 B:0.0];
-            break;
-        case 9:
-            [[_pages objectAtIndex:_pageIndex] setCores:0.5 G:0.5 B:0.0];
-            break;
-        case 10:
-            [[_pages objectAtIndex:_pageIndex] setCores:0.5 G:0.5 B:0.0];
-            break;
-        case 11:
-            [[_pages objectAtIndex:_pageIndex] setCores:0.5 G:0.5 B:0.0];
+        case 11:// cinza
+            [[_pages objectAtIndex:_pageIndex] setCores:0.5 G:0.5 B:0.5];
             break;
         default:
             [[_pages objectAtIndex:_pageIndex] setCores:0.0 G:0.0 B:0.0];
