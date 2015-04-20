@@ -9,10 +9,12 @@
 #import "BookViewController.h"
 #import "PageViewController.h"
 #import "EntradaUsuario.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface BookViewController ()
 {
     NSInteger corSelecionada, espessuraSelecionada;
+    AVAudioPlayer *somHome, *somPageProx;
 }
 
 @property (nonatomic) EntradaUsuario *tipoUsuario;
@@ -29,11 +31,10 @@
     self.tipoUsuario = [EntradaUsuario instance];
     self.btnLequeCor = [[NSMutableArray alloc] init];
     self.btnLequeEspessura = [[NSMutableArray alloc] init];
+    [btnEsq setHidden:YES];
 
     _pageIndex = 0;
     _pages = [[NSMutableArray alloc] init];
-    
-    [btnEsq setHidden:YES];
     
     for (unsigned int i=0; i<_pageTotal; i++) {
         PageViewController *page =[[PageViewController alloc] initWithPageNumber:i bookKey:_bookKey];
@@ -45,6 +46,7 @@
     [_viewPage bringSubviewToFront:[[_pages objectAtIndex:0] view]];
     
     [self createButtons];
+    [self somClickPageHome];
     
 }
 
@@ -104,9 +106,24 @@
         [btnEspessura setHidden:YES];
     }
     
-    [self corSelecionada:INTMAX_MAX];
-    [self espessuraSelecionada:INTMAX_MAX];
+    [self corSelecionada:-1];
+    [self espessuraSelecionada:-1];
 
+}
+
+- (void) somClickPageHome {
+    NSString *path;
+    NSURL *soundUrl;
+    
+    path = [NSString stringWithFormat:@"%@/home.mp3", [[NSBundle mainBundle] resourcePath]];
+    soundUrl = [NSURL fileURLWithPath:path];
+    somHome = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
+    somHome.numberOfLoops = 0;
+    
+    path = [NSString stringWithFormat:@"%@/pageProx.mp3", [[NSBundle mainBundle] resourcePath]];
+    soundUrl = [NSURL fileURLWithPath:path];
+    somPageProx = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
+    somPageProx.numberOfLoops = 0;
 }
 
 - (void) getBookDescription{
@@ -175,6 +192,7 @@
     
     [[_pages objectAtIndex:_pageIndex] stopPlayer];
     [self.navigationController popViewControllerAnimated:YES];
+    [somHome play];
     
 }
 
@@ -195,6 +213,7 @@
     [self changePage];
     [self corSelecionada:corSelecionada];
     [self espessuraSelecionada:espessuraSelecionada];
+    [somPageProx play];
 }
 
 - (IBAction)touchBtnDir:(id)sender{
@@ -215,6 +234,7 @@
     [self changePage];
     [self corSelecionada:corSelecionada];
     [self espessuraSelecionada:espessuraSelecionada];
+    [somPageProx play];
 }
 
 - (void)changePage{
@@ -325,7 +345,7 @@
             [[_pages objectAtIndex:_pageIndex] setEspessura:14];
             break;
         default:
-            [[_pages objectAtIndex:_pageIndex] setEspessura:10];
+            [[_pages objectAtIndex:_pageIndex] setEspessura:12];
             break;
     }
 }

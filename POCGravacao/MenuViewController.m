@@ -10,8 +10,14 @@
 #import "EntradaUsuario.h"
 #import "BookViewController.h"
 #import "BookShelf.h"
+#import <AVFoundation/AVFoundation.h>
+
 
 @interface MenuViewController ()
+
+{
+    AVAudioPlayer *clickBook;
+}
 
 @property (nonatomic) EntradaUsuario *tipoUsuario;
 @property (nonatomic) NSString *bookKey;
@@ -54,7 +60,7 @@
 
     
     [self sortButtonArray];
-    
+    [self somClickBook];
     
 }
 
@@ -85,6 +91,7 @@
 }
 
 - (void) selectedButton:(id)sender{
+    [clickBook play];
     _selectedBookButton = [NSString stringWithFormat:@"%ld", (long)[sender tag]];
     _bookSelected = [[BookShelf bookShelf] bookForKey:_selectedBookButton];
     
@@ -94,6 +101,15 @@
     
     _imageViewCover.image = [UIImage imageNamed:[_bookSelected bookCoverURL]];
     
+}
+
+- (void) somClickBook {
+    NSString *path = [NSString stringWithFormat:@"%@/clickButton.mp3", [[NSBundle mainBundle] resourcePath]];
+    NSURL *soundUrl = [NSURL fileURLWithPath:path];
+    
+    clickBook = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
+    clickBook.numberOfLoops = 0;
+
 }
 
 - (void) createBook:(NSInteger)bookTotalPages bookName:(NSString*)bookName{
