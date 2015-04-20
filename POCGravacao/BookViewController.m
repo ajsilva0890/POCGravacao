@@ -36,8 +36,6 @@
     _pageIndex = 0;
     _pages = [[NSMutableArray alloc] init];
     
-
-    
     [btnEsq setHidden:YES];
     
 
@@ -51,11 +49,8 @@
     [_viewPage bringSubviewToFront:[[_pages objectAtIndex:0] view]];
     
 
-    [self createButtons];
     [self somClickPageHome];
-
     [self createButtonsLeque];
-
     
 }
 
@@ -73,54 +68,6 @@
     
     return self;
 }
-
-<<<<<<< Updated upstream
-- (void) createButtons {
-    
-    /*  Criacao dos botoes cor */
-    int w = 50, h = 50, margin = 5, distancia=15, qntdCor = 12, qntdEspessura = 3;
-    
-    UIButton *btnCor;
-    
-    for (int i = 0; i < qntdCor; i++) {
-        
-        btnCor = [[UIButton alloc] initWithFrame:CGRectMake(i*(w+distancia)+margin+w, self.view.frame.size.height - h - margin, w, h)];
-        
-        NSString *imageCor = [NSString stringWithFormat:@"cor%d.png", i];
-        [btnCor setBackgroundImage:[UIImage imageNamed:imageCor]
-                          forState:UIControlStateNormal];
-        [btnCor setTag:i];
-        [self.btnLequeCor addObject:btnCor];
-    }
-    
-    for(UIButton *btnCor in self.btnLequeCor){
-        [self.view addSubview:btnCor];
-        [btnCor addTarget:self action:@selector(btnCor:) forControlEvents:UIControlEventTouchUpInside];
-        [btnCor setHidden:YES];
-    }
-    
-    /* criacao espessura */
-    UIButton *btnEspessura;
-    
-    for (int i = 0; i < qntdEspessura; i++) {
-        
-        btnEspessura = [[UIButton alloc] initWithFrame:CGRectMake(margin, self.view.frame.size.height - i*(h+distancia)-margin-(2*h), w, h)];
-        [btnEspessura setBackgroundImage:[UIImage imageNamed:@"Play.png"]
-                                forState:UIControlStateNormal];
-        [btnEspessura setTag:i];
-        [self.btnLequeEspessura addObject:btnEspessura];
-    }
-    
-    for(UIButton *btnEspessura in self.btnLequeEspessura){
-        [self.view addSubview:btnEspessura];
-        [btnEspessura addTarget:self action:@selector(btnEspessura:) forControlEvents:UIControlEventTouchUpInside];
-        [btnEspessura setHidden:YES];
-    }
-    
-    [self corSelecionada:-1];
-    [self espessuraSelecionada:-1];
-=======
->>>>>>> Stashed changes
 
 
 - (void) somClickPageHome {
@@ -178,7 +125,7 @@
         
         lineCount++;
     }
-    
+
 }
 
 - (void) atualizarUsuario {
@@ -261,7 +208,7 @@
     [somPageProx play];
 }
 
-- (void)changePage{
+- (void) changePage{
     //Change between pages, sets background of page or text.
     
     if (_loadImagesForPages) {
@@ -424,11 +371,8 @@
             [[_pages objectAtIndex:_pageIndex] setEspessura:16];
             break;
         default:
-<<<<<<< Updated upstream
-            [[_pages objectAtIndex:_pageIndex] setEspessura:12];
-=======
             [[_pages objectAtIndex:_pageIndex] setEspessura:8];
->>>>>>> Stashed changes
+
             break;
     }
 }

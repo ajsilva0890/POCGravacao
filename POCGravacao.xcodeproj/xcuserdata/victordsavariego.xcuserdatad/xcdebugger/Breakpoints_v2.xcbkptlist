@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "POCGravacao/BookViewController.m"
-            timestampString = "451202720.629146"
+            timestampString = "451250917.893072"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "-initWithPageTotal:bookName:bookKey:"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "POCGravacao/BookViewController.m"
-            timestampString = "451202823.042751"
+            timestampString = "451250917.893072"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
-            landmarkName = "-createButtons"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "-somClickPageHome"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
