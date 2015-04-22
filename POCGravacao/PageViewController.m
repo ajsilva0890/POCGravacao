@@ -349,6 +349,7 @@
 }
 
 - (void) setPageText:(NSString*)text{
+    [_lblPageText setHidden:NO];
     _lblPageText.text = text;
 }
 

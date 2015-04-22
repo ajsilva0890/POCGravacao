@@ -26,6 +26,23 @@
 
 @synthesize btnDir, btnEsq, btnActLequeCor;
 
+
+- (instancetype) initWithPageTotal:(NSInteger)pageTotal bookName:(NSString*)bookName bookKey:(NSString*)bookKey{
+    
+    self = [super init];
+    
+    if(self){
+        _pageTotal = pageTotal;
+        _bookName = bookName;
+        _bookKey = bookKey;
+        _pagesText = [[NSMutableArray alloc] init];
+        [self getBookDescription];
+    }
+    
+    return self;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tipoUsuario = [EntradaUsuario instance];
@@ -54,20 +71,7 @@
     
 }
 
-- (instancetype) initWithPageTotal:(NSInteger)pageTotal bookName:(NSString*)bookName bookKey:(NSString*)bookKey{
-    
-    self = [super init];
-    
-    if(self){
-        _pageTotal = pageTotal;
-        _bookName = bookName;
-        _bookKey = bookKey;
-        _pagesText = [[NSMutableArray alloc] init];
-        [self getBookDescription];
-    }
-    
-    return self;
-}
+
 
 
 - (void) somClickPageHome {
@@ -213,6 +217,7 @@
     
     if (_loadImagesForPages) {
         _pageURL = [NSString stringWithFormat:@"Book%@Page%ld.png", _bookName, (long)_pageIndex];
+        
     }
     else{
         _pageURL = @"Fundo.png";

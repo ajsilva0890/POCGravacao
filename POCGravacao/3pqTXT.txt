@@ -1,11 +1,11 @@
 Os Três Porquinhos
 A história de três porquinhos na luta contra o lobo mau!
 Autor: Conto Popular
-NO
+YES
 Era uma vez três porquinhos, eles estavam em busca de um bom lugar para construir suas casas.
-O porquinho mais novo, que só pensava em ________, fez sua casa muito rapidamente usando ________.
+O porquinho mais novo, que só pensava em ________, fez sua casa muito rapidamente usando ________ .
 O porquinho do meio, ansioso para ir ________ com o mais novo, juntou alguns ________ e depressa construiu uma casa de ________.
-O porquinho mais velho, que era mais ajuizado disse: - Vou construir minha casa de ________. Assim terei uma casa muito resistente para me proteger do lobo mau.
+O porquinho mais velho, que era mais ajuizado disse: - Vou construir minha casa de ________ . Assim terei uma casa muito resistente para me proteger do lobo mau.
 5
 6
 7
@@ -16,4 +16,3 @@ O porquinho mais velho, que era mais ajuizado disse: - Vou construir minha casa 
 12
 13
 14
-

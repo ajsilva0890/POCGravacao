@@ -46,7 +46,7 @@
     self.tipoUsuario = [EntradaUsuario instance];
     
     
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 1; i++) {
         [self createBook:10 bookName:@"teste123"];
         [self createBook:10 bookName:@"lol"];
         [self createBook:14 bookName:@"3pq"];

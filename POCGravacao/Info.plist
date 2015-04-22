@@ -32,7 +32,8 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
-		<string>CardenioModernBold.ttf</string>
+		<string>SchuboiseHandwrite.ttf</string>
+		<string>CardenioModern.ttf</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
