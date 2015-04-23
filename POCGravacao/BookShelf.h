@@ -11,7 +11,6 @@
 
 @interface BookShelf : NSObject
 
-
 + (instancetype)bookShelf;
 
 - (void)setBook:(BookViewController*)book forKey:(NSString *)key;

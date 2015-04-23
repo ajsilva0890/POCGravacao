@@ -35,6 +35,4 @@
 @property (nonatomic) IBOutlet UIButton *btnFilho;
 @property (nonatomic) IBOutlet UIButton *btnPai;
 
-
-
 @end

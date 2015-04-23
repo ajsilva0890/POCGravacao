@@ -62,10 +62,10 @@
     }
     [self.bookShelf removeObjectForKey:key];
 }
+
 -(unsigned long) bookTotal{
     return [self.bookShelf count];
     
 }
-
 
 @end

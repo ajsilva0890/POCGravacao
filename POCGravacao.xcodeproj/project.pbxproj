@@ -69,6 +69,7 @@
 		C4C7FD3B1AD82CF90073441E /* Book3pqPage11.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C7FD2D1AD82CF90073441E /* Book3pqPage11.png */; };
 		C4C7FD3C1AD82CF90073441E /* Book3pqPage12.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C7FD2E1AD82CF90073441E /* Book3pqPage12.png */; };
 		C4C7FD3D1AD82CF90073441E /* Book3pqPage13.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C7FD2F1AD82CF90073441E /* Book3pqPage13.png */; };
+		C4ED55B81AE84884006E8DDA /* checkOk.png in Resources */ = {isa = PBXBuildFile; fileRef = C4ED55B71AE84884006E8DDA /* checkOk.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +159,7 @@
 		C4C7FD2D1AD82CF90073441E /* Book3pqPage11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Book3pqPage11.png; sourceTree = "<group>"; };
 		C4C7FD2E1AD82CF90073441E /* Book3pqPage12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Book3pqPage12.png; sourceTree = "<group>"; };
 		C4C7FD2F1AD82CF90073441E /* Book3pqPage13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Book3pqPage13.png; sourceTree = "<group>"; };
+		C4ED55B71AE84884006E8DDA /* checkOk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkOk.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -352,6 +354,7 @@
 				545DA4531AD46BFC008A5247 /* BookViewController.h */,
 				545DA4541AD46BFC008A5247 /* BookViewController.m */,
 				545DA4551AD46BFC008A5247 /* BookViewController.xib */,
+				C4ED55B71AE84884006E8DDA /* checkOk.png */,
 			);
 			name = BookHistoria;
 			sourceTree = "<group>";
@@ -422,7 +425,7 @@
 				TargetAttributes = {
 					C4C5F6351AD042B300226F61 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = ECD4M22565;
+						DevelopmentTeam = 4TM3YLSYM4;
 					};
 					C4C5F64B1AD042B400226F61 = {
 						CreatedOnToolsVersion = 6.2;
@@ -473,6 +476,7 @@
 				C47216541AD84628005EF629 /* 3pqCover.png in Resources */,
 				C47395841AE45F50006C9AFA /* pageProx.mp3 in Resources */,
 				C47395781AE43665006C9AFA /* cor8.png in Resources */,
+				C4ED55B81AE84884006E8DDA /* checkOk.png in Resources */,
 				545DA4571AD46BFC008A5247 /* BookViewController.xib in Resources */,
 				C47216511AD8431F005EF629 /* LogoEraUmaVezUmDesenho.png in Resources */,
 				549BBB601AE80E510091359B /* SchuboiseHandwrite.ttf in Resources */,

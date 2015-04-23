@@ -27,7 +27,7 @@
 
 @implementation MenuViewController
 
-
+@synthesize btnPai, btnFilho;
 
 - (instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -69,6 +69,9 @@
     
     [self sortButtonArray];
     
+    [btnFilho setEnabled:NO];
+    [btnPai   setEnabled:NO];
+    
 }
 
 -(void) viewDidLayoutSubviews{
@@ -81,6 +84,13 @@
     
     [_lblAuthor setFrame:CGRectMake(descBounds.origin.x, descBounds.origin.y + descBounds.size.height + authorSize.height, authorSize.width, authorSize.height)];
     
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    
+    [self enableBtnFilhoPai];
+    
+    [super viewWillAppear:YES];
 }
 
 - (IBAction) btnFilho:(id)sender {
@@ -102,12 +112,26 @@
     _selectedBookButton = [NSString stringWithFormat:@"%ld", (long)[sender tag]];
     _bookSelected = [[BookShelf bookShelf] bookForKey:_selectedBookButton];
     
+    [self enableBtnFilhoPai];
+    
     _lblTitle.text = [_bookSelected bookFantasyName];
     _lblDescription.text = [_bookSelected bookDescription];
     _lblAuthor.text = [_bookSelected bookAuthor];
     
     _imageViewCover.image = [UIImage imageNamed:[_bookSelected bookCoverURL]];
     
+}
+
+- (void) enableBtnFilhoPai{
+    
+    if ([self.bookSelected bookLocked]) {
+        [btnFilho setEnabled:YES];
+        [btnPai   setEnabled:NO];
+    }
+    else {
+        [btnPai   setEnabled:YES];
+        [btnFilho setEnabled:NO];
+    }
 }
 
 - (void) somClickBook {
@@ -235,6 +259,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 /*
  #pragma mark - Navigation

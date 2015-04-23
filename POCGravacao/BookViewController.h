@@ -22,14 +22,20 @@
 @property (nonatomic) NSString* bookAuthor;
 @property (nonatomic) NSString* bookCoverURL;
 
+@property (nonatomic) BOOL      bookLocked;
 
 @property (nonatomic) NSMutableArray *btnLequeCor;
 @property (nonatomic) NSMutableArray *btnLequeEspessura;
 @property (nonatomic) NSMutableArray *pagesText;
 
-
 @property (nonatomic) bool loadImagesForPages;
 
+@property (nonatomic) IBOutlet UIView  *viewAlertFinalizar;
+@property (nonatomic) IBOutlet UIImageView *imageCheckViewAlert;
+@property (weak, nonatomic) IBOutlet UIButton *btnFinalizarOk;
+@property (weak, nonatomic) IBOutlet UIButton *btnFinalizarCancelar;
+
+@property (weak, nonatomic) IBOutlet UIButton *btnFinalizar;
 @property (weak, nonatomic) IBOutlet UIButton *btnEsq;
 @property (weak, nonatomic) IBOutlet UIButton *btnDir;
 @property (weak, nonatomic) IBOutlet UIView *viewPage;

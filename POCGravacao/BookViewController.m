@@ -24,7 +24,7 @@
 
 @implementation BookViewController
 
-@synthesize btnDir, btnEsq, btnActLequeCor;
+@synthesize btnDir, btnEsq, btnActLequeCor, btnFinalizar, imageCheckViewAlert;
 
 
 - (instancetype) initWithPageTotal:(NSInteger)pageTotal bookName:(NSString*)bookName bookKey:(NSString*)bookKey{
@@ -54,7 +54,7 @@
     _pages = [[NSMutableArray alloc] init];
     
     [btnEsq setHidden:YES];
-    
+    [self.viewAlertFinalizar setHidden:YES];
 
     for (unsigned int i=0; i<_pageTotal; i++) {
         PageViewController *page =[[PageViewController alloc] initWithPageNumber:i bookKey:_bookKey];
@@ -65,14 +65,22 @@
     [self changePage];
     [_viewPage bringSubviewToFront:[[_pages objectAtIndex:0] view]];
     
-
+    [self setBookLocked:NO];
+    [btnFinalizar setHidden:YES];
+    
     [self somClickPageHome];
     [self createButtonsLeque];
     
 }
 
-
-
+- (void) viewWillAppear:(BOOL)animated {
+    [[self btnDir] setAlpha:0.2];
+    [[self btnEsq] setAlpha:0.2];
+    [self atualizarUsuario];
+    
+    [super viewWillAppear:YES];
+    
+}
 
 - (void) somClickPageHome {
     NSString *path;
@@ -126,10 +134,8 @@
                 break;
         }
         
-        
         lineCount++;
     }
-
 }
 
 - (void) atualizarUsuario {
@@ -140,6 +146,7 @@
         [[_pages objectAtIndex:_pageIndex] setImagensButtonsFilho];
         [btnActLequeCor setHidden:NO];
         [btnActLequeCor setSelected:NO];
+        [btnFinalizar setHidden:YES];
     }
     else {
         [[[_pages objectAtIndex:_pageIndex]btnRecordPause]setEnabled:YES];
@@ -153,14 +160,6 @@
         for(UIButton *btnEspessura in self.btnLequeEspessura)
             [btnEspessura setHidden:YES];
     }
-}
-
-- (void) viewWillAppear:(BOOL)animated {
-    [[self btnDir] setAlpha:0.2];
-    [[self btnEsq] setAlpha:0.2];
-    [self atualizarUsuario];
-    
-    [super viewWillAppear:YES];
 }
 
 - (IBAction)btnMenu:(id)sender{
@@ -188,7 +187,9 @@
     [self changePage];
     [self corSelecionada:corSelecionada];
     [self espessuraSelecionada:espessuraSelecionada];
+    [btnFinalizar setHidden:YES];
     [somPageProx play];
+    
 }
 
 - (IBAction)touchBtnDir:(id)sender{
@@ -201,15 +202,49 @@
     
     
     if (_pageIndex == _pageTotal-2) {
+        [btnFinalizar setHidden:NO];
         [btnDir setHidden:YES];
     }
-
+    
     _pageIndex++;
     [self atualizarUsuario];
     [self changePage];
     [self corSelecionada:corSelecionada];
     [self espessuraSelecionada:espessuraSelecionada];
     [somPageProx play];
+}
+
+- (IBAction)btnFinalizar:(id)sender{
+    
+    [self.viewAlertFinalizar setHidden:NO];
+    [imageCheckViewAlert setHidden:YES];
+    
+}
+
+- (IBAction)btnFinalizarOk:(id)sender{
+    
+    [imageCheckViewAlert setHidden:NO];
+    [self setBookLocked:YES];
+    [self performSelector:@selector(checkOn) withObject:nil afterDelay:1.0];
+    
+}
+
+- (void) checkOn {
+    
+    [btnEsq setHidden:YES];
+    [btnDir setHidden:NO];
+    
+    self.pageIndex = 0;
+    [_viewPage bringSubviewToFront:[[_pages objectAtIndex:_pageIndex] view]];
+    
+    [[_pages objectAtIndex:_pageIndex] stopPlayer];
+    [self.navigationController popViewControllerAnimated:YES];
+    [somHome play];
+
+}
+
+- (IBAction)btnFinalizarCancelar:(id)sender{
+    [self.viewAlertFinalizar setHidden:YES];
 }
 
 - (void) changePage{
@@ -229,7 +264,6 @@
     [_viewPage bringSubviewToFront:[[_pages objectAtIndex:_pageIndex] view]];
     
 }
-
 
 - (void) createButtonsLeque {
     
