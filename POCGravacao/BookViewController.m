@@ -225,7 +225,7 @@
     
     [imageCheckViewAlert setHidden:NO];
     [self setBookLocked:YES];
-    [self performSelector:@selector(checkOn) withObject:nil afterDelay:1.0];
+    [self performSelector:@selector(checkOn) withObject:nil afterDelay:0.5];
     
 }
 
