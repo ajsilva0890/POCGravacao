@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import "BookViewController.h"
+#import "SettingsViewController.h"
 
 @interface MenuViewController : UIViewController{
     
@@ -34,5 +35,8 @@
 
 @property (nonatomic) IBOutlet UIButton *btnFilho;
 @property (nonatomic) IBOutlet UIButton *btnPai;
+@property (nonatomic) IBOutlet UIButton *btnAjuda;
+
+@property (nonatomic) SettingsViewController *settingsView;
 
 @end

@@ -10,7 +10,8 @@
 #import "EntradaUsuario.h"
 #import "BookViewController.h"
 #import "BookShelf.h"
-#import <AVFoundation/AVFoundation.h>
+#import "SettingsViewController.h"
+
 
 
 @interface MenuViewController ()
@@ -52,6 +53,7 @@
         [self createBook:14 bookName:@"3pq"];
     }
     
+    _settingsView = [[SettingsViewController alloc] init];
     
     _bookShelfButtons = [[NSMutableArray alloc] init];
     _viewContent = [[UIView alloc] initWithFrame:_scrollViewShelf.bounds];
@@ -93,6 +95,10 @@
     [self enableBtnFilhoPai];
     
     [super viewWillAppear:YES];
+}
+
+- (IBAction) btnAjuda:(id)sender{
+    [self.navigationController pushViewController:_settingsView animated:YES];
 }
 
 - (IBAction) btnFilho:(id)sender {
@@ -255,6 +261,7 @@
         [btnBook addTarget:self action:@selector(selectedButton:) forControlEvents:UIControlEventTouchUpInside];
     }
 }
+
 
 
 

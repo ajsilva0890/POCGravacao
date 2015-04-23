@@ -20,6 +20,9 @@
 		54BB84341AE308AB003A53F4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54BB84331AE308AB003A53F4 /* Images.xcassets */; };
 		54BB84361AE3207C003A53F4 /* 3pqTXT.txt in Resources */ = {isa = PBXBuildFile; fileRef = 54BB84351AE3207C003A53F4 /* 3pqTXT.txt */; };
 		54BB84381AE32E4F003A53F4 /* lolTXT.txt in Resources */ = {isa = PBXBuildFile; fileRef = 54BB84371AE32E4F003A53F4 /* lolTXT.txt */; };
+		54C33C071AE96D6F009BB220 /* Log.txt in Resources */ = {isa = PBXBuildFile; fileRef = 54C33C061AE96D6F009BB220 /* Log.txt */; };
+		54C33C091AE96D92009BB220 /* HelpText.txt in Resources */ = {isa = PBXBuildFile; fileRef = 54C33C081AE96D92009BB220 /* HelpText.txt */; };
+		54C33C0D1AE99924009BB220 /* btnHelp.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C33C0C1AE99924009BB220 /* btnHelp.png */; };
 		54DA0C901AD31A1200FA848D /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DA0C8E1AD31A1200FA848D /* PageViewController.m */; };
 		54DA0C911AD31A1200FA848D /* PageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54DA0C8F1AD31A1200FA848D /* PageViewController.xib */; };
 		54DD04381AE4B56D00169C26 /* MODELO.txt in Resources */ = {isa = PBXBuildFile; fileRef = 54DD04371AE4B56D00169C26 /* MODELO.txt */; };
@@ -101,6 +104,9 @@
 		54BB84331AE308AB003A53F4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		54BB84351AE3207C003A53F4 /* 3pqTXT.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 3pqTXT.txt; sourceTree = "<group>"; };
 		54BB84371AE32E4F003A53F4 /* lolTXT.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lolTXT.txt; sourceTree = "<group>"; };
+		54C33C061AE96D6F009BB220 /* Log.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Log.txt; sourceTree = "<group>"; };
+		54C33C081AE96D92009BB220 /* HelpText.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HelpText.txt; sourceTree = "<group>"; };
+		54C33C0C1AE99924009BB220 /* btnHelp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnHelp.png; sourceTree = "<group>"; };
 		54DA0C8D1AD31A1200FA848D /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
 		54DA0C8E1AD31A1200FA848D /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 		54DA0C8F1AD31A1200FA848D /* PageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageViewController.xib; sourceTree = "<group>"; };
@@ -228,6 +234,8 @@
 				549BBB611AE8206E0091359B /* SettingsViewController.h */,
 				549BBB621AE8206E0091359B /* SettingsViewController.m */,
 				549BBB631AE8206E0091359B /* SettingsViewController.xib */,
+				54C33C061AE96D6F009BB220 /* Log.txt */,
+				54C33C081AE96D92009BB220 /* HelpText.txt */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -380,6 +388,7 @@
 			children = (
 				C47216531AD84628005EF629 /* BtnNarrar.png */,
 				C47216441AD831D3005EF629 /* Narrar-02.png */,
+				54C33C0C1AE99924009BB220 /* btnHelp.png */,
 				54DD27E01AE4951400C15530 /* Narrar.png */,
 				C4C7FD201AD816DC0073441E /* btnPassarEsq.png */,
 				C426D40D1AD72A4500F9B4E9 /* btnPassar.png */,
@@ -441,7 +450,7 @@
 				TargetAttributes = {
 					C4C5F6351AD042B300226F61 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 4TM3YLSYM4;
+						DevelopmentTeam = ECD4M22565;
 					};
 					C4C5F64B1AD042B400226F61 = {
 						CreatedOnToolsVersion = 6.2;
@@ -496,6 +505,7 @@
 				C4ED55B81AE84884006E8DDA /* checkOk.png in Resources */,
 				545DA4571AD46BFC008A5247 /* BookViewController.xib in Resources */,
 				C47216511AD8431F005EF629 /* LogoEraUmaVezUmDesenho.png in Resources */,
+				54C33C071AE96D6F009BB220 /* Log.txt in Resources */,
 				549BBB601AE80E510091359B /* SchuboiseHandwrite.ttf in Resources */,
 				C4C7FD3D1AD82CF90073441E /* Book3pqPage13.png in Resources */,
 				C47395721AE43665006C9AFA /* cor2.png in Resources */,
@@ -512,6 +522,7 @@
 				C472164F1AD83C45005EF629 /* MenuViewController.xib in Resources */,
 				C47395731AE43665006C9AFA /* cor3.png in Resources */,
 				5494F8B11AE357AD00B58D57 /* CardenioModernBold.ttf in Resources */,
+				54C33C091AE96D92009BB220 /* HelpText.txt in Resources */,
 				C47216551AD84628005EF629 /* BtnNarrar.png in Resources */,
 				C4C7FD341AD82CF90073441E /* Book3pqPage4.png in Resources */,
 				C4C7FD3A1AD82CF90073441E /* Book3pqPage10.png in Resources */,
@@ -519,6 +530,7 @@
 				C4C7FD301AD82CF90073441E /* Book3pqPage0.png in Resources */,
 				C47395821AE45F50006C9AFA /* home.mp3 in Resources */,
 				C426D4141AD72A4500F9B4E9 /* Pausar.png in Resources */,
+				54C33C0D1AE99924009BB220 /* btnHelp.png in Resources */,
 				C4C7FD361AD82CF90073441E /* Book3pqPage6.png in Resources */,
 				C4C7FD381AD82CF90073441E /* Book3pqPage8.png in Resources */,
 				54DA0C911AD31A1200FA848D /* PageViewController.xib in Resources */,

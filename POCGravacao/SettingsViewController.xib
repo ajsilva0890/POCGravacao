@@ -3,9 +3,23 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="SchuboiseHandwrite.ttf">
+            <string>SchuboiseHandwrite</string>
+            <string>SchuboiseHandwrite</string>
+            <string>SchuboiseHandwrite</string>
+            <string>SchuboiseHandwrite</string>
+            <string>SchuboiseHandwrite</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController">
             <connections>
+                <outlet property="lblHelpText" destination="ZVm-LV-0pZ" id="kSe-6D-fjy"/>
+                <outlet property="lblLog" destination="WSe-cJ-0Tt" id="ELo-SU-al1"/>
+                <outlet property="scrollViewHelpText" destination="jOi-Uh-peH" id="Y7z-2R-ocm"/>
+                <outlet property="scrollViewLog" destination="yCU-OG-ScY" id="UE0-7e-jEv"/>
+                <outlet property="switchBGMusic" destination="LcT-kJ-Bzv" id="Aj1-fm-0f5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,63 +36,68 @@
                     <state key="normal" backgroundImage="Home.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="btnHome:" destination="-1" eventType="touchUpInside" id="hOS-fA-J3g"/>
+                    </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxS-4v-fjV" userLabel="lblCreditos">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxS-4v-fjV" userLabel="lblCreditos">
                     <rect key="frame" x="764" y="557" width="252" height="183"/>
-                    <attributedString key="attributedText">
-                        <fragment>
-                            <string key="content">Era uma vez um desenho - v1.0   Criado por    Anderson Silva,    Bruno Fonseca,   Mayara Rodrigues,    Victor Savariego.  BEPiD - Senac Santo Amaro.</string>
-                            <attributes>
-                                <color key="NSColor" red="0.36160432450000002" green="0.22477007869999999" blue="0.043191358989999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="16" name="SchuboiseHandwrite"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="1"/>
-                            </attributes>
-                        </fragment>
-                    </attributedString>
+                    <string key="text">Era uma vez um desenho - v1.0   Criado por    Anderson Silva,    Bruno Fonseca,   Mayara Rodrigues,    Victor Savariego.  BEPiD - Senac Santo Amaro.</string>
+                    <fontDescription key="fontDescription" name="SchuboiseHandwrite" family="SchuboiseHandwrite" pointSize="16"/>
+                    <color key="textColor" red="0.36160432450000002" green="0.22477007869999999" blue="0.043191358989999998" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wqt-h2-4hW">
-                    <rect key="frame" x="24" y="87" width="992" height="299"/>
-                    <attributedString key="attributedText">
-                        <fragment>
-                            <mutableString key="content">Olá! :D Acho que se você está vendo isso, então é um pai. Ou pelo menos um adulto. Mas isso não importa agora, imagino eu, pois você está é interessado em saber como usar este aplicativo, ou só para configurar alguma coisa mesmo. Enfim, seja o que for, vamos lá!  Nossa ideia com esse aplicativo é contar histórias e ao mesmo tempo incentivar a interaç</mutableString>
-                            <attributes>
-                                <color key="NSColor" red="0.36160432450000002" green="0.22477007869999999" blue="0.043191358989999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="24" name="SchuboiseHandwrite"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" headIndent="7"/>
-                            </attributes>
-                        </fragment>
-                        <fragment content="ã">
-                            <attributes>
-                                <color key="NSColor" red="0.36160432450000002" green="0.22477007869999999" blue="0.043191358989999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="24" name="LucidaGrande-Bold"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" headIndent="7"/>
-                            </attributes>
-                        </fragment>
-                        <fragment content="o dos adultos com as crianças. Permitir uma brincadeira de imaginaç">
-                            <attributes>
-                                <color key="NSColor" red="0.36160432450000002" green="0.22477007869999999" blue="0.043191358989999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="24" name="SchuboiseHandwrite"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" headIndent="7"/>
-                            </attributes>
-                        </fragment>
-                        <fragment content="ã">
-                            <attributes>
-                                <color key="NSColor" red="0.36160432450000002" green="0.22477007869999999" blue="0.043191358989999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="24" name="LucidaGrande-Bold"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" headIndent="7"/>
-                            </attributes>
-                        </fragment>
-                        <fragment content="o e criatividade.">
-                            <attributes>
-                                <color key="NSColor" red="0.36160432450000002" green="0.22477007869999999" blue="0.043191358989999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="24" name="SchuboiseHandwrite"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" headIndent="7"/>
-                            </attributes>
-                        </fragment>
-                    </attributedString>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LogoEraUmaVezUmDesenho.png" translatesAutoresizingMaskIntoConstraints="NO" id="t09-I2-oDQ" userLabel="viewLogo">
+                    <rect key="frame" x="246" y="-43" width="532" height="283"/>
+                </imageView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOi-Uh-peH" userLabel="scrollViewTexto">
+                    <rect key="frame" x="24" y="203" width="975" height="305"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVm-LV-0pZ" userLabel="lblHelpText">
+                            <rect key="frame" x="13" y="0.0" width="954" height="514"/>
+                            <mutableString key="text">Olá! :)  Se você está vendo isso, então é um pai. Ou pelo menos um adulto. Mas isso não importa agora, imagino, pois você está é interessado em saber como usar este aplicativo, ou só para configurar alguma coisa mesmo. Enfim, seja o que for, vamos lá!  Nossa ideia com esse aplicativo é contar histórias e ao mesmo tempo incentivar a interação dos adultos com as crianças. Permitir uma brincadeira de imaginação e criatividade.  Mas como usar? Bom, nossa proposta é que o adulto deixe narrado uma história para sua criança, para que ela a ouça em momentos em que quem a gravou não esteja presente. Porém, também pode ser usado para contar uma história junto da criança, uma atividade que ensine e incentive a leitura de forma divertida.  O aplicativo ainda está em fase de criação e desenvolvimento e planejamos atualiza-lo ao longo do tempo.  Esperamos que gostem e se divirtam! :D</mutableString>
+                            <fontDescription key="fontDescription" name="SchuboiseHandwrite" family="SchuboiseHandwrite" pointSize="22"/>
+                            <color key="textColor" red="0.36160432450000002" green="0.22477007869999999" blue="0.043191358989999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </scrollView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yCU-OG-ScY" userLabel="scrollViewLog">
+                    <rect key="frame" x="24" y="557" width="431" height="203"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSe-cJ-0Tt" userLabel="lblLog">
+                            <rect key="frame" x="8" y="8" width="415" height="234"/>
+                            <string key="text">Tem alguma crítica ou sugestão? Nos mande uma mensagem em facebook.com/apperaumavezumdesenho ou eraumavezumdesenho.wordpress.com!
+
+Recursos Futuros
+
+
+Log
+
+v.1.0
+
+- Lançamento do aplicativo.</string>
+                            <fontDescription key="fontDescription" name="SchuboiseHandwrite" family="SchuboiseHandwrite" pointSize="16"/>
+                            <color key="textColor" red="0.36160432450000002" green="0.22477007869999999" blue="0.043191358989999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </scrollView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Configurações" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="waT-1e-UlN" userLabel="lblConfigs">
+                    <rect key="frame" x="463" y="558" width="293" height="23"/>
+                    <fontDescription key="fontDescription" name="SchuboiseHandwrite" family="SchuboiseHandwrite" pointSize="16"/>
+                    <color key="textColor" red="0.36160432450000002" green="0.22477007869999999" blue="0.043191358989999998" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Música de Fundo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27A-oB-k4p" userLabel="musica">
+                    <rect key="frame" x="487" y="604" width="143" height="26"/>
+                    <fontDescription key="fontDescription" name="SchuboiseHandwrite" family="SchuboiseHandwrite" pointSize="16"/>
+                    <color key="textColor" red="0.36160432450000002" green="0.22477007869999999" blue="0.043191358989999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LcT-kJ-Bzv" userLabel="switchBGMusic">
+                    <rect key="frame" x="656" y="601" width="51" height="31"/>
+                </switch>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -88,5 +107,6 @@
     <resources>
         <image name="Fundo.png" width="2050" height="1538"/>
         <image name="Home.png" width="155" height="153"/>
+        <image name="LogoEraUmaVezUmDesenho.png" width="2048" height="1536"/>
     </resources>
 </document>

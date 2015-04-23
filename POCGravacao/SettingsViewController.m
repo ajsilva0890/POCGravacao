@@ -17,6 +17,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+
+    _scrollViewHelpText.contentSize = _lblHelpText.frame.size;
+    _scrollViewLog.contentSize = _lblLog.frame.size;
+    
+    
+}
+
+
+-(IBAction)btnHome:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(BOOL)prefersStatusBarHidden{
