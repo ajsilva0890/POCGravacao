@@ -35,6 +35,10 @@
 		<string>SchuboiseHandwrite.ttf</string>
 		<string>CardenioModern.ttf</string>
 	</array>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationLandscapeLeft</string>

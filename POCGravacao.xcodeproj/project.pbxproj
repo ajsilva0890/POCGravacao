@@ -12,6 +12,8 @@
 		547E19E81AE0219600E0F755 /* BookShelf.m in Sources */ = {isa = PBXBuildFile; fileRef = 547E19E71AE0219600E0F755 /* BookShelf.m */; };
 		5494F8B11AE357AD00B58D57 /* CardenioModernBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5494F8B01AE357AD00B58D57 /* CardenioModernBold.ttf */; };
 		549BBB601AE80E510091359B /* SchuboiseHandwrite.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 549BBB5F1AE80E510091359B /* SchuboiseHandwrite.ttf */; };
+		549BBB641AE8206E0091359B /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549BBB621AE8206E0091359B /* SettingsViewController.m */; };
+		549BBB651AE8206E0091359B /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 549BBB631AE8206E0091359B /* SettingsViewController.xib */; };
 		54A2EF1D1AE4569200648E72 /* shelfTop.png in Resources */ = {isa = PBXBuildFile; fileRef = 54A2EF1A1AE4569200648E72 /* shelfTop.png */; };
 		54A2EF1E1AE4569200648E72 /* shelfMiddle.png in Resources */ = {isa = PBXBuildFile; fileRef = 54A2EF1B1AE4569200648E72 /* shelfMiddle.png */; };
 		54A2EF1F1AE4569200648E72 /* shelfBottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 54A2EF1C1AE4569200648E72 /* shelfBottom.png */; };
@@ -90,6 +92,9 @@
 		547E19E71AE0219600E0F755 /* BookShelf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookShelf.m; sourceTree = "<group>"; };
 		5494F8B01AE357AD00B58D57 /* CardenioModernBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CardenioModernBold.ttf; sourceTree = "<group>"; };
 		549BBB5F1AE80E510091359B /* SchuboiseHandwrite.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SchuboiseHandwrite.ttf; sourceTree = "<group>"; };
+		549BBB611AE8206E0091359B /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		549BBB621AE8206E0091359B /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		549BBB631AE8206E0091359B /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		54A2EF1A1AE4569200648E72 /* shelfTop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shelfTop.png; sourceTree = "<group>"; };
 		54A2EF1B1AE4569200648E72 /* shelfMiddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shelfMiddle.png; sourceTree = "<group>"; };
 		54A2EF1C1AE4569200648E72 /* shelfBottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shelfBottom.png; sourceTree = "<group>"; };
@@ -217,6 +222,16 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
+		549BBB661AE820790091359B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				549BBB611AE8206E0091359B /* SettingsViewController.h */,
+				549BBB621AE8206E0091359B /* SettingsViewController.m */,
+				549BBB631AE8206E0091359B /* SettingsViewController.xib */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
 		C422BD5D1AD6C92B004F7E87 /* PagesHistoria */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +253,7 @@
 				C472164D1AD83C44005EF629 /* MenuViewController.xib */,
 				547E19E61AE0219600E0F755 /* BookShelf.h */,
 				547E19E71AE0219600E0F755 /* BookShelf.m */,
+				549BBB661AE820790091359B /* Settings */,
 			);
 			name = MenuInicial;
 			sourceTree = "<group>";
@@ -470,6 +486,7 @@
 				C47395741AE43665006C9AFA /* cor4.png in Resources */,
 				54BB84361AE3207C003A53F4 /* 3pqTXT.txt in Resources */,
 				C47395701AE43665006C9AFA /* cor0.png in Resources */,
+				549BBB651AE8206E0091359B /* SettingsViewController.xib in Resources */,
 				C4C7FD1F1AD7FAED0073441E /* Gravar.png in Resources */,
 				54A2EF1E1AE4569200648E72 /* shelfMiddle.png in Resources */,
 				54DD27E11AE4951400C15530 /* Narrar.png in Resources */,
@@ -530,6 +547,7 @@
 				545DA4561AD46BFC008A5247 /* BookViewController.m in Sources */,
 				547E19E81AE0219600E0F755 /* BookShelf.m in Sources */,
 				C472164E1AD83C45005EF629 /* MenuViewController.m in Sources */,
+				549BBB641AE8206E0091359B /* SettingsViewController.m in Sources */,
 				C4C5F63F1AD042B300226F61 /* AppDelegate.m in Sources */,
 				C4C5F6421AD042B300226F61 /* POCGravacao.xcdatamodeld in Sources */,
 				C46316061AD0729800695BA1 /* EntradaUsuario.m in Sources */,

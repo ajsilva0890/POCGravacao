@@ -19,8 +19,8 @@
     AVAudioPlayer *clickBook;
 }
 
-@property (nonatomic) EntradaUsuario *tipoUsuario;
-@property (nonatomic) NSString *bookKey;
+@property (nonatomic) EntradaUsuario* tipoUsuario;
+@property (nonatomic) NSString* bookKey;
 
 
 @end
@@ -73,6 +73,8 @@
     [btnPai   setEnabled:NO];
     
 }
+
+
 
 -(void) viewDidLayoutSubviews{
     
@@ -253,6 +255,7 @@
         [btnBook addTarget:self action:@selector(selectedButton:) forControlEvents:UIControlEventTouchUpInside];
     }
 }
+
 
 
 - (void)didReceiveMemoryWarning {

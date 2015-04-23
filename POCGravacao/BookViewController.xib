@@ -81,7 +81,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVN-C0-Or1" userLabel="btnHome">
-                    <rect key="frame" x="19" y="24" width="60" height="55"/>
+                    <rect key="frame" x="24" y="24" width="60" height="55"/>
                     <state key="normal" backgroundImage="Home.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
