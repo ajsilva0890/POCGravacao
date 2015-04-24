@@ -8,7 +8,6 @@
             <string>SchuboiseHandwrite</string>
             <string>SchuboiseHandwrite</string>
             <string>SchuboiseHandwrite</string>
-            <string>SchuboiseHandwrite</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -42,10 +41,9 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Df-cp-sPq" userLabel="imageViewInfo">
                     <rect key="frame" x="580" y="260" width="436" height="500"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5J-kl-ryK" userLabel="btnFilho">
-                    <rect key="frame" x="696" y="270" width="208" height="50"/>
-                    <fontDescription key="fontDescription" name="SchuboiseHandwrite" family="SchuboiseHandwrite" pointSize="24"/>
-                    <state key="normal">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5J-kl-ryK" userLabel="btnFilho">
+                    <rect key="frame" x="699" y="261" width="203" height="82"/>
+                    <state key="normal" image="BtnComeçar.png">
                         <color key="titleColor" red="0.3616043244949495" green="0.22477007870409646" blue="0.043191358990867519" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -74,15 +72,6 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pRD-nJ-pTi" userLabel="imageViewCover">
                     <rect key="frame" x="696" y="340" width="208" height="208"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5w7-kO-B7w" userLabel="btnPai">
-                    <rect key="frame" x="892" y="697" width="116" height="55"/>
-                    <state key="normal" backgroundImage="BtnNarrar.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="btnPai:" destination="-1" eventType="touchUpInside" id="Toj-F0-uhs"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8b-cd-QQA" userLabel="btnAjuda">
                     <rect key="frame" x="954" y="8" width="54" height="90"/>
                     <state key="normal" image="btnHelp.png">
@@ -90,6 +79,15 @@
                     </state>
                     <connections>
                         <action selector="btnAjuda:" destination="-1" eventType="touchUpInside" id="97I-Rq-Fel"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5w7-kO-B7w" userLabel="btnPai">
+                    <rect key="frame" x="904" y="706" width="104" height="56"/>
+                    <state key="normal" backgroundImage="BtnNarrar.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnPai:" destination="-1" eventType="touchUpInside" id="Toj-F0-uhs"/>
                     </connections>
                 </button>
             </subviews>
@@ -101,6 +99,7 @@
         </view>
     </objects>
     <resources>
+        <image name="BtnComeçar.png" width="418" height="173"/>
         <image name="BtnNarrar.png" width="169" height="95"/>
         <image name="Fundo.png" width="2050" height="1538"/>
         <image name="LogoEraUmaVezUmDesenho.png" width="2048" height="1536"/>

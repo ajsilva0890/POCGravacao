@@ -38,6 +38,7 @@
     imagePlay = [UIImage imageNamed:@"Play.png"];
     imageStop = [UIImage imageNamed:@"Stop.png"];
     imageNarrar = [UIImage imageNamed:@"Narrar.png"];
+    imageNarrarPause = [UIImage imageNamed:@"BtnPausar01.png"];
     
     
     //Se for pai, libera botao de gravação.

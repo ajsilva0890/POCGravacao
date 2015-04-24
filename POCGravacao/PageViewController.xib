@@ -54,8 +54,20 @@
                         <action selector="recordPauseTapped:" destination="-1" eventType="touchUpInside" id="bFI-9v-Dne"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTB-MH-b8U" userLabel="lblPageIndex">
+                    <rect key="frame" x="977" y="728" width="39" height="32"/>
+                    <fontDescription key="fontDescription" name="CardenioModern-Bold" family="Cardenio Modern" pointSize="24"/>
+                    <color key="textColor" red="0.36160432450000002" green="0.22477007869999999" blue="0.043191358989999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PAGE TEXT" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cba-Oa-Lqk" userLabel="lblPageText">
+                    <rect key="frame" x="28" y="108" width="961" height="191"/>
+                    <fontDescription key="fontDescription" name="SchuboiseHandwrite" family="SchuboiseHandwrite" pointSize="26"/>
+                    <color key="textColor" red="0.36160432450000002" green="0.22477007869999999" blue="0.043191358989999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m4y-Fw-KbN" userLabel="btnPlay">
-                    <rect key="frame" x="877" y="630" width="112" height="100"/>
+                    <rect key="frame" x="864" y="643" width="118" height="89"/>
                     <state key="normal" backgroundImage="Play.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -66,18 +78,6 @@
                         <action selector="playTapped:" destination="-1" eventType="touchUpInside" id="UWV-GJ-Wg8"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTB-MH-b8U" userLabel="lblPageIndex">
-                    <rect key="frame" x="982" y="732" width="34" height="28"/>
-                    <fontDescription key="fontDescription" name="CardenioModern-Bold" family="Cardenio Modern" pointSize="20"/>
-                    <color key="textColor" red="0.36160432450000002" green="0.22477007869999999" blue="0.043191358989999998" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PAGE TEXT" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cba-Oa-Lqk" userLabel="lblPageText">
-                    <rect key="frame" x="28" y="108" width="961" height="191"/>
-                    <fontDescription key="fontDescription" name="SchuboiseHandwrite" family="SchuboiseHandwrite" pointSize="26"/>
-                    <color key="textColor" red="0.36160432450000002" green="0.22477007869999999" blue="0.043191358989999998" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>

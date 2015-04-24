@@ -50,9 +50,9 @@
     
     
     for (int i = 0; i < 1; i++) {
-        [self createBook:10 bookName:@"teste123"];
-        [self createBook:10 bookName:@"lol"];
         [self createBook:14 bookName:@"3pq"];
+        [self createBook:10 bookName:@"joaoemaria"];
+        [self createBook:10 bookName:@"redhood"];
     }
     
     _settingsView = [[SettingsViewController alloc] init];
@@ -64,14 +64,26 @@
     [_scrollViewShelf addSubview:_imageViewShelf];
     [_scrollViewShelf addSubview:_viewContent];
     
-    [self sortButtonArray];
-    
     shelfTop = [UIImage imageNamed:@"shelfTop.png"];
     shelfMiddle = [UIImage imageNamed:@"shelfMiddle.png"];
     shelfBottom = [UIImage imageNamed:@"shelfBottom.png"];
     
     
     [self sortButtonArray];
+    
+    // Seleciona o livro 1 de começo.
+    _selectedBookButton = [NSString stringWithFormat:@"%ld", (long)0];
+    _bookSelected = [[BookShelf bookShelf] bookForKey:_selectedBookButton];
+    
+    [self enableBtnFilhoPai];
+    
+    _lblTitle.text = [_bookSelected bookFantasyName];
+    _lblDescription.text = [_bookSelected bookDescription];
+    _lblAuthor.text = [_bookSelected bookAuthor];
+    
+    _imageViewCover.image = [UIImage imageNamed:[_bookSelected bookCoverURL]];
+    
+    // --- FIM
     
     [btnFilho setEnabled:NO];
     [btnPai   setEnabled:NO];
@@ -124,7 +136,6 @@
 }
 
 - (void) selectedButton:(id)sender{
-//    [clickBook play];
     
     [self.sons playClique:0];
     
@@ -171,8 +182,10 @@
     
     UIButton *btnBook;
     
+    NSString *coverUrl;
+    
     int tagCount = 0;
-    int colunas = 3, w = 150, h = 150, marginX = 32, marginY = 32; // Configs dos botões de livro.
+    int colunas = 3, w = 125, h = 125, marginX = 32, marginY = 32; // Configs dos botões de livro.
     unsigned long int bookTotal = [BookShelf bookShelf].bookTotal;
     unsigned long int linhas = bookTotal/3;
     
@@ -249,8 +262,10 @@
             btnBook.tag = tagCount;
             tagCount++;
             
+            coverUrl = [[[BookShelf bookShelf]bookForKey:[NSString stringWithFormat:@"%d", j]]bookCoverURL];
+            
             //[btnBook setTitle:@"BUTTON" forState:UIControlStateNormal];
-            [btnBook setBackgroundImage: [UIImage imageNamed:@"Home.png"]
+            [btnBook setBackgroundImage: [UIImage imageNamed:coverUrl]
                                forState:UIControlStateNormal];
             [self.bookShelfButtons addObject:btnBook];
         }

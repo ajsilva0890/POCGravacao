@@ -38,6 +38,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnFinalizar;
 @property (weak, nonatomic) IBOutlet UIButton *btnEsq;
 @property (weak, nonatomic) IBOutlet UIButton *btnDir;
+@property (weak, nonatomic) IBOutlet UIButton *btnActLequeCor;
+
+
 @property (weak, nonatomic) IBOutlet UIView *viewPage;
 
 @property (weak, nonatomic) IBOutlet UIButton *btnMenu;

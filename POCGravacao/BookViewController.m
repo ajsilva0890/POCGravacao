@@ -19,7 +19,7 @@
 }
 
 @property (nonatomic) EntradaUsuario *tipoUsuario;
-@property (weak, nonatomic) IBOutlet UIButton *btnActLequeCor;
+
 @property (nonatomic) Sounds *sons;
 
 @end
@@ -309,9 +309,9 @@
         
         btnEspessura = [[UIButton alloc] initWithFrame:CGRectMake(margin - 20, self.view.frame.size.height - i*(h+distancia)-margin-(2*h) + 20, w, h)];
         
-//        NSString *imageEspessura = [NSString stringWithFormat:@"espessura%d.png", i];
+        NSString *imageEspessura = [NSString stringWithFormat:@"espessura%d.png", i];
         
-        [btnEspessura setBackgroundImage:[UIImage imageNamed:@"Play.png"]
+        [btnEspessura setBackgroundImage:[UIImage imageNamed:imageEspessura]
                                 forState:UIControlStateNormal];
         [btnEspessura setTag:i];
         [self.btnLequeEspessura addObject:btnEspessura];
@@ -395,16 +395,13 @@
         case 8:// laranja
             [[_pages objectAtIndex:_pageIndex] setCores:208.0/255 G:125.0/255 B:21.0/255];
             break;
-        case 9: // branco
+        case 9: // marrom
+            [[_pages objectAtIndex:_pageIndex] setCores:84.0/255 G:48.0/255 B:19.0/255];
+            break;
+        case 10: // branco
             [[_pages objectAtIndex:_pageIndex] setCores:1.0 G:1.0 B:1.0];
             break;
-        case 10: // preto
-            [[_pages objectAtIndex:_pageIndex] setCores:11.0/255 G:12.0/255 B:12.0/255];
-            break;
-        case 11:// cinza
-            [[_pages objectAtIndex:_pageIndex] setCores:83.0/255 G:84.0/255 B:84.0/255];
-            break;
-        default:
+        default: // preto
             [[_pages objectAtIndex:_pageIndex] setCores:11.0/255 G:12.0/255 B:12.0/255];
             break;
     }
@@ -427,10 +424,10 @@
             [[_pages objectAtIndex:_pageIndex] setEspessura:12];
             break;
         case 2:
-            [[_pages objectAtIndex:_pageIndex] setEspessura:16];
+            [[_pages objectAtIndex:_pageIndex] setEspessura:18];
             break;
         default:
-            [[_pages objectAtIndex:_pageIndex] setEspessura:8];
+            [[_pages objectAtIndex:_pageIndex] setEspessura:12];
 
             break;
     }

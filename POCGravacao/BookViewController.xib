@@ -3,12 +3,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <mutableArray key="SchuboiseHandwrite.ttf">
-            <string>SchuboiseHandwrite</string>
-            <string>SchuboiseHandwrite</string>
-        </mutableArray>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BookViewController">
             <connections>
@@ -19,7 +13,6 @@
                 <outlet property="btnFinalizarCancelar" destination="bVG-eG-Ygw" id="3P0-9H-q1j"/>
                 <outlet property="btnFinalizarOk" destination="6il-l5-GwR" id="dxo-pU-mKC"/>
                 <outlet property="btnMenu" destination="OVN-C0-Or1" id="JbK-mi-P2T"/>
-                <outlet property="imageCheckViewAlert" destination="iLE-Md-A94" id="5Fy-Hk-oqu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewAlertFinalizar" destination="b24-ba-W1P" id="yFb-Xl-GSb"/>
                 <outlet property="viewPage" destination="boy-rH-iqm" id="U29-5h-l9s"/>
@@ -31,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="boy-rH-iqm" userLabel="viewPage">
-                    <rect key="frame" x="-3" y="0.0" width="1024" height="768"/>
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vzk-Ab-0n5" userLabel="btnDir">
@@ -88,32 +81,27 @@
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b24-ba-W1P">
                     <rect key="frame" x="279" y="234" width="466" height="301"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6il-l5-GwR">
-                            <rect key="frame" x="71" y="235" width="62" height="48"/>
-                            <fontDescription key="fontDescription" name="SchuboiseHandwrite" family="SchuboiseHandwrite" pointSize="35"/>
-                            <state key="normal" title="SIM">
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6il-l5-GwR">
+                            <rect key="frame" x="63" y="220" width="108" height="62"/>
+                            <state key="normal" image="Check-01.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
                                 <action selector="btnFinalizarOk:" destination="-1" eventType="touchUpInside" id="xai-4q-b1J"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVG-eG-Ygw">
-                            <rect key="frame" x="323" y="236" width="83" height="49"/>
-                            <fontDescription key="fontDescription" name="SchuboiseHandwrite" family="SchuboiseHandwrite" pointSize="35"/>
-                            <state key="normal" title="NÃO">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FeedbackFinalizar.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZfY-AK-sZh">
+                            <rect key="frame" x="15" y="0.0" width="437" height="212"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVG-eG-Ygw">
+                            <rect key="frame" x="294" y="220" width="109" height="62"/>
+                            <state key="normal" image="X-01.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
                                 <action selector="btnFinalizarCancelar:" destination="-1" eventType="touchUpInside" id="WwZ-dw-bA9"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FeedbackFinalizar.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZfY-AK-sZh">
-                            <rect key="frame" x="15" y="0.0" width="437" height="212"/>
-                        </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Check-01.png" translatesAutoresizingMaskIntoConstraints="NO" id="iLE-Md-A94">
-                            <rect key="frame" x="138" y="101" width="282" height="182"/>
-                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -131,6 +119,7 @@
         <image name="FeedbackFinalizar.png" width="912" height="329"/>
         <image name="Home.png" width="155" height="153"/>
         <image name="Iconelapis.png" width="709" height="627"/>
+        <image name="X-01.png" width="404" height="253"/>
         <image name="btnPassar.png" width="164" height="311"/>
         <image name="btnPassarEsq.png" width="164" height="311"/>
     </resources>
