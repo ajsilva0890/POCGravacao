@@ -10,6 +10,7 @@
 #import "PageViewController.h"
 #import "EntradaUsuario.h"
 #import <AVFoundation/AVFoundation.h>
+#import "Sounds.h"
 
 @interface BookViewController ()
 {
@@ -19,6 +20,7 @@
 
 @property (nonatomic) EntradaUsuario *tipoUsuario;
 @property (weak, nonatomic) IBOutlet UIButton *btnActLequeCor;
+@property (nonatomic) Sounds *sons;
 
 @end
 
@@ -48,6 +50,8 @@
     self.tipoUsuario = [EntradaUsuario instance];
     self.btnLequeCor = [[NSMutableArray alloc] init];
     self.btnLequeEspessura = [[NSMutableArray alloc] init];
+    self.sons = [[Sounds alloc] init];
+    
     [btnEsq setHidden:YES];
 
     _pageIndex = 0;
@@ -68,7 +72,7 @@
     [self setBookLocked:NO];
     [btnFinalizar setHidden:YES];
     
-    [self somClickPageHome];
+//    [self somClickPageHome];
     [self createButtonsLeque];
     
 }
@@ -82,20 +86,20 @@
     
 }
 
-- (void) somClickPageHome {
-    NSString *path;
-    NSURL *soundUrl;
-    
-    path = [NSString stringWithFormat:@"%@/home.mp3", [[NSBundle mainBundle] resourcePath]];
-    soundUrl = [NSURL fileURLWithPath:path];
-    somHome = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
-    somHome.numberOfLoops = 0;
-    
-    path = [NSString stringWithFormat:@"%@/pageProx.mp3", [[NSBundle mainBundle] resourcePath]];
-    soundUrl = [NSURL fileURLWithPath:path];
-    somPageProx = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
-    somPageProx.numberOfLoops = 0;
-}
+//- (void) somClickPageHome {
+//    NSString *path;
+//    NSURL *soundUrl;
+//    
+//    path = [NSString stringWithFormat:@"%@/home.mp3", [[NSBundle mainBundle] resourcePath]];
+//    soundUrl = [NSURL fileURLWithPath:path];
+//    somHome = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
+//    somHome.numberOfLoops = 0;
+//    
+//    path = [NSString stringWithFormat:@"%@/pageProx.mp3", [[NSBundle mainBundle] resourcePath]];
+//    soundUrl = [NSURL fileURLWithPath:path];
+//    somPageProx = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
+//    somPageProx.numberOfLoops = 0;
+//}
 
 - (void) getBookDescription{
     
@@ -147,6 +151,8 @@
         [btnActLequeCor setHidden:NO];
         [btnActLequeCor setSelected:NO];
         [btnFinalizar setHidden:YES];
+        [self.viewAlertFinalizar setHidden:YES];
+
     }
     else {
         [[[_pages objectAtIndex:_pageIndex]btnRecordPause]setEnabled:YES];
@@ -166,7 +172,8 @@
     
     [[_pages objectAtIndex:_pageIndex] stopPlayer];
     [self.navigationController popViewControllerAnimated:YES];
-    [somHome play];
+    [self.sons playClique:1];
+//    [somHome play];
     
 }
 
@@ -188,7 +195,8 @@
     [self corSelecionada:corSelecionada];
     [self espessuraSelecionada:espessuraSelecionada];
     [btnFinalizar setHidden:YES];
-    [somPageProx play];
+    [self.sons playClique:4];
+//    [somPageProx play];
     
 }
 
@@ -211,10 +219,12 @@
     [self changePage];
     [self corSelecionada:corSelecionada];
     [self espessuraSelecionada:espessuraSelecionada];
-    [somPageProx play];
+    [self.sons playClique:4];
+//    [somPageProx play];
 }
 
 - (IBAction)btnFinalizar:(id)sender{
+    [self.sons playClique:5];
     
     [self.viewAlertFinalizar setHidden:NO];
     [imageCheckViewAlert setHidden:YES];
@@ -223,6 +233,7 @@
 
 - (IBAction)btnFinalizarOk:(id)sender{
     
+    [self.sons playClique:1];
     [imageCheckViewAlert setHidden:NO];
     [self setBookLocked:YES];
     [self performSelector:@selector(checkOn) withObject:nil afterDelay:0.5];
@@ -244,6 +255,8 @@
 }
 
 - (IBAction)btnFinalizarCancelar:(id)sender{
+    [self.sons playClique:5];
+
     [self.viewAlertFinalizar setHidden:YES];
 }
 
@@ -268,15 +281,15 @@
 - (void) createButtonsLeque {
     
     /*  Criacao dos botoes cor */
-    int w = 50, h = 50, margin = 5, distancia = 15, qntdCor = 12, qntdEspessura = 3;
+    int w = 50, h = 50, margin = 30, distancia = 15, qntdCor = 12, qntdEspessura = 3;
     
     UIButton *btnCor;
     
     for (int i = 0; i < qntdCor; i++) {
         
-        btnCor = [[UIButton alloc] initWithFrame:CGRectMake(i*(w+distancia)+margin+w, self.view.frame.size.height - h - margin, w, h)];
+        btnCor = [[UIButton alloc] initWithFrame:CGRectMake(i*(w+distancia)+margin+w, self.view.frame.size.height - h - margin + 25, w-20, h+20)];
         
-        NSString *imageCor = [NSString stringWithFormat:@"cor%d.png", i];
+        NSString *imageCor = [NSString stringWithFormat:@"c%d.png", i];
         [btnCor setBackgroundImage:[UIImage imageNamed:imageCor]
                           forState:UIControlStateNormal];
         [btnCor setTag:i];
@@ -294,7 +307,10 @@
     
     for (int i = 0; i < qntdEspessura; i++) {
         
-        btnEspessura = [[UIButton alloc] initWithFrame:CGRectMake(margin, self.view.frame.size.height - i*(h+distancia)-margin-(2*h), w, h)];
+        btnEspessura = [[UIButton alloc] initWithFrame:CGRectMake(margin - 20, self.view.frame.size.height - i*(h+distancia)-margin-(2*h) + 20, w, h)];
+        
+//        NSString *imageEspessura = [NSString stringWithFormat:@"espessura%d.png", i];
+        
         [btnEspessura setBackgroundImage:[UIImage imageNamed:@"Play.png"]
                                 forState:UIControlStateNormal];
         [btnEspessura setTag:i];
@@ -314,8 +330,11 @@
 
 
 - (IBAction)btnActLequeCor:(id)sender{
-
+    
+    [self.sons playClique:6];
+    
     if (![btnActLequeCor isSelected]) {
+        [[self btnActLequeCor] setAlpha:0.4];
         for(UIButton *btnCor in self.btnLequeCor){
             [btnCor setHidden:NO];
         }
@@ -327,6 +346,7 @@
     }
     
     else{
+        [[self btnActLequeCor] setAlpha:1];
         for(UIButton *btnCor in self.btnLequeCor){
             [btnCor setHidden:YES];
         }

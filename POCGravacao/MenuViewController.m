@@ -11,7 +11,7 @@
 #import "BookViewController.h"
 #import "BookShelf.h"
 #import "SettingsViewController.h"
-
+#import "Sounds.h"
 
 
 @interface MenuViewController ()
@@ -22,6 +22,7 @@
 
 @property (nonatomic) EntradaUsuario* tipoUsuario;
 @property (nonatomic) NSString* bookKey;
+@property (nonatomic) Sounds *sons;
 
 
 @end
@@ -45,6 +46,7 @@
     // Do any additional setup after loading the view from its nib.
     
     self.tipoUsuario = [EntradaUsuario instance];
+    self.sons = [[Sounds alloc] init];
     
     
     for (int i = 0; i < 1; i++) {
@@ -63,7 +65,7 @@
     [_scrollViewShelf addSubview:_viewContent];
     
     [self sortButtonArray];
-    [self somClickBook];
+    
     shelfTop = [UIImage imageNamed:@"shelfTop.png"];
     shelfMiddle = [UIImage imageNamed:@"shelfMiddle.png"];
     shelfBottom = [UIImage imageNamed:@"shelfBottom.png"];
@@ -98,10 +100,14 @@
 }
 
 - (IBAction) btnAjuda:(id)sender{
+    [self.sons playClique:1];
+
     [self.navigationController pushViewController:_settingsView animated:YES];
 }
 
 - (IBAction) btnFilho:(id)sender {
+    
+    [self.sons playClique:3];
     
     [self.tipoUsuario setTipoDeUsuario:0 ];
     [self.navigationController pushViewController:_bookSelected  animated:YES];
@@ -110,13 +116,18 @@
 
 - (IBAction) btnPai:(id)sender {
     
+    [self.sons playClique:2];
+    
     [self.tipoUsuario setTipoDeUsuario:1 ];
     [self.navigationController pushViewController:_bookSelected  animated:YES];
     
 }
 
 - (void) selectedButton:(id)sender{
-    [clickBook play];
+//    [clickBook play];
+    
+    [self.sons playClique:0];
+    
     _selectedBookButton = [NSString stringWithFormat:@"%ld", (long)[sender tag]];
     _bookSelected = [[BookShelf bookShelf] bookForKey:_selectedBookButton];
     
@@ -140,15 +151,6 @@
         [btnPai   setEnabled:YES];
         [btnFilho setEnabled:NO];
     }
-}
-
-- (void) somClickBook {
-    NSString *path = [NSString stringWithFormat:@"%@/clickButton.mp3", [[NSBundle mainBundle] resourcePath]];
-    NSURL *soundUrl = [NSURL fileURLWithPath:path];
-    
-    clickBook = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
-    clickBook.numberOfLoops = 0;
-
 }
 
 - (void) createBook:(NSInteger)bookTotalPages bookName:(NSString*)bookName{
@@ -180,8 +182,6 @@
     shelfImageSize.width = _imageViewShelf.frame.size.width; // Largura da scroll view. Não mude isso.
     shelfImageSize.height = shelfTopMaxHeight;
     _imageViewShelf.image = shelfTop;
-    
-    
     
     if (linhas % 3 != 0) {
         linhas++;
@@ -261,9 +261,6 @@
         [btnBook addTarget:self action:@selector(selectedButton:) forControlEvents:UIControlEventTouchUpInside];
     }
 }
-
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
