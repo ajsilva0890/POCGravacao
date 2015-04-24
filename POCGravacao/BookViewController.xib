@@ -120,7 +120,7 @@
         <image name="Home.png" width="155" height="153"/>
         <image name="Iconelapis.png" width="709" height="627"/>
         <image name="X-01.png" width="404" height="253"/>
-        <image name="btnPassar.png" width="164" height="311"/>
-        <image name="btnPassarEsq.png" width="164" height="311"/>
+        <image name="btnPassar.png" width="144" height="285"/>
+        <image name="btnPassarEsq.png" width="144" height="285"/>
     </resources>
 </document>

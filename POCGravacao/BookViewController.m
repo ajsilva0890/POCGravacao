@@ -281,13 +281,13 @@
 - (void) createButtonsLeque {
     
     /*  Criacao dos botoes cor */
-    int w = 50, h = 50, margin = 30, distancia = 15, qntdCor = 12, qntdEspessura = 3;
+    int w = 65, h = 150, margin = 20, distancia = 10, qntdCor = 12, qntdEspessura = 3, wEs = 50, hEs = 50;
     
     UIButton *btnCor;
     
     for (int i = 0; i < qntdCor; i++) {
         
-        btnCor = [[UIButton alloc] initWithFrame:CGRectMake(i*(w+distancia)+margin+w, self.view.frame.size.height - h - margin + 25, w-20, h+20)];
+        btnCor = [[UIButton alloc] initWithFrame:CGRectMake(i*(w)+margin+w, self.view.frame.size.height - h/2 - margin + 25, w-20, h+20)];
         
         NSString *imageCor = [NSString stringWithFormat:@"c%d.png", i];
         [btnCor setBackgroundImage:[UIImage imageNamed:imageCor]
@@ -307,7 +307,7 @@
     
     for (int i = 0; i < qntdEspessura; i++) {
         
-        btnEspessura = [[UIButton alloc] initWithFrame:CGRectMake(margin - 20, self.view.frame.size.height - i*(h+distancia)-margin-(2*h) + 20, w, h)];
+        btnEspessura = [[UIButton alloc] initWithFrame:CGRectMake(margin - 20, self.view.frame.size.height - i*(hEs+distancia)-margin-(2*hEs) + 20, wEs, hEs)];
         
         NSString *imageEspessura = [NSString stringWithFormat:@"espessura%d.png", i];
         
@@ -362,6 +362,8 @@
     
     [self corSelecionada:[sender tag]];
     corSelecionada = [sender tag];
+    
+
     
 }
 

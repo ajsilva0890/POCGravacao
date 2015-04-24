@@ -76,7 +76,7 @@
     _bookSelected = [[BookShelf bookShelf] bookForKey:_selectedBookButton];
     
     [self enableBtnFilhoPai];
-    
+
     _lblTitle.text = [_bookSelected bookFantasyName];
     _lblDescription.text = [_bookSelected bookDescription];
     _lblAuthor.text = [_bookSelected bookAuthor];

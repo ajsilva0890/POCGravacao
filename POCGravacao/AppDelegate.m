@@ -21,7 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [application setStatusBarHidden:YES];
     
-    [NSThread sleepForTimeInterval:2.0];
+    //[NSThread sleepForTimeInterval:2.0];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     MenuViewController *menu = [[MenuViewController alloc] init];
