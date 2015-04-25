@@ -163,8 +163,8 @@
 		C473957E1AE45F50006C9AFA /* home.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = home.mp3; path = sons/home.mp3; sourceTree = "<group>"; };
 		C473957F1AE45F50006C9AFA /* page.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = page.mp3; path = sons/page.mp3; sourceTree = "<group>"; };
 		C47395801AE45F50006C9AFA /* pageProx.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = pageProx.mp3; path = sons/pageProx.mp3; sourceTree = "<group>"; };
-		C47A679E1AEAA34A00A9A62D /* Sounds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sounds.h; sourceTree = "<group>"; };
-		C47A679F1AEAA34A00A9A62D /* Sounds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sounds.m; sourceTree = "<group>"; };
+		C47A679E1AEAA34A00A9A62D /* Sounds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sounds.h; path = ../Sounds.h; sourceTree = "<group>"; };
+		C47A679F1AEAA34A00A9A62D /* Sounds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sounds.m; path = ../Sounds.m; sourceTree = "<group>"; };
 		C47A67A11AEAA37A00A9A62D /* caixaLapis.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = caixaLapis.mp3; path = sons/caixaLapis.mp3; sourceTree = "<group>"; };
 		C47A67A21AEAA37A00A9A62D /* finalizar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = finalizar.mp3; path = sons/finalizar.mp3; sourceTree = "<group>"; };
 		C4C5F6361AD042B300226F61 /* POCGravacao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POCGravacao.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -298,6 +298,16 @@
 			name = PagesHistoria;
 			sourceTree = "<group>";
 		};
+		C471EAFF1AEBF7C500763069 /* allSounds */ = {
+			isa = PBXGroup;
+			children = (
+				C47395631AE430F7006C9AFA /* sons */,
+				C47A679E1AEAA34A00A9A62D /* Sounds.h */,
+				C47A679F1AEAA34A00A9A62D /* Sounds.m */,
+			);
+			name = allSounds;
+			sourceTree = "<group>";
+		};
 		C47216581AD857BB005EF629 /* MenuInicial */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,8 +362,6 @@
 		C4C5F62D1AD042B300226F61 = {
 			isa = PBXGroup;
 			children = (
-				C47A679E1AEAA34A00A9A62D /* Sounds.h */,
-				C47A679F1AEAA34A00A9A62D /* Sounds.m */,
 				C4C5F6741AD0508700226F61 /* AVFoundation.framework */,
 				C4C5F6381AD042B300226F61 /* POCGravacao */,
 				C4C5F64F1AD042B400226F61 /* POCGravacaoTests */,
@@ -373,8 +381,8 @@
 		C4C5F6381AD042B300226F61 /* POCGravacao */ = {
 			isa = PBXGroup;
 			children = (
+				C471EAFF1AEBF7C500763069 /* allSounds */,
 				C473957C1AE4366E006C9AFA /* btnLapisCor */,
-				C47395631AE430F7006C9AFA /* sons */,
 				C4C7FD1B1AD7F9D50073441E /* imageBtn */,
 				5443FE7A1AD59E1400E7EBD6 /* Book3PQ */,
 				C47216581AD857BB005EF629 /* MenuInicial */,
