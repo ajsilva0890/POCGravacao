@@ -42,6 +42,7 @@
 		C426D4151AD72A4500F9B4E9 /* Play.png in Resources */ = {isa = PBXBuildFile; fileRef = C426D4101AD72A4500F9B4E9 /* Play.png */; };
 		C426D4161AD72A4500F9B4E9 /* Stop.png in Resources */ = {isa = PBXBuildFile; fileRef = C426D4111AD72A4500F9B4E9 /* Stop.png */; };
 		C46316061AD0729800695BA1 /* EntradaUsuario.m in Sources */ = {isa = PBXBuildFile; fileRef = C46316051AD0729800695BA1 /* EntradaUsuario.m */; };
+		C471EAFE1AEBEA9200763069 /* clickLapisEspessura.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C471EAFD1AEBEA9200763069 /* clickLapisEspessura.mp3 */; };
 		C472164E1AD83C45005EF629 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C472164C1AD83C44005EF629 /* MenuViewController.m */; };
 		C472164F1AD83C45005EF629 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C472164D1AD83C44005EF629 /* MenuViewController.xib */; };
 		C47216511AD8431F005EF629 /* LogoEraUmaVezUmDesenho.png in Resources */ = {isa = PBXBuildFile; fileRef = C47216501AD8431F005EF629 /* LogoEraUmaVezUmDesenho.png */; };
@@ -92,7 +93,7 @@
 		C4D5B7841AEAB28000775169 /* Btnfinalizar.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D5B77C1AEAB28000775169 /* Btnfinalizar.png */; };
 		C4D5B7851AEAB28000775169 /* BtnPausar01.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D5B77D1AEAB28000775169 /* BtnPausar01.png */; };
 		C4D5B7861AEAB28000775169 /* GravarLegenda.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D5B77E1AEAB28000775169 /* GravarLegenda.png */; };
-		C4D5B7871AEAB28000775169 /* LagendaIniciar.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D5B77F1AEAB28000775169 /* LagendaIniciar.png */; };
+		C4D5B7871AEAB28000775169 /* LegendaIniciar.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D5B77F1AEAB28000775169 /* LegendaIniciar.png */; };
 		C4D5B7881AEAB28000775169 /* LegendaPausar.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D5B7801AEAB28000775169 /* LegendaPausar.png */; };
 		C4D5B78A1AEAB28000775169 /* Narrar01.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D5B7821AEAB28000775169 /* Narrar01.png */; };
 		C4D5B78B1AEAB28000775169 /* PararLegenda.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D5B7831AEAB28000775169 /* PararLegenda.png */; };
@@ -151,6 +152,7 @@
 		C426D4111AD72A4500F9B4E9 /* Stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Stop.png; sourceTree = "<group>"; };
 		C46316041AD0729800695BA1 /* EntradaUsuario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntradaUsuario.h; sourceTree = "<group>"; };
 		C46316051AD0729800695BA1 /* EntradaUsuario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntradaUsuario.m; sourceTree = "<group>"; };
+		C471EAFD1AEBEA9200763069 /* clickLapisEspessura.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = clickLapisEspessura.mp3; path = sons/clickLapisEspessura.mp3; sourceTree = "<group>"; };
 		C472164B1AD83C44005EF629 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		C472164C1AD83C44005EF629 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		C472164D1AD83C44005EF629 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
@@ -208,7 +210,7 @@
 		C4D5B77C1AEAB28000775169 /* Btnfinalizar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Btnfinalizar.png; sourceTree = "<group>"; };
 		C4D5B77D1AEAB28000775169 /* BtnPausar01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BtnPausar01.png; sourceTree = "<group>"; };
 		C4D5B77E1AEAB28000775169 /* GravarLegenda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GravarLegenda.png; sourceTree = "<group>"; };
-		C4D5B77F1AEAB28000775169 /* LagendaIniciar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LagendaIniciar.png; sourceTree = "<group>"; };
+		C4D5B77F1AEAB28000775169 /* LegendaIniciar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LegendaIniciar.png; sourceTree = "<group>"; };
 		C4D5B7801AEAB28000775169 /* LegendaPausar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LegendaPausar.png; sourceTree = "<group>"; };
 		C4D5B7821AEAB28000775169 /* Narrar01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Narrar01.png; sourceTree = "<group>"; };
 		C4D5B7831AEAB28000775169 /* PararLegenda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PararLegenda.png; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 		C47395631AE430F7006C9AFA /* sons */ = {
 			isa = PBXGroup;
 			children = (
+				C471EAFD1AEBEA9200763069 /* clickLapisEspessura.mp3 */,
 				C47A67A11AEAA37A00A9A62D /* caixaLapis.mp3 */,
 				C47A67A21AEAA37A00A9A62D /* finalizar.mp3 */,
 				C473957D1AE45F50006C9AFA /* clickButton.mp3 */,
@@ -435,7 +438,7 @@
 				C4D5B77C1AEAB28000775169 /* Btnfinalizar.png */,
 				C4D5B77D1AEAB28000775169 /* BtnPausar01.png */,
 				C4D5B77E1AEAB28000775169 /* GravarLegenda.png */,
-				C4D5B77F1AEAB28000775169 /* LagendaIniciar.png */,
+				C4D5B77F1AEAB28000775169 /* LegendaIniciar.png */,
 				C4D5B7801AEAB28000775169 /* LegendaPausar.png */,
 				C4D5B7821AEAB28000775169 /* Narrar01.png */,
 				C4D5B7831AEAB28000775169 /* PararLegenda.png */,
@@ -521,7 +524,7 @@
 				TargetAttributes = {
 					C4C5F6351AD042B300226F61 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = ECD4M22565;
+						DevelopmentTeam = 4TM3YLSYM4;
 					};
 					C4C5F64B1AD042B400226F61 = {
 						CreatedOnToolsVersion = 6.2;
@@ -610,12 +613,13 @@
 				C4C7FD3A1AD82CF90073441E /* Book3pqPage10.png in Resources */,
 				C47216571AD84854005EF629 /* Fundo.png in Resources */,
 				C4D5B78E1AEAB43C00775169 /* Check-01.png in Resources */,
-				C4D5B7871AEAB28000775169 /* LagendaIniciar.png in Resources */,
+				C4D5B7871AEAB28000775169 /* LegendaIniciar.png in Resources */,
 				C4C7FD301AD82CF90073441E /* Book3pqPage0.png in Resources */,
 				C47395821AE45F50006C9AFA /* home.mp3 in Resources */,
 				54DA3E621AEADC3F00ADD394 /* espessura2.png in Resources */,
 				C426D4141AD72A4500F9B4E9 /* Pausar.png in Resources */,
 				54DA3E571AEAB9A100ADD394 /* joaoemariaCover.png in Resources */,
+				C471EAFE1AEBEA9200763069 /* clickLapisEspessura.mp3 in Resources */,
 				54C33C0D1AE99924009BB220 /* btnHelp.png in Resources */,
 				C4C7FD361AD82CF90073441E /* Book3pqPage6.png in Resources */,
 				C4C7FD381AD82CF90073441E /* Book3pqPage8.png in Resources */,

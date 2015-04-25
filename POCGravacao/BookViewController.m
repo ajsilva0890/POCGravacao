@@ -16,6 +16,7 @@
 {
     NSInteger corSelecionada, espessuraSelecionada;
     AVAudioPlayer *somHome, *somPageProx;
+    CGRect posSelect, posUnselect;
 }
 
 @property (nonatomic) EntradaUsuario *tipoUsuario;
@@ -72,7 +73,6 @@
     [self setBookLocked:NO];
     [btnFinalizar setHidden:YES];
     
-//    [self somClickPageHome];
     [self createButtonsLeque];
     
 }
@@ -86,20 +86,6 @@
     
 }
 
-//- (void) somClickPageHome {
-//    NSString *path;
-//    NSURL *soundUrl;
-//    
-//    path = [NSString stringWithFormat:@"%@/home.mp3", [[NSBundle mainBundle] resourcePath]];
-//    soundUrl = [NSURL fileURLWithPath:path];
-//    somHome = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
-//    somHome.numberOfLoops = 0;
-//    
-//    path = [NSString stringWithFormat:@"%@/pageProx.mp3", [[NSBundle mainBundle] resourcePath]];
-//    soundUrl = [NSURL fileURLWithPath:path];
-//    somPageProx = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
-//    somPageProx.numberOfLoops = 0;
-//}
 
 - (void) getBookDescription{
     
@@ -149,7 +135,6 @@
         [[[_pages objectAtIndex:_pageIndex]btnRecordPause]setEnabled:NO];
         [[_pages objectAtIndex:_pageIndex] setImagensButtonsFilho];
         [btnActLequeCor setHidden:NO];
-        [btnActLequeCor setSelected:NO];
         [btnFinalizar setHidden:YES];
         [self.viewAlertFinalizar setHidden:YES];
 
@@ -158,7 +143,6 @@
         [[[_pages objectAtIndex:_pageIndex]btnRecordPause]setEnabled:YES];
         [[_pages objectAtIndex:_pageIndex] setImagensButtonsPai];
         [btnActLequeCor setHidden:YES];
-        [btnActLequeCor setSelected:YES];
         
         for(UIButton *btnCor in self.btnLequeCor)
             [btnCor setHidden:YES];
@@ -173,7 +157,6 @@
     [[_pages objectAtIndex:_pageIndex] stopPlayer];
     [self.navigationController popViewControllerAnimated:YES];
     [self.sons playClique:1];
-//    [somHome play];
     
 }
 
@@ -196,7 +179,6 @@
     [self espessuraSelecionada:espessuraSelecionada];
     [btnFinalizar setHidden:YES];
     [self.sons playClique:4];
-//    [somPageProx play];
     
 }
 
@@ -220,12 +202,11 @@
     [self corSelecionada:corSelecionada];
     [self espessuraSelecionada:espessuraSelecionada];
     [self.sons playClique:4];
-//    [somPageProx play];
 }
 
 - (IBAction)btnFinalizar:(id)sender{
-    [self.sons playClique:5];
     
+    [self.sons playClique:5];
     [self.viewAlertFinalizar setHidden:NO];
     [imageCheckViewAlert setHidden:YES];
     
@@ -302,12 +283,16 @@
         [btnCor setHidden:YES];
     }
     
+    posUnselect = btnCor.frame;
+    posSelect = btnCor.frame;
+    posSelect.origin.y -= 20;
+    
     /* criacao espessura */
     UIButton *btnEspessura;
     
     for (int i = 0; i < qntdEspessura; i++) {
         
-        btnEspessura = [[UIButton alloc] initWithFrame:CGRectMake(margin - 20, self.view.frame.size.height - i*(hEs+distancia)-margin-(2*hEs) + 20, wEs, hEs)];
+        btnEspessura = [[UIButton alloc] initWithFrame:CGRectMake(margin - 15, self.view.frame.size.height - i*(hEs+distancia)-margin-(2*hEs) + 20, wEs, hEs)];
         
         NSString *imageEspessura = [NSString stringWithFormat:@"espessura%d.png", i];
         
@@ -360,11 +345,9 @@
 
 - (void)btnCor:(id)sender{
     
+    [self.sons playClique:7];
     [self corSelecionada:[sender tag]];
     corSelecionada = [sender tag];
-    
-
-    
 }
 
 - (void)corSelecionada:(NSInteger)selecao {
@@ -412,6 +395,7 @@
 
 - (void)btnEspessura:(id)sender{
     
+    [self.sons playClique:7];
     [self espessuraSelecionada:[sender tag]];
     espessuraSelecionada = [sender tag];
 }

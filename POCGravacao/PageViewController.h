@@ -12,6 +12,7 @@
 
 
 @interface PageViewController : UIViewController <AVAudioRecorderDelegate, AVAudioPlayerDelegate>
+
 {
     float r, g, b, alpha;
     UIImage *imageGravar, *imagePausar, *imagePlay, *imageStop, *imageNarrar, *imageNarrarPause;
@@ -31,6 +32,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnPlay;
 @property (weak, nonatomic) IBOutlet UIImageView *bgView;
 @property (nonatomic) IBOutlet UIImageView *drawView;
+@property (nonatomic) IBOutlet UIImageView *imageLegendaPlayPause;
+@property (nonatomic) IBOutlet UIImageView *imageLegendaParar;
+@property (nonatomic) IBOutlet UIImageView *imageLegendaGravar;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *lblPageText;
 @property (weak, nonatomic) IBOutlet UILabel *lblPageIndex;

@@ -7,8 +7,11 @@
 //
 
 #import "SettingsViewController.h"
+#import "Sounds.h"
 
 @interface SettingsViewController ()
+
+@property (nonatomic) Sounds *sons;
 
 @end
 
@@ -21,11 +24,12 @@
     _scrollViewHelpText.contentSize = _lblHelpText.frame.size;
     _scrollViewLog.contentSize = _lblLog.frame.size;
     
-    
+    self.sons = [[Sounds alloc] init];
 }
 
 
 -(IBAction)btnHome:(id)sender{
+    [self.sons playClique:1];
     [self.navigationController popViewControllerAnimated:YES];
 }
 

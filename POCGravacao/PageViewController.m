@@ -23,7 +23,9 @@
 
 @implementation PageViewController
 
-@synthesize btnStop, btnPlay, btnRecordPause;
+@synthesize btnStop, btnPlay, btnRecordPause,
+            imageLegendaPlayPause, imageLegendaGravar, imageLegendaParar;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -163,12 +165,6 @@
     
     [self playPauseConfig];
     
-    //    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Terminou de Narrar"
-    //                                                    message: @"Faça seu desenho e mude de página"
-    //                                                   delegate: nil
-    //                                          cancelButtonTitle:@"OK"
-    //                                          otherButtonTitles:nil];
-    //    [alert show];
 }
 
 - (void) recordPauseConfig {
@@ -195,10 +191,13 @@
     else{
         if (btnPlay.currentBackgroundImage == imagePlay) {
             [btnPlay setBackgroundImage:imagePausar forState:UIControlStateNormal];
+            [imageLegendaPlayPause setImage:[UIImage imageNamed:@"LegendaPausar.png"]];
         }
         
         else{
             [btnPlay setBackgroundImage:imagePlay forState:UIControlStateNormal];
+            [imageLegendaPlayPause setImage:[UIImage imageNamed:@"LegendaIniciar.png"]];
+
         }
     }
 }
@@ -343,6 +342,10 @@
     [btnPlay setBackgroundImage:imageNarrar forState:UIControlStateNormal];
     [btnStop setHidden:YES];
     [btnRecordPause setHidden:YES];
+    [imageLegendaPlayPause setHidden:YES];
+    [imageLegendaGravar setHidden:YES];
+    [imageLegendaParar setHidden:YES];
+
 }
 
 - (void)viewDidLayoutSubviews{

@@ -19,6 +19,9 @@
                 <outlet property="btnRecordPause" destination="4Tc-5E-B3K" id="Jpi-8x-NJa"/>
                 <outlet property="btnStop" destination="qZD-Ju-bf6" id="m0w-a9-nxb"/>
                 <outlet property="drawView" destination="T81-Ez-59k" id="Zrk-Fn-pkE"/>
+                <outlet property="imageLegendaGravar" destination="E7M-DZ-BkZ" id="ZbC-hU-nvD"/>
+                <outlet property="imageLegendaParar" destination="Rky-t8-flr" id="5yh-dT-Ro3"/>
+                <outlet property="imageLegendaPlayPause" destination="xMC-i4-H94" id="7Le-Sm-0pn"/>
                 <outlet property="lblPageIndex" destination="eTB-MH-b8U" id="yAg-dY-ojC"/>
                 <outlet property="lblPageText" destination="Cba-Oa-Lqk" id="4o6-7j-DZl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -78,6 +81,15 @@
                         <action selector="playTapped:" destination="-1" eventType="touchUpInside" id="UWV-GJ-Wg8"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PararLegenda.png" translatesAutoresizingMaskIntoConstraints="NO" id="Rky-t8-flr" userLabel="imageStop">
+                    <rect key="frame" x="116" y="567" width="107" height="68"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="GravarLegenda.png" translatesAutoresizingMaskIntoConstraints="NO" id="E7M-DZ-BkZ" userLabel="imageGravar">
+                    <rect key="frame" x="116" y="654" width="124" height="68"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LegendaIniciar.png" translatesAutoresizingMaskIntoConstraints="NO" id="xMC-i4-H94" userLabel="imageIniciar">
+                    <rect key="frame" x="861" y="573" width="124" height="68"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>
@@ -88,6 +100,9 @@
     </objects>
     <resources>
         <image name="Gravar.png" width="282" height="290"/>
+        <image name="GravarLegenda.png" width="151" height="71"/>
+        <image name="LegendaIniciar.png" width="133" height="71"/>
+        <image name="PararLegenda.png" width="123" height="71"/>
         <image name="Pausar.png" width="256" height="294"/>
         <image name="Play.png" width="256" height="336"/>
         <image name="Stop.png" width="258" height="250"/>
