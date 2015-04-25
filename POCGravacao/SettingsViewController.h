@@ -18,5 +18,4 @@
 @property (nonatomic) IBOutlet UILabel *lblHelpText;
 @property (nonatomic) IBOutlet UILabel *lblLog;
 
-
 @end

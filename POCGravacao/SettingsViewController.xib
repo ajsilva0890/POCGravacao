@@ -97,6 +97,9 @@ v.1.0
                 </label>
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LcT-kJ-Bzv" userLabel="switchBGMusic">
                     <rect key="frame" x="656" y="601" width="51" height="31"/>
+                    <connections>
+                        <action selector="switchBGMusic:" destination="-1" eventType="touchUpInside" id="5T7-4B-Ur8"/>
+                    </connections>
                 </switch>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

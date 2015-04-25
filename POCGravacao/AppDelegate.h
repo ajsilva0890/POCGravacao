@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import <AVFoundation/AVFoundation.h>
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -18,6 +20,8 @@
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 @property(nonatomic, retain) UINavigationController *navController;
+@property(nonatomic) AVAudioPlayer *background;
+
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

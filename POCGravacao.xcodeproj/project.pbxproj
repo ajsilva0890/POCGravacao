@@ -43,6 +43,7 @@
 		C426D4161AD72A4500F9B4E9 /* Stop.png in Resources */ = {isa = PBXBuildFile; fileRef = C426D4111AD72A4500F9B4E9 /* Stop.png */; };
 		C46316061AD0729800695BA1 /* EntradaUsuario.m in Sources */ = {isa = PBXBuildFile; fileRef = C46316051AD0729800695BA1 /* EntradaUsuario.m */; };
 		C471EAFE1AEBEA9200763069 /* clickLapisEspessura.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C471EAFD1AEBEA9200763069 /* clickLapisEspessura.mp3 */; };
+		C471EB031AEC071E00763069 /* background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C471EB021AEC071E00763069 /* background.mp3 */; };
 		C472164E1AD83C45005EF629 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C472164C1AD83C44005EF629 /* MenuViewController.m */; };
 		C472164F1AD83C45005EF629 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C472164D1AD83C44005EF629 /* MenuViewController.xib */; };
 		C47216511AD8431F005EF629 /* LogoEraUmaVezUmDesenho.png in Resources */ = {isa = PBXBuildFile; fileRef = C47216501AD8431F005EF629 /* LogoEraUmaVezUmDesenho.png */; };
@@ -153,6 +154,7 @@
 		C46316041AD0729800695BA1 /* EntradaUsuario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntradaUsuario.h; sourceTree = "<group>"; };
 		C46316051AD0729800695BA1 /* EntradaUsuario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntradaUsuario.m; sourceTree = "<group>"; };
 		C471EAFD1AEBEA9200763069 /* clickLapisEspessura.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = clickLapisEspessura.mp3; path = sons/clickLapisEspessura.mp3; sourceTree = "<group>"; };
+		C471EB021AEC071E00763069 /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = background.mp3; path = sons/background.mp3; sourceTree = "<group>"; };
 		C472164B1AD83C44005EF629 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		C472164C1AD83C44005EF629 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		C472164D1AD83C44005EF629 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 		C47395631AE430F7006C9AFA /* sons */ = {
 			isa = PBXGroup;
 			children = (
+				C471EB021AEC071E00763069 /* background.mp3 */,
 				C471EAFD1AEBEA9200763069 /* clickLapisEspessura.mp3 */,
 				C47A67A11AEAA37A00A9A62D /* caixaLapis.mp3 */,
 				C47A67A21AEAA37A00A9A62D /* finalizar.mp3 */,
@@ -607,6 +610,7 @@
 				54DA3E5A1AEABA3000ADD394 /* joaoemariaTXT.txt in Resources */,
 				54A2EF1D1AE4569200648E72 /* shelfTop.png in Resources */,
 				C4C7FD351AD82CF90073441E /* Book3pqPage5.png in Resources */,
+				C471EB031AEC071E00763069 /* background.mp3 in Resources */,
 				C4C7FD311AD82CF90073441E /* Book3pqPage1.png in Resources */,
 				C4D5B78F1AEAB43C00775169 /* FeedbackFinalizar.png in Resources */,
 				C426D4161AD72A4500F9B4E9 /* Stop.png in Resources */,

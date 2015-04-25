@@ -13,16 +13,16 @@
 
 {
     AVAudioPlayer *click;
+    AVAudioPlayer *background;
     
 }
-
-@property (nonatomic) NSMutableArray *allSounds;
 
 @end
 
 @implementation Sounds
 
 - (void) playClique:(int)select{
+    
     
     NSString *path;
     NSURL *soundUrl;
@@ -63,5 +63,7 @@
     [click setVolume:0.1];
     [click play];
 }
+
+
 
 @end

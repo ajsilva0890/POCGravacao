@@ -8,10 +8,13 @@
 
 #import "SettingsViewController.h"
 #import "Sounds.h"
+#import "AppDelegate.h"
 
 @interface SettingsViewController ()
 
 @property (nonatomic) Sounds *sons;
+@property (nonatomic) AppDelegate *delegate;
+
 
 @end
 
@@ -25,6 +28,7 @@
     _scrollViewLog.contentSize = _lblLog.frame.size;
     
     self.sons = [[Sounds alloc] init];
+    self.delegate = ( AppDelegate* )[UIApplication sharedApplication].delegate;
 }
 
 
@@ -40,6 +44,17 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)switchBGMusic:(id)sender {
+    
+    if(self.switchBGMusic.on) {
+        [self.delegate.background play];
+    }
+    else {
+        [self.delegate.background stop];
+
+    }
 }
 
 /*
