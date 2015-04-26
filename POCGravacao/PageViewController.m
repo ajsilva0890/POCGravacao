@@ -277,8 +277,12 @@
     buscouAudio = NO;
     buscouGravacao = NO;
     
-    AVAudioSession *audioSession = [[AVAudioSession alloc] init];
-    [audioSession setActive:NO error:nil];
+    /* Esse comanda desativa a sessão de aúdio,
+        isso era útil por questão de segurança quando não tinhamos música de fundo, 
+        pois ela encerra inclusive a música de fundo, por isso foi desativada. */
+    
+//    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+//    [audioSession setActive:NO error:nil];
     
 }
 
