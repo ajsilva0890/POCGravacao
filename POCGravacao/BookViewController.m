@@ -348,6 +348,18 @@
     [self.sons playClique:7];
     [self corSelecionada:[sender tag]];
     corSelecionada = [sender tag];
+    
+    int w = 65, h = 150, margin = 20, qntdCor = 12;
+
+    UIButton *btnAux = sender;
+    btnAux.frame = CGRectMake([sender tag]*(w)+margin+w, self.view.frame.size.height - h/2 - margin - 40 + 30, w-20, h+20);
+    
+    for (int i = 0; i < qntdCor; i++) {
+        if (i != [sender tag]) {
+            btnAux = [self.btnLequeCor objectAtIndex:i];
+            btnAux.frame = CGRectMake(i*(w)+margin+w, self.view.frame.size.height - h/2 - margin + 25, w-20, h+20);
+        }
+    }
 }
 
 - (void)corSelecionada:(NSInteger)selecao {

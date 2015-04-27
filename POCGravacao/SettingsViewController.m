@@ -15,7 +15,6 @@
 @property (nonatomic) Sounds *sons;
 @property (nonatomic) AppDelegate *delegate;
 
-
 @end
 
 @implementation SettingsViewController
@@ -29,6 +28,7 @@
     
     self.sons = [[Sounds alloc] init];
     self.delegate = ( AppDelegate* )[UIApplication sharedApplication].delegate;
+
 }
 
 

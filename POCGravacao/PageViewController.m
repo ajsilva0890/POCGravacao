@@ -8,6 +8,7 @@
 
 #import "PageViewController.h"
 #import "EntradaUsuario.h"
+#import "AppDelegate.h"
 
 
 @interface PageViewController ()
@@ -18,6 +19,7 @@
 }
 
 @property (nonatomic) EntradaUsuario *tipoUsuario;
+@property (nonatomic) AppDelegate *delegate;
 
 @end
 
@@ -32,6 +34,7 @@
     // Do any additional setup after loading the view from its nib.
     
     self.tipoUsuario = [EntradaUsuario instance];
+    self.delegate = ( AppDelegate* )[UIApplication sharedApplication].delegate;
     buscouAudio = NO;
     buscouGravacao = NO;
     
@@ -52,7 +55,6 @@
     
     _lblPageIndex.text = [NSString stringWithFormat:@"%i", _pageNumber+1];
     
-    //    [self loadAudioSettings];
     [self loadImageSettings];
     
 }
@@ -170,10 +172,14 @@
 - (void) recordPauseConfig {
     if (btnRecordPause.currentBackgroundImage == imageGravar) {
         [btnRecordPause setBackgroundImage:imagePausar forState:UIControlStateNormal];
+        [imageLegendaGravar setImage:[UIImage imageNamed:@"LegendaPausar.png"]];
+
     }
     
     else{
         [btnRecordPause setBackgroundImage:imageGravar forState:UIControlStateNormal];
+        [imageLegendaGravar setImage:[UIImage imageNamed:@"GravarLegenda.png"]];
+
     }
 }
 
@@ -203,12 +209,15 @@
 }
 
 - (IBAction)recordPauseTapped:(id)sender {
+
     //    para a reproducao do audio antes de comecar a gravar
     if (_player.playing) {
         [_player stop];
     }
     
     if (!_recorder.recording) {
+
+        [self.delegate.background stop];
         
         if (buscouGravacao == NO) {
             
@@ -258,7 +267,7 @@
         
     }
     else {
-        
+        [self.delegate.background play];
         [_recorder pause];
         [self recordPauseConfig];
         
@@ -269,9 +278,11 @@
 }
 
 - (IBAction)stopTapped:(id)sender {
+    [self.delegate.background play];
     [_recorder stop];
     
     [btnRecordPause setBackgroundImage:imageGravar forState:UIControlStateNormal];
+    [imageLegendaGravar setImage:[UIImage imageNamed:@"GravarLegenda.png"]];
     [btnStop setEnabled:NO];
     
     buscouAudio = NO;

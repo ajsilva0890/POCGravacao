@@ -23,8 +23,8 @@
     NSString *path = [NSString stringWithFormat:@"%@/background.mp3", [[NSBundle mainBundle] resourcePath]];
     NSURL *soundUrl = [NSURL fileURLWithPath:path];
     self.background = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
-    self.background.numberOfLoops = 0;
-    [self.background setVolume:0.02];
+    self.background.numberOfLoops = -1;
+    [self.background setVolume:0.03];
     [self.background play];
     
     
