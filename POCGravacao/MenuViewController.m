@@ -18,6 +18,7 @@
 
 {
     AVAudioPlayer *clickBook;
+    UIButton *auxCheckLocked;
 }
 
 @property (nonatomic) EntradaUsuario* tipoUsuario;
@@ -109,6 +110,16 @@
     [self enableBtnFilhoPai];
     
     [super viewWillAppear:YES];
+    
+    if ([self.bookSelected bookLocked]) {
+        printf("fechado");
+        UIImageView *fechado;
+                                                        // (xLocation, yLocation, myCircleWidth, myCircleHeight)
+        fechado = [[UIImageView alloc] initWithFrame:CGRectMake(auxCheckLocked.frame.size.width/2, auxCheckLocked.frame.size.height/2, 50, 50)];
+        fechado.image = [UIImage imageNamed:@"Check-01.png"];
+        
+        [auxCheckLocked addSubview:fechado];
+    }
 }
 
 - (IBAction) btnAjuda:(id)sender{
@@ -136,6 +147,7 @@
 }
 
 - (void) selectedButton:(id)sender{
+    auxCheckLocked = sender;
     
     [self.sons playClique:0];
     
@@ -249,6 +261,7 @@
         
         
         for (int j = 0; j < colunas && bookTotal > 0; j++) {
+            
             bookTotal--;
             
             int spaceY = i*h+marginY;
@@ -268,6 +281,9 @@
             [btnBook setBackgroundImage: [UIImage imageNamed:coverUrl]
                                forState:UIControlStateNormal];
             [self.bookShelfButtons addObject:btnBook];
+            
+            if (j == 0)
+                auxCheckLocked = btnBook;
         }
     }
     

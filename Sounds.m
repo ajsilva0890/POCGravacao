@@ -14,7 +14,6 @@
 {
     AVAudioPlayer *click;
     AVAudioPlayer *background;
-    
 }
 
 @end
@@ -22,7 +21,6 @@
 @implementation Sounds
 
 - (void) playClique:(int)select{
-    
     
     NSString *path;
     NSURL *soundUrl;
@@ -63,7 +61,5 @@
     [click setVolume:0.1];
     [click play];
 }
-
-
 
 @end
