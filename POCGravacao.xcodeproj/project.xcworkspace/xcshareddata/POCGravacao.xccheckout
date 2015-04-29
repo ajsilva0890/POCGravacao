@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>4F649B8D-5154-4A88-BD64-2CCC2E786F62</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>POCGravacao</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>EBBA48ADA99EAA73CFEE9E62E5F213508056CFD8</key>
 		<string>https://github.com/ajsilva0890/POCGravacao.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>POCGravacao.xcodeproj/project.xcworkspace</string>
+	<string>POCGravacao.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>EBBA48ADA99EAA73CFEE9E62E5F213508056CFD8</key>

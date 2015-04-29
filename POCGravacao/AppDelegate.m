@@ -24,7 +24,7 @@
     NSURL *soundUrl = [NSURL fileURLWithPath:path];
     self.background = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
     self.background.numberOfLoops = -1;
-    [self.background setVolume:0.03];
+    [self.background setVolume:0.1];
     [self.background play];
     
     

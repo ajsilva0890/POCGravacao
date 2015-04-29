@@ -27,7 +27,7 @@
     
     switch (select) {
         case 0:
-            path = [NSString stringWithFormat:@"%@/clickButton.mp3", [[NSBundle mainBundle] resourcePath]];
+            path = [NSString stringWithFormat:@"%@/clickLapisEspessura.mp3", [[NSBundle mainBundle] resourcePath]];
             break;
         case 1:
             path = [NSString stringWithFormat:@"%@/home.mp3", [[NSBundle mainBundle] resourcePath]];
@@ -59,6 +59,11 @@
     click = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
     click.numberOfLoops = 0;
     [click setVolume:0.1];
+    
+    if (select == 4) {
+        [click setVolume:0.01];
+    }
+    
     [click play];
 }
 
